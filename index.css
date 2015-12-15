@@ -1,0 +1,12 @@
+#elements {
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    columns: 2;
+}
+
+#elements .panel {
+    /* http://stackoverflow.com/a/26854682 */
+    page-break-inside: avoid; /* For Firefox. */
+    -webkit-column-break-inside: avoid; /* For Chrome & friends. */
+    break-inside: avoid; /* For standard browsers like IE. :-) */
+}
