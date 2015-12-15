@@ -1,3 +1,6 @@
+var tags = [];
+var scoreFuncs = [];
+
 $(function() {
     $.get("data/trashtrek.xml", function(data) {
         $("#dump").text("");
@@ -9,6 +12,10 @@ $(function() {
             var heading = $("Heading", this).text();
             var question = $("Question", this).text();
             var tag = $("Tag", this).text();
+            var score = $("Score", this).text();
+
+            tags.push(tag);
+            scoreFuncs.push(score);
 
             var $item = $("<li></li>").addClass("list-group-item clearfix");
             $item.append(question);
@@ -51,3 +58,30 @@ $(function() {
         }
     });
 });
+
+
+function calcScore()
+{
+    var answers = {};
+    tags.forEach(function(tag) {
+        answers[tag] = $("input[name=" + tag + "]:checked").val();
+    });
+
+    var context = {
+        answers: answers
+    };
+
+    var score = 0;
+
+    // http://stackoverflow.com/a/25859853
+    function evalInContext(js, context) {
+        //# Return the results of the in-line anonymous function we .call with the passed context
+        return function() { return eval(js); }.call(context);
+    }
+
+    for (var i = 0; i < scoreFuncs.length; i++) {
+        evalInContext(scoreFuncs[i], context);
+    }
+
+    return score;
+}
