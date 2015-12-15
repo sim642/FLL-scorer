@@ -87,17 +87,20 @@ $(function() {
         doScore();
     });
 
-    $("#submit").on("click", function() {
+    $("#submitform").on("submit", function(e) {
         var score = doScore();
         var good = doValidate();
         if (good) {
-            $(this).removeClass("btn-danger").addClass("btn-success");
+            $("#submit").removeClass("btn-danger").addClass("btn-success");
 
-            // TODO: do submit
-            alert("Submitting score " + score);
+            var answers = JSON.stringify(getAnswers());
+            $("#formanswers").val(answers);
+
+            alert("Submitting score " + score + "\n" + answers);
         }
         else {
-            $(this).addClass("btn-danger");
+            $("#submit").addClass("btn-danger");
+            e.preventDefault();
         }
     });
 });
@@ -161,6 +164,7 @@ function getErrors() {
 function doScore() {
     var score = getScore();
     $("#score").text(score);
+    $("#formscore").val(score);
     return score;
 }
 

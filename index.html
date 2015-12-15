@@ -38,11 +38,16 @@
                     </div>
                 </form>
 
-                <form class="navbar-form navbar-right">
+                <form class="navbar-form navbar-right" id="submitform" method="post" action="score.php">
                     <div class="form-group">
                         <label>Score:</label>
                         <p class="form-control-static" id="score">0</p>
                     </div>
+
+                    <input type="hidden" name="team" value="123">
+                    <input type="hidden" name="round" value="1">
+                    <input type="hidden" name="score" id="formscore" value="0">
+                    <input type="hidden" name="answers" id="formanswers" value="{}">
                     <button type="submit" class="btn btn-default" id="submit">Submit</button>
                 </form>
             </div>
