@@ -10,8 +10,8 @@ $(function() {
             var question = $("Question", this).text();
             var tag = $("Tag", this).text();
 
-            var $row = $("<div></div>").addClass("row");
-            $row.append($("Question", this).text());
+            var $item = $("<li></li>").addClass("list-group-item clearfix");
+            $item.append(question);
 
             var $group = $("<div></div>").addClass("btn-group pull-right").attr('data-toggle', 'buttons');
             $("Option", this).each(function() {
@@ -28,21 +28,21 @@ $(function() {
                 $group.append($label);
             });
 
-            $row.append($group);
+            $item.append($group);
 
             if (!(heading in panels))
             {
                 var $panel = $("<div></div>").addClass("panel panel-default");
                 var $heading = $("<div></div>").addClass("panel-heading").text(heading);
-                var $body = $("<div></div>").addClass("panel-body");
+                var $list = $("<ul></ul>").addClass("list-group");
 
                 $panel.append($heading);
-                $panel.append($body);
+                $panel.append($list);
 
                 panels[heading] = $panel;
             }
 
-            $(".panel-body", panels[heading]).append($row);
+            $(".list-group", panels[heading]).append($item);
         });
 
         for (var heading in panels)
