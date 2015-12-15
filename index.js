@@ -34,7 +34,7 @@ function buildElements() {
     var panels = {};
 
     $.each(elements, function(i, element) {
-        var $item = $("<li></li>").addClass("list-group-item clearfix");
+        var $item = $("<li></li>").addClass("list-group-item clearfix").attr("id", element.tag);
         $item.append(element.question);
 
         var $group = $("<div></div>").addClass("btn-group pull-right").attr('data-toggle', 'buttons');
@@ -60,6 +60,9 @@ function buildElements() {
             var $panel = $("<div></div>").addClass("panel panel-default");
             var $heading = $("<div></div>").addClass("panel-heading").text(element.heading);
             var $list = $("<ul></ul>").addClass("list-group");
+
+            var $error = $("<li></li>").addClass("list-group-item list-group-item-danger error").hide();
+            $list.append($error);
 
             $panel.append($heading);
             $panel.append($list);
@@ -95,8 +98,7 @@ function getAnswers() {
     return answers;
 }
 
-function getScore()
-{
+function getScore() {
     var context = {
         answers: getAnswers()
     };
@@ -117,8 +119,7 @@ function getScore()
 }
 
 
-function getErrors()
-{
+function getErrors() {
     var context = {
         answers: getAnswers()
     };
@@ -139,4 +140,17 @@ function getErrors()
     });
 
     return errors;
+}
+
+function validate() {
+    var errors = getErrors();
+
+    $("#elements .error").hide();
+    //$("#elements .panel").removeClass("panel-danger");
+    $.each(errors, function(tag, error) {
+        var $panel = $("#" + tag, "#elements").parents(".panel");
+
+        //$panel.addClass("panel-danger");
+        $(".error", $panel).text(error).show();
+    });
 }
