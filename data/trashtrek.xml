@@ -29,7 +29,7 @@
                            {'highlight': false, 'msg':''};]]>
         </Validate>
     </Element>
-    
+
     <Element>
         <Heading>M04 Sorting: Yellow/Blue Bars in Matching Green Bin</Heading>
         <Question>Bars in Bins NEVER completely in West Transfer</Question>
@@ -58,7 +58,7 @@
                            {'highlight': false, 'msg':''};]]>
         </Validate>
     </Element>
-    
+
     <Element>
         <Heading>M04 Sorting: Black Bars</Heading>
         <Question>Bars in original position / scoring Flower Box</Question>
@@ -85,7 +85,7 @@
                             {'highlight': true, 'msg':'Must have total of 12 Black bars.'};]]>
         </Validate>
     </Element>
-    
+
     <Element>
         <Heading>M04 Sorting: Black Bars</Heading>
         <Question>Bars in matching Green Bin or in Landfill Bin</Question>
@@ -108,7 +108,7 @@
                             {'highlight': true, 'msg':'Must have total of 12 Black bars.'};]]>
         </Validate>
     </Element>
-    
+
     <Element>
         <Heading>M04 Sorting: Black Bars</Heading>
         <Question>Bars elsewhere in play</Question>
@@ -135,7 +135,7 @@
                             {'highlight': true, 'msg':'Must have total of 12 Black bars.'};]]>
         </Validate>
     </Element>
-    
+
     <Element>
         <Heading>M02 Methane</Heading>
         <Question>Methane in Truck and/or Factory</Question>
@@ -158,7 +158,7 @@
         </Option>
         <Score><![CDATA[if (this.answers['m03a'] == 'Yes') {score += 50;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>M03 Transport</Heading>
         <Question>Yellow Bin completely East of Truck's Guide</Question>
@@ -201,7 +201,7 @@
                            {'highlight': false, 'msg':''};]]>
         </Validate>
     </Element>
-    
+
     <Element>
         <Heading>M06 Scrap Cars</Heading>
         <Question>Car completely folded in East Transfer</Question>
@@ -213,12 +213,12 @@
             <Label>No</Label><Value>No</Value><Default/>
         </Option>
         <Score><![CDATA[if ((this.answers['m06b'] == 'Yes') && (this.answers['m06c'] == 'Yes')) {score += 50;}]]></Score>
-        <Validate><![CDATA[(this.answers['m06a'] == 'Yes') && (this.answers['m06b'] == 'Yes')) ?
+        <Validate><![CDATA[(this.answers['m06a'] == 'Yes') && (this.answers['m06b'] == 'Yes') ?
                            {'highlight': true, 'msg':'Car cannot be repaired and scraped.'} : // validation failed
                            {'highlight': false, 'msg':''};]]>
         </Validate>
     </Element>
-    
+
     <Element>
         <Heading>M06 Scrap Cars</Heading>
         <Question>Car NEVER even partly in Safety</Question>
@@ -247,7 +247,7 @@
                            {'highlight': false, 'msg':''};]]>
         </Validate>
     </Element>
-    
+
     <Element>
         <Heading>M08 Composting</Heading>
         <Question>Compost Ejected AND Completely in Safety</Question>
@@ -274,7 +274,7 @@
         <Option><Label>2</Label><Value>2</Value></Option>
         <Score><![CDATA[score += (this.answers['m07a'] || 0)*1 > 0 ? (this.answers['m07a'] || 0)*30 : 0;]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>M07 Cleanup</Heading>
         <Question>Animals completely in any Circle w/o Bags</Question>
@@ -285,7 +285,7 @@
         <Option><Label>3</Label><Value>3</Value></Option>
         <Score><![CDATA[score += (this.answers['m07b'] || 0)*1 > 0 ? (this.answers['m07b'] || 0)*20 : 0;]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>M07 Cleanup</Heading>
         <Question>Chicken completely in Small Circle</Question>
@@ -311,7 +311,7 @@
         </Option>
         <Score><![CDATA[if (this.answers['m10'] == 'Yes') {score += 85;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>M01 Using Recycled Material</Heading>
         <Question>Your Grn Bins w/ Matching Yel/Blu bar in Opp Safety</Question>
@@ -321,7 +321,7 @@
         <Option><Label>2</Label><Value>2</Value></Option>
         <Score><![CDATA[score += (this.answers['m01a'] || 0)*60;]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>M01 Using Recycled Material</Heading>
         <Question>Opp Grn Bins w/ Matching Yel/Blu bar in Your Safety</Question>
@@ -367,7 +367,7 @@
         </Option>
         <Score><![CDATA[if ((this.answers['m12a'] == 'Yes') && (this.answers['m12b'] == 'Yes')) {score += 40;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>M12 Repurposing (Flower Box)</Heading>
         <Question>Package in original condition</Question>
@@ -379,7 +379,7 @@
             <Label>No</Label><Value>No</Value><Default/>
         </Option>
     </Element>
-    
+
     <Element>
         <Heading>Return Loose Items</Heading>
         <Question>3xAnimals, 2xPeople, 1xBlkBase, 1xPackage, 2xPlanes, 2xBags,
