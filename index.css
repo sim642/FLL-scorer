@@ -10,3 +10,7 @@
     -webkit-column-break-inside: avoid; /* For Chrome & friends. */
     break-inside: avoid; /* For standard browsers like IE. :-) */
 }
+
+body {
+    padding-top: 70px;
+}
