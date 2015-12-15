@@ -34,3 +34,7 @@ body {
         columns: 3;
     }
 }
+
+#elements .list-group-item {
+    overflow: hidden;
+}
