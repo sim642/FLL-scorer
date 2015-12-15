@@ -145,12 +145,18 @@ function getErrors() {
 function validate() {
     var errors = getErrors();
 
-    $("#elements .error").hide();
-    //$("#elements .panel").removeClass("panel-danger");
-    $.each(errors, function(tag, error) {
-        var $panel = $("#" + tag, "#elements").parents(".panel");
+    $.each(elements, function(i, element) {
+        var $panel = $("#" + element.tag, "#elements").parents(".panel");
+        var $error = $(".error", $panel);
 
-        //$panel.addClass("panel-danger");
-        $(".error", $panel).text(error).show();
+        if (element.tag in errors) {
+            $error.text(errors[element.tag]);
+            if ($error.is(":hidden"))
+                $error.slideDown();
+        }
+        else {
+            if ($error.is(":visible"))
+                $error.slideUp();
+        }
     });
 }
