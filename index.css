@@ -1,7 +1,5 @@
-#elements {
-    -webkit-columns: 3;
-    -moz-columns: 3;
-    columns: 3;
+body {
+    padding-top: 70px;
 }
 
 #elements .panel {
@@ -11,6 +9,28 @@
     break-inside: avoid; /* For standard browsers like IE. :-) */
 }
 
-body {
-    padding-top: 70px;
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    #elements {
+        -webkit-columns: 2;
+        -moz-columns: 2;
+        columns: 2;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    #elements {
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        columns: 3;
+    }
 }
