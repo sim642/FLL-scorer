@@ -2,16 +2,16 @@ $(function() {
     $.get("data/trashtrek.xml", function(data) {
         $("#dump").text("");
 
+        var panels = {};
+
         var $data = $(data);
         $("Element", $data).each(function() {
-            var $panel = $("<div></div>").addClass("panel panel-default");
-            var $heading = $("<div></div>").addClass("panel-heading");
-            var $body = $("<div></div>").addClass("panel-body");
-
+            var heading = $("Heading", this).text();
+            var question = $("Question", this).text();
             var tag = $("Tag", this).text();
 
-            $heading.text($("Heading", this).text());
-            $body.append($("Question", this).text());
+            var $row = $("<div></div>").addClass("row");
+            $row.append($("Question", this).text());
 
             var $group = $("<div></div>").addClass("btn-group pull-right").attr('data-toggle', 'buttons');
             $("Option", this).each(function() {
@@ -28,11 +28,26 @@ $(function() {
                 $group.append($label);
             });
 
-            $body.append($group);
+            $row.append($group);
 
-            $panel.append($heading);
-            $panel.append($body);
-            $("#elements").append($panel);
+            if (!(heading in panels))
+            {
+                var $panel = $("<div></div>").addClass("panel panel-default");
+                var $heading = $("<div></div>").addClass("panel-heading").text(heading);
+                var $body = $("<div></div>").addClass("panel-body");
+
+                $panel.append($heading);
+                $panel.append($body);
+
+                panels[heading] = $panel;
+            }
+
+            $(".panel-body", panels[heading]).append($row);
         });
+
+        for (var heading in panels)
+        {
+            $("#elements").append(panels[heading]);
+        }
     });
 });
