@@ -80,10 +80,18 @@ function buildElements() {
     });
 }
 
+function loadAnswers(answers) {
+    $.each(answers, function(tag, answer) {
+        $("input[name=" + tag + "]").attr("checked", "").parent().removeClass("active");
+        $("input[name=" + tag + "][value=" + answer + "]").attr("checked", "checked").parent().addClass("active");
+    });
+}
+
 $(function() {
     $.get("data/trashtrek.xml", function(data) {
         elements = parseData(data);
         buildElements();
+        loadAnswers(JSON.parse($("#formanswers").val()));
         doScore();
     });
 
