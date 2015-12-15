@@ -49,6 +49,8 @@ function buildElements() {
                 $input.attr("checked", "checked");
             }
 
+            $input.on("change", doScore);
+
             $label.append($input);
             $group.append($label);
         });
@@ -82,6 +84,7 @@ $(function() {
     $.get("data/trashtrek.xml", function(data) {
         elements = parseData(data);
         buildElements();
+        doScore();
     });
 });
 
@@ -142,14 +145,23 @@ function getErrors() {
     return errors;
 }
 
-function validate() {
+function doScore() {
+    var score = getScore();
+    $("#score").text(score);
+    return score;
+}
+
+function doValidate() {
     var errors = getErrors();
+    var errorcnt = 0;
 
     $.each(elements, function(i, element) {
         var $panel = $("#" + element.tag, "#elements").parents(".panel");
         var $error = $(".error", $panel);
 
         if (element.tag in errors) {
+            errorcnt++;
+
             $error.text(errors[element.tag]);
             if ($error.is(":hidden"))
                 $error.slideDown();
@@ -159,4 +171,6 @@ function validate() {
                 $error.slideUp();
         }
     });
+
+    return errorcnt == 0;
 }
