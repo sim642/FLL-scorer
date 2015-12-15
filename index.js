@@ -86,6 +86,20 @@ $(function() {
         buildElements();
         doScore();
     });
+
+    $("#submit").on("click", function() {
+        var score = doScore();
+        var good = doValidate();
+        if (good) {
+            $(this).removeClass("btn-danger").addClass("btn-success");
+
+            // TODO: do submit
+            alert("Submitting score " + score);
+        }
+        else {
+            $(this).addClass("btn-danger");
+        }
+    });
 });
 
 // Used in data functions
@@ -120,7 +134,6 @@ function getScore() {
 
     return score;
 }
-
 
 function getErrors() {
     var context = {
