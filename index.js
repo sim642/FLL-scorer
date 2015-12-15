@@ -1,80 +1,104 @@
-var tags = [];
-var scoreFuncs = [];
-var validateFuncs = [];
+var elements = [];
+
+function parseData(data) {
+    var $data = $(data);
+    var elements = [];
+
+    $("Element", $data).each(function() {
+        var element = {
+            heading: $("Heading", this).text(),
+            question: $("Question", this).text(),
+            tag: $("Tag", this).text(),
+            options: [],
+            score: $("Score", this).text(),
+            validate: $("Validate", this).text()
+        };
+
+        $("Option", this).each(function() {
+            var option = {
+                label: $("Label", this).text(),
+                value: $("Value", this).text(),
+                default: $("Default", this).length > 0
+            };
+
+            element.options.push(option);
+        });
+
+        elements.push(element);
+    });
+
+    return elements;
+}
+
+function buildElements() {
+    var panels = {};
+
+    $.each(elements, function(i, element) {
+        var $item = $("<li></li>").addClass("list-group-item clearfix");
+        $item.append(element.question);
+
+        var $group = $("<div></div>").addClass("btn-group pull-right").attr('data-toggle', 'buttons');
+
+        $.each(element.options, function(j, option) {
+            var $label = $("<label></label>").addClass("btn btn-default").text(option.label);
+            var $input = $("<input></input>").attr("type", "radio").attr("name", element.tag).attr("autocomplete", "off").val(option.value);
+
+            if (option.default)
+            {
+                $label.addClass("active");
+                $input.attr("checked", "checked");
+            }
+
+            $label.append($input);
+            $group.append($label);
+        });
+
+        $item.append($group);
+
+        if (!(element.heading in panels))
+        {
+            var $panel = $("<div></div>").addClass("panel panel-default");
+            var $heading = $("<div></div>").addClass("panel-heading").text(element.heading);
+            var $list = $("<ul></ul>").addClass("list-group");
+
+            $panel.append($heading);
+            $panel.append($list);
+
+            panels[element.heading] = $panel;
+        }
+
+        $(".list-group", panels[element.heading]).append($item);
+    });
+
+    $.each(panels, function(heading, $panel) {
+        $('#elements').append($panel);
+    });
+}
 
 $(function() {
     $.get("data/trashtrek.xml", function(data) {
-        $("#dump").text("");
-
-        var panels = {};
-
-        var $data = $(data);
-        $("Element", $data).each(function() {
-            var heading = $("Heading", this).text();
-            var question = $("Question", this).text();
-            var tag = $("Tag", this).text();
-            var score = $("Score", this).text();
-            var validate = $("Validate", this).text();
-
-            tags.push(tag);
-            scoreFuncs.push(score);
-            validateFuncs.push(validate);
-
-            var $item = $("<li></li>").addClass("list-group-item clearfix");
-            $item.append(question);
-
-            var $group = $("<div></div>").addClass("btn-group pull-right").attr('data-toggle', 'buttons');
-            $("Option", this).each(function() {
-                var $label = $("<label></label>").addClass("btn btn-default").text($("Label", this).text());
-                var $input = $("<input></input>").attr("type", "radio").attr("name", tag).attr("autocomplete", "off").val($("Value", this).text());
-
-                if ($("Default", this).length > 0)
-                {
-                    $label.addClass("active");
-                    $input.attr("checked", "checked");
-                }
-
-                $label.append($input);
-                $group.append($label);
-            });
-
-            $item.append($group);
-
-            if (!(heading in panels))
-            {
-                var $panel = $("<div></div>").addClass("panel panel-default");
-                var $heading = $("<div></div>").addClass("panel-heading").text(heading);
-                var $list = $("<ul></ul>").addClass("list-group");
-
-                $panel.append($heading);
-                $panel.append($list);
-
-                panels[heading] = $panel;
-            }
-
-            $(".list-group", panels[heading]).append($item);
-        });
-
-        for (var heading in panels)
-        {
-            $("#elements").append(panels[heading]);
-        }
+        elements = parseData(data);
+        buildElements();
     });
 });
 
+// Used in data functions
 function isEmpty(val) {
     return (val === undefined || val == null || val.length <= 0) ? true : false;
 }
 
-function calcScore()
-{
+function getAnswers() {
     var answers = {};
-    $.each(tags, function(i, tag) {
-        answers[tag] = $("input[name=" + tag + "]:checked").val();
+    $.each(elements, function(i, element) {
+        answers[element.tag] = $("input[name=" + element.tag + "]:checked").val();
     });
+    return answers;
+}
 
+function getScore()
+{
     var context = {
-        answers: answers
+        answers: getAnswers()
     };
 
     var score = 0;
@@ -85,23 +109,18 @@ function calcScore()
         return function() { return eval(js); }.call(context);
     }
 
-    $.each(scoreFuncs, function(i, scoreFunc) {
-        evalInContext(scoreFunc, context);
+    $.each(elements, function(i, element) {
+        evalInContext(element.score, context);
     });
 
     return score;
 }
 
 
-function validate()
+function getErrors()
 {
-    var answers = {};
-    $.each(tags, function(i, tag) {
-        answers[tag] = $("input[name=" + tag + "]:checked").val();
-    });
-
     var context = {
-        answers: answers
+        answers: getAnswers()
     };
 
     // http://stackoverflow.com/a/25859853
@@ -110,11 +129,14 @@ function validate()
         return function() { return eval(js); }.call(context);
     }
 
-    $.each(validateFuncs, function(i, validateFunc) {
-        var ret = evalInContext(validateFunc, context);
+    var errors = {};
+    $.each(elements, function(i, element) {
+        var ret = evalInContext(element.validate, context);
 
         if (ret && ret.highlight) {
-            console.log(tags[i], ret.msg);
+            errors[element.tag] = ret.msg;
         }
     });
+
+    return errors;
 }
