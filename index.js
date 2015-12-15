@@ -69,7 +69,7 @@ function isEmpty(val) {
 function calcScore()
 {
     var answers = {};
-    tags.forEach(function(tag) {
+    $.each(tags, function(i, tag) {
         answers[tag] = $("input[name=" + tag + "]:checked").val();
     });
 
@@ -85,9 +85,9 @@ function calcScore()
         return function() { return eval(js); }.call(context);
     }
 
-    for (var i = 0; i < scoreFuncs.length; i++) {
-        evalInContext(scoreFuncs[i], context);
-    }
+    $.each(scoreFuncs, function(i, scoreFunc) {
+        evalInContext(scoreFunc, context);
+    });
 
     return score;
 }
@@ -96,7 +96,7 @@ function calcScore()
 function validate()
 {
     var answers = {};
-    tags.forEach(function(tag) {
+    $.each(tags, function(i, tag) {
         answers[tag] = $("input[name=" + tag + "]:checked").val();
     });
 
@@ -110,11 +110,11 @@ function validate()
         return function() { return eval(js); }.call(context);
     }
 
-    for (var i = 0; i < validateFuncs.length; i++) {
-        var ret = evalInContext(validateFuncs[i], context);
+    $.each(validateFuncs, function(i, validateFunc) {
+        var ret = evalInContext(validateFunc, context);
 
         if (ret && ret.highlight) {
             console.log(tags[i], ret.msg);
         }
-    }
+    });
 }
