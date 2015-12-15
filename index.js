@@ -129,7 +129,11 @@ $(function() {
             var answers = JSON.stringify(getAnswers());
             $("#formanswers").val(answers);
 
-            alert("Submitting score " + score + "\n" + answers);
+            var alertStr = $("#submitform input").map(function() {
+                return $(this).attr("name") + "=" + $(this).val();
+            }).get().join("\n");
+
+            alert(alertStr);
         }
         else {
             $("#submit").addClass("btn-danger");
