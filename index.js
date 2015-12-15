@@ -10,6 +10,7 @@ function parseData(data) {
             question: $("Question", this).text(),
             tag: $("Tag", this).text(),
             options: [],
+            default: null,
             score: $("Score", this).text(),
             validate: $("Validate", this).text()
         };
@@ -20,6 +21,9 @@ function parseData(data) {
                 value: $("Value", this).text(),
                 default: $("Default", this).length > 0
             };
+
+            if (option.default)
+                element.default = option.value;
 
             element.options.push(option);
         });
@@ -49,7 +53,10 @@ function buildElements() {
                 $input.attr("checked", "checked");
             }
 
-            $input.on("change", doScore);
+            $input.on("change", function() {
+                doScore();
+                checkDefault(element.tag);
+            });
 
             $label.append($input);
             $group.append($label);
@@ -80,10 +87,28 @@ function buildElements() {
     });
 }
 
+function checkDefault(tag) {
+    var answer = $("input[name=" + tag + "]:checked").val();
+
+    $.each(elements, function(i, element) {
+        if (element.tag == tag) {
+            var $item = $("#" + tag);
+            $item.removeClass('list-group-item-info');
+
+            if (answer != element.default)
+                $item.addClass('list-group-item-info');
+
+            return true;
+        }
+    });
+}
+
 function loadAnswers(answers) {
     $.each(answers, function(tag, answer) {
         $("input[name=" + tag + "]").attr("checked", "").parent().removeClass("active");
         $("input[name=" + tag + "][value=" + answer + "]").attr("checked", "checked").parent().addClass("active");
+
+        checkDefault(tag);
     });
 }
 
