@@ -82,6 +82,7 @@ function buildElements() {
         $(".list-group", panels[element.heading]).append($item);
     });
 
+    $("#elements").empty();
     $.each(panels, function(heading, $panel) {
         $("#elements").append($panel);
     });
@@ -112,12 +113,27 @@ function loadAnswers(answers) {
     });
 }
 
-$(function() {
-    $.get("data/trashtrek.xml", function(data) {
+function reset() {
+    buildElements();
+    doScore();
+
+    $("#submit").removeClass("btn-danger btn-success").addClass("btn-default");
+}
+
+function loadData(name) {
+    $.get("data/" + name + ".xml", function(data) {
         elements = parseData(data);
-        buildElements();
-        loadAnswers(JSON.parse($("#formanswers").val()));
-        doScore();
+        reset();
+    });
+}
+
+$(function() {
+    $("#challenge").on("change", function() {
+        loadData($(this).val());
+    }).trigger("change");
+
+    $("#reset").on("click", function() {
+        reset();
     });
 
     $("#submitform").on("submit", function(e) {
