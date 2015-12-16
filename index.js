@@ -224,6 +224,8 @@ function doScore() {
 }
 
 function doValidate() {
+    $icon = $("<span></span>").addClass("glyphicon glyphicon-alert").html("&nbsp;");
+
     var errors = getErrors();
     var errorcnt = 0;
 
@@ -235,6 +237,7 @@ function doValidate() {
             errorcnt++;
 
             $error.text(errors[element.tag]);
+            $error.prepend($icon.clone());
             if ($error.is(":hidden"))
                 $error.slideDown();
         }
