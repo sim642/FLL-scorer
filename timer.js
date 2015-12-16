@@ -28,7 +28,8 @@ function displayTime(d, func) {
 }
 
 function startTimer(func) {
-    $("#timer").text("Stop");
+    $("#timer").text("Stop").removeClass("btn-default btn-success").addClass("btn-danger");
+
     endtime = Date.now() + defaulttime;
 
     stepper = setInterval(function() {
@@ -37,7 +38,7 @@ function startTimer(func) {
 }
 
 function stopTimer() {
-    $("#timer").text("Start");
+    $("#timer").text("Start").removeClass("btn-default btn-danger").addClass("btn-success");
 
     endtime = null;
     clearInterval(stepper);
