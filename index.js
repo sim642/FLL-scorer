@@ -172,7 +172,7 @@ function getScore() {
         evalInContext(element.score, context);
     });
 
-    return score;
+    return Math.max(0, score);
 }
 
 function getErrors() {
