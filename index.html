@@ -20,6 +20,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+        <script src="timer.js"></script>
         <script src="index.js"></script>
     </head>
 
@@ -41,6 +42,15 @@
                 </form>
 
                 <form class="navbar-form navbar-right" id="submitform" method="post" action="/">
+                    <button type="button" class="btn btn-default" id="timer">Start</button>
+
+                    <div class="form-group">
+                        <label>Time:</label>
+                        <p class="form-control-static" id="time">
+                            <span id="min">-</span>:<span id="sec">--</span>.<span id="ms">-</span>
+                        </p>
+                    </div>
+
                     <div class="form-group">
                         <label>Score:</label>
                         <p class="form-control-static" id="score">0</p>

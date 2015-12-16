@@ -118,6 +118,7 @@ function reset() {
     doScore();
 
     $("#submit").removeClass("btn-danger btn-success").addClass("btn-default");
+    resetTimer();
 }
 
 function loadData(name) {
@@ -128,11 +129,22 @@ function loadData(name) {
 }
 
 $(function() {
+    resetTimer();
+
     $("#challenge").on("change", function() {
         loadData($(this).val());
     }).trigger("change");
 
     $("#reset").on("click", reset);
+
+    $("#timer").on("click", function() {
+        if (isTimer()) {
+            stopTimer();
+        }
+        else {
+            startTimer();
+        }
+    });
 
     $("#submitform").on("submit", function(e) {
         var score = doScore();
