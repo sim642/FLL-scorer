@@ -132,9 +132,7 @@ $(function() {
         loadData($(this).val());
     }).trigger("change");
 
-    $("#reset").on("click", function() {
-        reset();
-    });
+    $("#reset").on("click", reset);
 
     $("#submitform").on("submit", function(e) {
         var score = doScore();
