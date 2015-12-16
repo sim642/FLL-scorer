@@ -140,21 +140,13 @@ $(function() {
         var score = doScore();
         var good = doValidate();
         if (good) {
-            $("#submit").removeClass("btn-danger").addClass("btn-success");
-
-            var answers = JSON.stringify(getAnswers());
-            $("#formanswers").val(answers);
-
-            var alertStr = $("#submitform input").map(function() {
-                return $(this).attr("name") + "=" + $(this).val();
-            }).get().join("\n");
-
-            alert(alertStr);
+            $("#submit").removeClass("btn-default btn-danger").addClass("btn-success");
         }
         else {
-            $("#submit").addClass("btn-danger");
-            e.preventDefault();
+            $("#submit").removeClass("btn-default btn-success").addClass("btn-danger");
         }
+
+        e.preventDefault();
     });
 });
 
