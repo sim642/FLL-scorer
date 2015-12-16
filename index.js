@@ -83,7 +83,7 @@ function buildElements() {
     });
 
     $.each(panels, function(heading, $panel) {
-        $('#elements').append($panel);
+        $("#elements").append($panel);
     });
 }
 
