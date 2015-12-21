@@ -133,9 +133,13 @@ $(function() {
 
     $("#challenge").on("change", function() {
         loadData($(this).val());
+        ga("send", "event", "challenge", "load", $(this).val());
     }).trigger("change");
 
-    $("#reset").on("click", reset);
+    $("#reset").on("click", function() {
+        reset();
+        ga("send", "event", "challenge", "reset", $("#challenge").val());
+    });
 
     $("#timer").on("click", function() {
         if (isTimer()) {
@@ -157,6 +161,8 @@ $(function() {
         }
 
         e.preventDefault();
+
+        ga("send", "event", "scoring", "validate", $("#challenge").val(), good ? score : -1);
     });
 });
 

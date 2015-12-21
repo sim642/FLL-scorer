@@ -35,19 +35,24 @@ function startTimer(func) {
     stepper = setInterval(function() {
         displayTime(endtime - Date.now(), func);
     }, 100);
+
+    ga("send", "event", "timer", "start");
 }
 
-function stopTimer() {
+function stopTimer(reset) {
     $("#timer").text("Start").removeClass("btn-default btn-danger").addClass("btn-success");
 
     endtime = null;
     clearInterval(stepper);
     stepper = null;
+
+    if (!reset)
+        ga("send", "event", "timer", "stop", $("#time").text().trim());
 }
 
 function resetTimer(func) {
     displayTime(defaulttime, func);
-    stopTimer();
+    stopTimer(true);
 }
 
 function isTimer() {
