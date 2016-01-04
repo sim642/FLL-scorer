@@ -137,6 +137,12 @@ $(function() {
         }
         else {
             $("#submit").addClass("btn-danger");
+
+            // http://stackoverflow.com/a/6677069
+            $("html, body").animate({
+                scrollTop: $(".error:visible", "#elements").first().parents(".panel").offset().top - $("#elements").offset().top
+            }, "slow");
+
             e.preventDefault();
         }
     });
