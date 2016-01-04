@@ -158,6 +158,11 @@ $(function() {
         }
         else {
             $("#submit").removeClass("btn-default btn-success").addClass("btn-danger");
+
+            // http://stackoverflow.com/a/6677069
+            $("html, body").animate({
+                scrollTop: $(".error:visible", "#elements").first().parents(".panel").offset().top - $("#elements").offset().top
+            }, "slow");
         }
 
         e.preventDefault();
@@ -235,6 +240,8 @@ function doValidate() {
     var errors = getErrors();
     var errorcnt = 0;
 
+    $(".error", "#elements").data("current", false);
+
     $.each(elements, function(i, element) {
         var $panel = $("#" + element.tag, "#elements").parents(".panel");
         var $error = $(".error", $panel);
@@ -246,9 +253,11 @@ function doValidate() {
             $error.prepend($icon.clone());
             if ($error.is(":hidden"))
                 $error.slideDown();
+
+            $error.data("current", true);
         }
         else {
-            if ($error.is(":visible"))
+            if ($error.is(":visible") && !$error.data("current"))
                 $error.slideUp();
         }
     });
