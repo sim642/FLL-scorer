@@ -7,19 +7,25 @@
         <title>FLL scorer</title>
 
         <!-- Latest compiled and minified CSS -->
+        <!-- TODO: kasuta kohalikku bootstrap-i mitte CDN-i -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
         <!-- Optional theme -->
+        <!-- TODO: kasuta kohalikku bootstrap-i mitte CDN-i -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
+        <!-- TODO: muuda CSS-i aadressi -->
         <link rel="stylesheet" href="index.css" charset="utf-8">
 
+        <!-- TODO: kasuta kohalikku jquery-t mitte CDN-i -->
         <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
         <!-- Latest compiled and minified JavaScript -->
+        <!-- TODO: kasuta kohalikku bootstrap-i mitte CDN-i -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
+        <!-- TODO: muuda JS-i aadressi -->
         <script src="index.js"></script>
     </head>
 
@@ -39,24 +45,25 @@
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
                             <label>Team:</label>
-                            <p class="form-control-static">Test team</p>
+                            <p class="form-control-static"><!-- TODO: pane siia meeskonna nimi -->Test team</p>
                         </div>
                         <div class="form-group">
                             <label>Round:</label>
-                            <p class="form-control-static">1</p>
+                            <p class="form-control-static"><!-- TODO: pane siia vooru number -->1</p>
                         </div>
                     </form>
 
+                    <!-- TODO: muuda action -->
                     <form class="navbar-form navbar-right" id="submitform" method="post" action="/">
                         <div class="form-group">
                             <label>Score:</label>
                             <p class="form-control-static" id="score">0</p>
                         </div>
 
-                        <input type="hidden" name="team" value="123">
-                        <input type="hidden" name="round" value="1">
-                        <input type="hidden" name="score" id="formscore" value="0">
-                        <input type="hidden" name="answers" id="formanswers" value="{}">
+                        <input type="hidden" name="team" value="123"><!-- TODO: pane value-sse meeskonna ID, mis tagasi saadetakse -->
+                        <input type="hidden" name="round" value="1"><!-- TODO: pane value-sse vooru number, mis tagasi saadetakse -->
+                        <input type="hidden" name="score" id="formscore" value="0"><!-- TODO: ära seda value-t muuda -->
+                        <input type="hidden" name="answers" id="formanswers" value="{}"><!-- TODO: pane value-sse varem täidetud valikute JSON andmebaasist, või {} kui pole varem täitnud -->
                         <button type="submit" class="btn btn-default" id="submit">Submit</button>
                     </form>
                 </div>

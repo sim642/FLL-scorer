@@ -1,3 +1,4 @@
+var dataUrl = "data/trashtrek.xml"; // TODO: muuda andmefaili aadress
 var elements = [];
 
 function parseData(data) {
@@ -113,7 +114,7 @@ function loadAnswers(answers) {
 }
 
 $(function() {
-    $.get("data/trashtrek.xml", function(data) {
+    $.get(dataUrl, function(data) {
         elements = parseData(data);
         buildElements();
         loadAnswers(JSON.parse($("#formanswers").val()));
@@ -129,6 +130,7 @@ $(function() {
             var answers = JSON.stringify(getAnswers());
             $("#formanswers").val(answers);
 
+            // TODO: eemalda alertStr ja alert()
             var alertStr = $("#submitform input").map(function() {
                 return $(this).attr("name") + "=" + $(this).val();
             }).get().join("\n");
