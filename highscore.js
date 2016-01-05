@@ -8,22 +8,25 @@ var logos = [
 ];
 var logoi = 0;
 
+
 function renderLogos() {
-    $(".onelogo, .twologo", "#header").hide();
+    $(".onelogo, .twologo", "#header").fadeOut(400).promise().done(function() {
+        var logo = logos[logoi];
+        if (logo.length == 1) {
+            $("#onelogo").attr("src", "logo/" + logo[0]);
+            $(".onelogo", "#header").fadeIn(400);
+            //$(".onelogo", "#header").show();
+        }
+        else if (logo.length == 2) {
+            $("#leftlogo").attr("src", "logo/" + logo[0]);
+            $("#rightlogo").attr("src", "logo/" + logo[1]);
+            $(".twologo", "#header").fadeIn(400);
+            //$(".twologo", "#header").show();
+        }
 
-    var logo = logos[logoi];
-    if (logo.length == 1) {
-        $(".onelogo", "#header").show();
-        $("#onelogo").attr("src", "logo/" + logo[0]);
-    }
-    else if (logo.length == 2) {
-        $(".twologo", "#header").show();
-        $("#leftlogo").attr("src", "logo/" + logo[0]);
-        $("#rightlogo").attr("src", "logo/" + logo[1]);
-    }
-
-    logoi++;
-    logoi %= logos.length;
+        logoi++;
+        logoi %= logos.length;
+    });
 }
 
 function animateScroll() {
