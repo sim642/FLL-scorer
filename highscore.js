@@ -11,6 +11,7 @@ var logoi = 0;
 var scrolls = 5;
 
 function renderLogos() {
+    // http://stackoverflow.com/a/8793546
     $(".onelogo, .twologo", "#header").fadeOut(400).promise().done(function() {
         var logo = logos[logoi];
         if (logo.length == 1) {
@@ -34,7 +35,7 @@ function animateScroll() {
     setTimeout(function() {
         $("html").animate({
             scrollTop: $(".panel", "#highscore").last().offset().top - $("#highscore").offset().top
-        }, $(".col-name", "#highscore").length * 750, "linear", function() {
+        }, $(".col-name", "#highscore").length * 1500, "linear", function() {
             scrolls--;
             if (scrolls) {
                 $("html").animate({

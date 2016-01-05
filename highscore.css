@@ -8,6 +8,7 @@ body {
     height: 15vh;
 }
 
+/* http://stackoverflow.com/a/20548578 */
 .vcenter {
     display: inline-block;
     vertical-align: middle;
@@ -21,4 +22,8 @@ body {
 #event {
     font-size: 175%;
     font-weight: bold;
+}
+
+.col-name {
+    overflow: hidden;
 }
