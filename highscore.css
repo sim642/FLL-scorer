@@ -1,0 +1,18 @@
+body {
+    padding-top: 27vh;
+
+    font-size: 250%;
+}
+
+#header {
+    height: 15vh;
+}
+
+#header img {
+    height: 15vh;
+}
+
+#event {
+    font-size: 175%;
+    font-weight: bold;
+}
