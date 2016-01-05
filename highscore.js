@@ -8,6 +8,7 @@ var logos = [
 ];
 var logoi = 0;
 
+var scrolls = 5;
 
 function renderLogos() {
     $(".onelogo, .twologo", "#header").fadeOut(400).promise().done(function() {
@@ -34,13 +35,19 @@ function animateScroll() {
         $("html").animate({
             scrollTop: $(".panel", "#highscore").last().offset().top - $("#highscore").offset().top
         }, $(".col-name", "#highscore").length * 750, "linear", function() {
-            $("html").animate({
-                scrollTop: $(".panel", "#highscore").first().offset().top - $("#highscore").offset().top
-            }, "slow", "swing", function() {
-                animateScroll();
-            });
+            scrolls--;
+            if (scrolls) {
+                $("html").animate({
+                    scrollTop: $(".panel", "#highscore").first().offset().top - $("#highscore").offset().top
+                }, "slow", "swing", function() {
+                    animateScroll();
+                });
+            }
+            else {
+                location.reload();
+            }
         });
-    }, 5 * 1000);
+    }, 10 * 1000);
 }
 $(function() {
     renderLogos();
