@@ -55,5 +55,9 @@ body {
 
 #elements .list-group-item {
     /* https://bugs.webkit.org/show_bug.cgi?id=152920 */
-    /* overflow: hidden; */
+    overflow: hidden;
+}
+
+.col + .col {
+    padding-left: 0;
 }
