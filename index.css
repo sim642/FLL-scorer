@@ -32,11 +32,11 @@ body {
         padding-left: 0px;
     }
 
-    #elements {
+    /*#elements {
         -webkit-columns: 2;
         -moz-columns: 2;
         columns: 2;
-    }
+    }*/
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -46,11 +46,11 @@ body {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    #elements {
+    /*#elements {
         -webkit-columns: 3;
         -moz-columns: 3;
         columns: 3;
-    }
+    }*/
 }
 
 #elements .list-group-item {

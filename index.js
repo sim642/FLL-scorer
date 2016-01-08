@@ -34,6 +34,42 @@ function parseData(data) {
     return elements;
 }
 
+function colsReset() {
+    $(".panel", "#elements").detach().appendTo($("#col-0", "#elements"));
+}
+
+function colsSort() {
+    var colcnt = 1;
+    if ($("body").width() >= 768)
+        colcnt = 2;
+    if ($("body").width() >= 1200)
+        colcnt = 3;
+
+    $(".col", "#elements").removeClass("col-xs-12 col-xs-6 col-xs-4");
+    if (colcnt == 1) {
+        $("#col-0").addClass("col-xs-12");
+    }
+    else if (colcnt == 2) {
+        $("#col-0, #col-1").addClass("col-xs-6");
+    }
+    else if (colcnt == 3) {
+        $("#col-0, #col-1, #col-2").addClass("col-xs-4");
+    }
+
+    var colheight = $("#col-0").height() / colcnt;
+
+    $(".panel", "#elements").each(function() {
+        var col = Math.floor(($(this).offset().top - $("#col-0").offset().top) / colheight);
+        $(this).data("col", col);
+    });
+
+    $(".panel", "#elements").each(function() {
+        var col = $(this).data("col");
+        if (col > 0)
+            $(this).detach().appendTo($("#col-" + col, "#elements"));
+    });
+}
+
 function buildElements() {
     var panels = {};
 
@@ -83,8 +119,10 @@ function buildElements() {
     });
 
     $.each(panels, function(heading, $panel) {
-        $("#elements").append($panel);
+        $("#col-0", "#elements").append($panel);
     });
+
+    colsSort();
 }
 
 function checkDefault(tag) {
@@ -118,6 +156,11 @@ $(function() {
         buildElements();
         loadAnswers(JSON.parse($("#formanswers").val()));
         doScore();
+    });
+
+    $(window).resize(function() {
+        colsReset();
+        colsSort();
     });
 
     $("#submitform").on("submit", function(e) {
