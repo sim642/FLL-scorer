@@ -34,16 +34,45 @@ function parseData(data) {
     return elements;
 }
 
-function colsReset() {
-    $(".panel", "#elements").detach().appendTo($("#col-0", "#elements"));
+function mathSum(arr) {
+    var sum = 0;
+    $.each(arr, function(_, val) {
+        sum += val;
+    });
+    return sum;
 }
 
-function colsSort() {
+function mathAvg(arr) {
+    return mathSum(arr) / arr.length;
+}
+
+function mathStdDev(arr) {
+    var avg = mathAvg(arr);
+
+    var sqdiffs = $.map(arr, function(val) {
+        return Math.pow(val - avg, 2);
+    });
+
+    return Math.sqrt(mathAvg(sqdiffs));
+}
+
+var colcnt = null;
+
+function colsCnt() {
     var colcnt = 1;
     if ($("body").width() >= 768)
         colcnt = 2;
     if ($("body").width() >= 1200)
         colcnt = 3;
+    return colcnt;
+}
+
+function colsReset() {
+    $(".panel", "#elements").detach().appendTo($("#col-0", "#elements"));
+}
+
+function colsSort() {
+    console.log("colsSort");
 
     $(".col", "#elements").removeClass("col-xs-12 col-xs-6 col-xs-4");
     if (colcnt == 1) {
@@ -56,10 +85,38 @@ function colsSort() {
         $("#col-0, #col-1, #col-2").addClass("col-xs-4");
     }
 
-    var colheight = $("#col-0").height() / colcnt;
+    var heights = [];
+    $(".panel", "#elements").each(function(i) {
+        heights[i] = $(this).outerHeight(true);
+    });
 
-    $(".panel", "#elements").each(function() {
-        var col = Math.floor(($(this).offset().top - $("#col-0").offset().top) / colheight);
+    var bestpart = null;
+    genPartitions(heights.length, colcnt, function(partition) {
+        var colheights = $.map(partition, function(block) {
+            var sum = 0;
+            $.each(block, function(_, i) {
+                sum += heights[i];
+            })
+            return sum;
+        });
+        var score = mathStdDev(colheights);
+
+        if (bestpart === null || bestpart.score > score) {
+            bestpart = {
+                score: score,
+                partition: partition
+            }
+        }
+    });
+
+    $(".panel", "#elements").each(function(i) {
+        var col = null;
+        for (var j = 0; j < colcnt; j++) {
+            if (bestpart.partition[j].indexOf(i) >= 0) {
+                col = j;
+                break;
+            }
+        }
         $(this).data("col", col);
     });
 
@@ -122,6 +179,7 @@ function buildElements() {
         $("#col-0", "#elements").append($panel);
     });
 
+    colcnt = colsCnt();
     colsSort();
 }
 
@@ -159,8 +217,12 @@ $(function() {
     });
 
     $(window).resize(function() {
-        colsReset();
-        colsSort();
+        var ncolcnt = colsCnt();
+        /*if (ncolcnt != colcnt)*/ {
+            colcnt = ncolcnt;
+            colsReset();
+            colsSort();
+        }
     });
 
     $("#submitform").on("submit", function(e) {
