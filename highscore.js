@@ -33,14 +33,14 @@ function renderLogos() {
 
 function animateScroll() {
     setTimeout(function() {
-        $("html").animate({
+        $("html, body").animate({
             scrollTop: $(".panel", "#highscore").last().offset().top - $("#highscore").offset().top
-        }, $(".col-name", "#highscore").length * 1500, "linear", function() {
+        }, $(".col-name", "#highscore").length * 1500, "linear").promise().done(function() {
             scrolls--;
             if (scrolls) {
-                $("html").animate({
+                $("html, body").animate({
                     scrollTop: $(".panel", "#highscore").first().offset().top - $("#highscore").offset().top
-                }, "slow", "swing", function() {
+                }, "slow", "swing").promise().done(function() {
                     animateScroll();
                 });
             }
@@ -54,6 +54,6 @@ $(function() {
     renderLogos();
     setInterval(renderLogos, 15 * 1000);
 
-    $("html").scrollTop(0);
+    $("html, body").scrollTop(0);
     animateScroll();
 });
