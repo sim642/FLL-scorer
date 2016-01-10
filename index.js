@@ -77,6 +77,7 @@ function colsSort() {
     $(".col", "#elements").removeClass("col-xs-12 col-xs-6 col-xs-4");
     if (colcnt == 1) {
         $("#col-0").addClass("col-xs-12");
+        return;
     }
     else if (colcnt == 2) {
         $("#col-0, #col-1").addClass("col-xs-6");
