@@ -71,6 +71,17 @@ function colsReset() {
     $(".panel", "#elements").detach().appendTo($("#col-0", "#elements"));
 }
 
+function colsScore(heights, partition) {
+    var colheights = $.map(partition, function(block) {
+        var sum = 0;
+        $.each(block, function(_, i) {
+            sum += heights[i];
+        })
+        return sum;
+    });
+    return mathStdDev(colheights);
+}
+
 function colsSort() {
     console.log("colsSort");
 
@@ -93,14 +104,7 @@ function colsSort() {
 
     var bestpart = null;
     genPartitions(heights.length, colcnt, function(partition) {
-        var colheights = $.map(partition, function(block) {
-            var sum = 0;
-            $.each(block, function(_, i) {
-                sum += heights[i];
-            })
-            return sum;
-        });
-        var score = mathStdDev(colheights);
+        var score = colsScore(heights, partition);
 
         if (bestpart === null || bestpart.score > score) {
             bestpart = {
