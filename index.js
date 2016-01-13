@@ -36,10 +36,13 @@ function parseData(data) {
 
 function emphasize(str) {
     return str.replace(/[A-ZÕÄÖÜ]+(?![a-zõäöü])/g, function(match, offset) {
+        var r = null;
         if (offset > 0)
-            return "<b>" + match.toLowerCase() + "</b>";
+            r = match.toLowerCase();
         else
-            return "<b>" + match[0] + match.substr(1).toLowerCase() + "</b>";
+            r = match[0] + match.substr(1).toLowerCase();
+
+        return $("<span></span>").addClass("emphasize").text(r)[0].outerHTML;
     });
 }
 
