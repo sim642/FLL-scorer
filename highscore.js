@@ -34,19 +34,21 @@ function renderLogos() {
 function animateScroll() {
     setTimeout(function() {
         $("html, body").animate({
-            scrollTop: $(".panel", "#highscore").last().offset().top - $("#highscore").offset().top
+            scrollTop: $("body").height() - $(window).height() + $("#highscore").offset().top
         }, $(".col-name", "#highscore").length * 1500, "linear").promise().done(function() {
-            scrolls--;
-            if (scrolls) {
-                $("html, body").animate({
-                    scrollTop: $(".panel", "#highscore").first().offset().top - $("#highscore").offset().top
-                }, "slow", "swing").promise().done(function() {
-                    animateScroll();
-                });
-            }
-            else {
-                location.reload();
-            }
+            setTimeout(function() {
+                scrolls--;
+                if (scrolls) {
+                    $("html, body").animate({
+                        scrollTop: $(".panel", "#highscore").first().offset().top - $("#highscore").offset().top
+                    }, "slow", "swing").promise().done(function() {
+                        animateScroll();
+                    });
+                }
+                else {
+                    location.reload();
+                }
+            }, 5 * 1000);
         });
     }, 10 * 1000);
 }
