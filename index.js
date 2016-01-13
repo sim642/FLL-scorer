@@ -34,12 +34,21 @@ function parseData(data) {
     return elements;
 }
 
+function emphasize(str) {
+    return str.replace(/[A-ZÕÄÖÜ]+(?![a-zõäöü])/g, function(match, offset) {
+        if (offset > 0)
+            return "<b>" + match.toLowerCase() + "</b>";
+        else
+            return "<b>" + match[0] + match.substr(1).toLowerCase() + "</b>";
+    });
+}
+
 function buildElements() {
     var panels = {};
 
     $.each(elements, function(i, element) {
         var $item = $("<li></li>").addClass("list-group-item clearfix").attr("id", element.tag);
-        $item.append(element.question);
+        $item.append(emphasize(element.question));
 
         var $group = $("<div></div>").addClass("btn-group pull-right").attr('data-toggle', 'buttons');
 
