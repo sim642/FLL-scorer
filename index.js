@@ -114,6 +114,46 @@ function colsBest(heights, colcnt) {
     }
 }
 
+function colsBest2(heights, colcnt) {
+    var T = new Array(colcnt);
+
+    for (var r = 0; r < colcnt; r++) {
+        T[r] = new Array(heights.length + 1);
+
+        for (var c = 0; c < heights.length + 1; c++) {
+            if (c == 0) {
+                T[r][c] = {
+                    score: 0,
+                    partition: new Array(colcnt).fill([])
+                };
+            }
+            else {
+                var bestpart = null;
+
+                for (var j = 0; j <= r; j++) {
+                    var prev = T[j][c - 1];
+
+                    var partition = $.extend(true, [], prev.partition);
+
+                    partition[r].push(c - 1);
+                    var score = colsScore(heights, partition);
+
+                    if (bestpart === null || bestpart.score > score) {
+                        bestpart = {
+                            score: score,
+                            partition: partition
+                        };
+                    }
+                }
+
+                T[r][c] = bestpart;
+            }
+        }
+    }
+
+    return T[colcnt - 1][heights.length];
+}
+
 function colsSort() {
     console.log("colsSort");
 
