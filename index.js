@@ -34,12 +34,24 @@ function parseData(data) {
     return elements;
 }
 
+function emphasize(str) {
+    return str.replace(/[A-ZÕÄÖÜ]+(?![a-zõäöü])/g, function(match, offset) {
+        var r = null;
+        if (offset > 0)
+            r = match.toLowerCase();
+        else
+            r = match[0] + match.substr(1).toLowerCase();
+
+        return $("<span></span>").addClass("emphasize").text(r)[0].outerHTML;
+    });
+}
+
 function buildElements() {
     var panels = {};
 
     $.each(elements, function(i, element) {
         var $item = $("<li></li>").addClass("list-group-item clearfix").attr("id", element.tag);
-        $item.append(element.question);
+        $item.append(emphasize(element.question));
 
         var $group = $("<div></div>").addClass("btn-group pull-right").attr('data-toggle', 'buttons');
 

@@ -57,3 +57,7 @@ body {
     /* https://bugs.webkit.org/show_bug.cgi?id=152920 */
     /* overflow: hidden; */
 }
+
+.emphasize {
+    font-weight: bold;
+}
