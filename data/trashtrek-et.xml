@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>M04 Sorteerimine: Kol/Sin plokid on oma õiges prügikastis</Heading>
+        <Question>Õiges prügikastis olevad plokid on Transp. Läände alas</Question>
+        <Tag>m04a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Option><Label>9</Label><Value>9</Value></Option>
+        <Option><Label>10</Label><Value>10</Value></Option>
+        <Option><Label>11</Label><Value>11</Value></Option>
+        <Option><Label>12</Label><Value>12</Value></Option>
+        <Option><Label>13</Label><Value>13</Value></Option>
+        <Option><Label>14</Label><Value>14</Value></Option>
+        <Option><Label>15</Label><Value>15</Value></Option>
+        <Score><![CDATA[score += (this.answers['m01a'] || 0)*1 + (this.answers['m04a'] || 0)*1 > 0 ? (this.answers['m04a'] || 0)*7 : 0;]]></Score>
+        <Validate><![CDATA[(((this.answers['m04a'] || 0)*1 +
+                            (this.answers['m01a'] || 0)*1 +
+                            (this.answers['m04b'] || 0)*1) > 15) ?
+                           {'highlight': true, 'msg':'Kol/Sin plokkide arv ei saa ületada 15.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M04 Sorteerimine: Kol/Sin plokid on oma õiges prügikastis</Heading>
+        <Question>Prügikastis olevad plokid polnud kordagi T. Läände alas</Question>
+        <Tag>m04b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Option><Label>9</Label><Value>9</Value></Option>
+        <Option><Label>10</Label><Value>10</Value></Option>
+        <Option><Label>11</Label><Value>11</Value></Option>
+        <Option><Label>12</Label><Value>12</Value></Option>
+        <Option><Label>13</Label><Value>13</Value></Option>
+        <Option><Label>14</Label><Value>14</Value></Option>
+        <Option><Label>15</Label><Value>15</Value></Option>
+        <Score><![CDATA[score += (this.answers['m04b'] || 0)*1 > 0 ? (this.answers['m04b'] || 0)*6 : 0;]]></Score>
+        <Validate><![CDATA[(((this.answers['m01a'] || 0)*1 +
+                            (this.answers['m04a'] || 0)*1 +
+                            (this.answers['m04b'] || 0)*1) > 15) ?
+                           {'highlight': true, 'msg':'Kol/Sin plokkide arv ei saa ületada 15.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M04 Sorteerimine: Ainult mustad plokid</Heading>
+        <Question>Plokid on algasendis/punkte toovas Lillepotis</Question>
+        <Tag>m04c</Tag>
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Option><Label>9</Label><Value>9</Value></Option>
+        <Option><Label>10</Label><Value>10</Value></Option>
+        <Option><Label>11</Label><Value>11</Value></Option>
+        <Option><Label>12</Label><Value>12</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m04c'] || 0)*1 > 0 ? (this.answers['m04c'] || 0)*8 : 0;]]></Score>
+        <Validate><![CDATA[(isEmpty(this.answers['m04c']) || isEmpty(this.answers['m04d']) ||
+                            isEmpty(this.answers['m04e']) ||
+                            (((this.answers['m04c'] || 0)*1 +
+                            (this.answers['m04d'] || 0)*1 +
+                            (this.answers['m04e'] || 0)*1) == 12)) ? {'highlight': false, 'msg':''} :
+                            {'highlight': true, 'msg':'Kokku peab olema 12 musta plokki.'};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M04 Sorteerimine: Ainult mustad plokid</Heading>
+        <Question>Plokid on vastavas Prügikastis või Prügimäel</Question>
+        <Tag>m04d</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Score><![CDATA[score += (this.answers['m04d'] || 0)*1 > 0 ? (this.answers['m04d'] || 0)*3 : 0;]]></Score>
+        <Validate><![CDATA[(isEmpty(this.answers['m04c']) || isEmpty(this.answers['m04d']) ||
+                            isEmpty(this.answers['m04e']) ||
+                            (((this.answers['m04c'] || 0)*1 +
+                            (this.answers['m04d'] || 0)*1 +
+                            (this.answers['m04e'] || 0)*1) == 12)) ? {'highlight': false, 'msg':''} :
+                            {'highlight': true, 'msg':'Kokku peab olema 12 musta plokki.'};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M04 Sorteerimine: Ainult mustad plokid</Heading>
+        <Question>Mujal mänguväljakul/baasis/laual</Question>
+        <Tag>m04e</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Option><Label>9</Label><Value>9</Value></Option>
+        <Option><Label>10</Label><Value>10</Value></Option>
+        <Option><Label>11</Label><Value>11</Value></Option>
+        <Option><Label>12</Label><Value>12</Value></Option>
+        <Score><![CDATA[score -= (this.answers['m04e'] || 0)*1 > 0 ? (this.answers['m04e'] || 0)*8 : 0;]]></Score>
+        <Validate><![CDATA[(isEmpty(this.answers['m04c']) || isEmpty(this.answers['m04d']) ||
+                            isEmpty(this.answers['m04e']) ||
+                            (((this.answers['m04c'] || 0)*1 +
+                            (this.answers['m04d'] || 0)*1 +
+                            (this.answers['m04e'] || 0)*1) == 12)) ? {'highlight': false, 'msg':''} :
+                            {'highlight': true, 'msg':'Kokku peab olema 12 musta plokki.'};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M02 Metaan</Heading>
+        <Question>Metaan on Veoautos ja/või Tehases</Question>
+        <Tag>m02</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>40</Value></Option>
+        <Option><Label>2</Label><Value>80</Value></Option>
+        <Score><![CDATA[score += (this.answers['m02'] || 0)*1;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Transport</Heading>
+        <Question>Veoauto toetab Kollase konteineri koguraskust</Question>
+        <Tag>m03a</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if (this.answers['m03a'] == 'Yes') {score += 50;}]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Transport</Heading>
+        <Question>Kollane konteiner on suunajast täielikult idas</Question>
+        <Tag>m03b</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if (this.answers['m03b'] == 'Yes') {score += 60;}]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Karjäär</Heading>
+        <Question>Vähemalt üks LEGO mehike on Sorteerimisalas</Question>
+        <Tag>m05</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if (this.answers['m05'] == 'Yes') {score += 60;}]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Autoromud</Heading>
+        <Question>Mootor on lahtivolditud autos omal kohal</Question>
+        <Tag>m06a</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if ((this.answers['m06a'] == 'Yes') && (this.answers['m06c'] == 'Yes')) {score += 65;}]]></Score>
+        <Validate><![CDATA[(this.answers['m06a'] == 'Yes') && (this.answers['m06b'] == 'Yes') ?
+                           {'highlight': true, 'msg':'Auto ei saa olla parandatud ja lammutatud.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M06 Autoromud</Heading>
+        <Question>Kokkuvolditud auto on täielikult Transport Itta alas</Question>
+        <Tag>m06b</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if ((this.answers['m06b'] == 'Yes') && (this.answers['m06c'] == 'Yes')) {score += 50;}]]></Score>
+        <Validate><![CDATA[(this.answers['m06a'] == 'Yes') && (this.answers['m06b'] == 'Yes') ?
+                           {'highlight': true, 'msg':'Auto ei saa olla parandatud ja lammutatud.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M06 Autoromud</Heading>
+        <Question>Auto ei olnud kordagi Ohutus alas</Question>
+        <Tag>m06c</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value><Default/>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value>
+        </Option>
+    </Element>
+
+    <Element>
+        <Heading>M08 Komposteerimine</Heading>
+        <Question>Kompost on väljastatud ja see ei ole Ohutus alas</Question>
+        <Tag>m08a</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if (this.answers['m08a'] == 'Yes') {score += 60;}]]></Score>
+        <Validate><![CDATA[(this.answers['m08a'] == 'Yes') && (this.answers['m08b'] == 'Yes') ?
+                           {'highlight': true, 'msg':'Kompost ei saa olla Ohtus alas ja sellest väljas.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M08 Komposteerimine</Heading>
+        <Question>Kompost on väljastatud ja on TÄIELIKULT Ohutus alas</Question>
+        <Tag>m08b</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if (this.answers['m08b'] == 'Yes') {score += 80;}]]></Score>
+        <Validate><![CDATA[(this.answers['m08a'] == 'Yes') && (this.answers['m08b'] == 'Yes') ?
+                           {'highlight': true, 'msg':'Kompost ei saa olla Ohtus alas ja sellest väljas.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M07 Koristus</Heading>
+        <Question>Kilekotid on täielikult Ohutus alas</Question>
+        <Tag>m07a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[score += (this.answers['m07a'] || 0)*1 > 0 ? (this.answers['m07a'] || 0)*30 : 0;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 Koristus</Heading>
+        <Question>Loomad on täielikult ringi sees, kus puudub kilekott</Question>
+        <Tag>m07b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[score += (this.answers['m07b'] || 0)*1 > 0 ? (this.answers['m07b'] || 0)*20 : 0;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 Koristus</Heading>
+        <Question>Kana on täielikult prügimäe väikeses ringis</Question>
+        <Tag>m07c</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if (this.answers['m07c'] == 'Yes') {score += 35;}]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 Lammutamine</Heading>
+        <Question>ÜKSKI MAJA TALA ei ole oma algasendis</Question>
+        <Tag>m10</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if (this.answers['m10'] == 'Yes') {score += 85;}]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Ringlusmaterjali kasutamine</Heading>
+        <Question>Teie roheline prügikast koos vastava plokiga vastase Oh. alas</Question>
+        <Tag>m01a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[score += (this.answers['m01a'] || 0)*60;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Ringlusmaterjali kasutamine</Heading>
+        <Question>Vastase roheline prügikast koos vastava plokiga teie Oh. alas</Question>
+        <Tag>m01b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[score += (this.answers['m01b'] || 0)*60;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 Vara päästmine</Heading>
+        <Question>Väärtislikud esemed on täielikult Ohutus alas</Question>
+        <Tag>m09</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if (this.answers['m09'] == 'Yes') {score += 60;}]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Ostuotsused</Heading>
+        <Question>Mängulennukid on täielikult Ohutus alas</Question>
+        <Tag>m11</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[score += (this.answers['m11'] || 0)*1 > 0 ? (this.answers['m11'] || 0)*40 : 0;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Uus eesmärk (Lillepott)</Heading>
+        <Question>Kompost on täielikult tühjas Mängulennuki pakendis</Question>
+        <Tag>m12a</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Score><![CDATA[if ((this.answers['m12a'] == 'Yes') && (this.answers['m12b'] == 'Yes')) {score += 40;}]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Uus eesmärk (Lillepott)</Heading>
+        <Question>Pakend on algses olekus</Question>
+        <Tag>m12b</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value><Default/>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value>
+        </Option>
+    </Element>
+
+    <Element>
+        <Heading>Platsil olevad lahtised asjad</Heading>
+        <Question>3xLoomad, 2xInimesed, 1xMustaKollanePakend, 1xPakend, 2xMängulennuk, 2xKilekott, 1xKompost, 12xMustadPlokid,
+            9xKollasedPlokid, 6xSinisedPlokid, 3xPrügikastid, 1xKollaneKonteiner, 1xAuto, 1xMootor, 1xVeoauto, 1xVäärtuslikudAsjad,
+            2xMetaan</Question>
+        <Tag>items</Tag>
+        <Option>
+            <Label>Jah</Label><Value>Yes</Value>
+        </Option>
+        <Option>
+            <Label>Ei</Label><Value>No</Value><Default/>
+        </Option>
+        <Validate><![CDATA[(this.answers['items'] == 'No') ?
+                           {'highlight': true, 'msg':'Kõik missioonimudelid tuleb platsile jätta.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+</Scoring_Elements>

@@ -113,7 +113,7 @@ function loadAnswers(answers) {
 }
 
 $(function() {
-    $.get("data/trashtrek.xml", function(data) {
+    $.get("data/trashtrek-et.xml", function(data) {
         elements = parseData(data);
         buildElements();
         loadAnswers(JSON.parse($("#formanswers").val()));
