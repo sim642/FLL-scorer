@@ -82,6 +82,38 @@ function colsScore(heights, partition) {
     return mathStdDev(colheights);
 }
 
+function colsBest(heights, colcnt) {
+    if (heights.length == 0) {
+        return {
+            score: 0,
+            partition: new Array(colcnt).fill([])
+        };
+    }
+    else {
+        var bestpart = null;
+
+        for (var j = 1; j <= colcnt; j++) {
+            var prev = colsBest(heights.slice(0, heights.length - 1), j);
+
+            var partition = prev.partition.slice();
+            for (var k = partition.length; k < colcnt; k++)
+                partition.push([]);
+
+            partition[colcnt - 1].push(heights.length - 1);
+            var score = colsScore(heights, partition);
+
+            if (bestpart === null || bestpart.score > score) {
+                bestpart = {
+                    score: score,
+                    partition: partition
+                };
+            }
+        }
+
+        return bestpart;
+    }
+}
+
 function colsSort() {
     console.log("colsSort");
 
