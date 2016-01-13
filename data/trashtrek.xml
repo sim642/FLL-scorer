@@ -373,10 +373,10 @@
         <Question>Package in original condition</Question>
         <Tag>m12b</Tag>
         <Option>
-            <Label>Yes</Label><Value>Yes</Value>
+            <Label>Yes</Label><Value>Yes</Value><Default/>
         </Option>
         <Option>
-            <Label>No</Label><Value>No</Value><Default/>
+            <Label>No</Label><Value>No</Value>
         </Option>
     </Element>
 
