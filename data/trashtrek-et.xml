@@ -2,8 +2,8 @@
 <Scoring_Elements>
 
     <Element>
-        <Heading>M04 Sorteerimine: Kol/Sin plokid on oma õiges prügikastis</Heading>
-        <Question>Õiges prügikastis olevad plokid on Transp. Läände alas</Question>
+        <Heading>M04 Sorteerimine: Kollased/Sinised plokid õigetes prügikastides</Heading>
+        <Question>Õigetes prügikastides plokid Transport Läände alas</Question>
         <Tag>m04a</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -25,14 +25,14 @@
         <Validate><![CDATA[(((this.answers['m04a'] || 0)*1 +
                             (this.answers['m01a'] || 0)*1 +
                             (this.answers['m04b'] || 0)*1) > 15) ?
-                           {'highlight': true, 'msg':'Kol/Sin plokkide arv ei saa ületada 15.'} : // validation failed
+                           {'highlight': true, 'msg':'Kollaste/Sininiste plokkide arv ei saa ületada 15.'} : // validation failed
                            {'highlight': false, 'msg':''};]]>
         </Validate>
     </Element>
 
     <Element>
-        <Heading>M04 Sorteerimine: Kol/Sin plokid on oma õiges prügikastis</Heading>
-        <Question>Prügikastis olevad plokid polnud kordagi T. Läände alas</Question>
+        <Heading>M04 Sorteerimine: Kollased/Sinised plokid õigetes prügikastides</Heading>
+        <Question>Prügikastides plokid polnud KORDAGI Transport Läände alas</Question>
         <Tag>m04b</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -54,14 +54,14 @@
         <Validate><![CDATA[(((this.answers['m01a'] || 0)*1 +
                             (this.answers['m04a'] || 0)*1 +
                             (this.answers['m04b'] || 0)*1) > 15) ?
-                           {'highlight': true, 'msg':'Kol/Sin plokkide arv ei saa ületada 15.'} : // validation failed
+                           {'highlight': true, 'msg':'Kollaste/Siniste plokkide arv ei saa ületada 15.'} : // validation failed
                            {'highlight': false, 'msg':''};]]>
         </Validate>
     </Element>
 
     <Element>
-        <Heading>M04 Sorteerimine: Ainult mustad plokid</Heading>
-        <Question>Plokid on algasendis/punkte toovas Lillepotis</Question>
+        <Heading>M04 Sorteerimine: Mustad plokid</Heading>
+        <Question>Plokid algasendis / punkte toovas Lillepotis</Question>
         <Tag>m04c</Tag>
         <Option><Label>0</Label><Value>0</Value></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -82,13 +82,13 @@
                             (((this.answers['m04c'] || 0)*1 +
                             (this.answers['m04d'] || 0)*1 +
                             (this.answers['m04e'] || 0)*1) == 12)) ? {'highlight': false, 'msg':''} :
-                            {'highlight': true, 'msg':'Kokku peab olema 12 musta plokki.'};]]>
+                            {'highlight': true, 'msg':'Musti plokke peab olema kokku 12.'};]]>
         </Validate>
     </Element>
 
     <Element>
-        <Heading>M04 Sorteerimine: Ainult mustad plokid</Heading>
-        <Question>Plokid on vastavas Prügikastis või Prügimäel</Question>
+        <Heading>M04 Sorteerimine: Mustad plokid</Heading>
+        <Question>Plokid vastavas Prügikastis / Prügimäel</Question>
         <Tag>m04d</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -105,13 +105,13 @@
                             (((this.answers['m04c'] || 0)*1 +
                             (this.answers['m04d'] || 0)*1 +
                             (this.answers['m04e'] || 0)*1) == 12)) ? {'highlight': false, 'msg':''} :
-                            {'highlight': true, 'msg':'Kokku peab olema 12 musta plokki.'};]]>
+                            {'highlight': true, 'msg':'Musti plokke peab olema kokku 12.'};]]>
         </Validate>
     </Element>
 
     <Element>
-        <Heading>M04 Sorteerimine: Ainult mustad plokid</Heading>
-        <Question>Mujal mänguväljakul/baasis/laual</Question>
+        <Heading>M04 Sorteerimine: Mustad plokid</Heading>
+        <Question>Plokid mujal mänguväljal / baasis / laual</Question>
         <Tag>m04e</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -132,13 +132,13 @@
                             (((this.answers['m04c'] || 0)*1 +
                             (this.answers['m04d'] || 0)*1 +
                             (this.answers['m04e'] || 0)*1) == 12)) ? {'highlight': false, 'msg':''} :
-                            {'highlight': true, 'msg':'Kokku peab olema 12 musta plokki.'};]]>
+                            {'highlight': true, 'msg':'Musti plokke peab olema kokku 12.'};]]>
         </Validate>
     </Element>
 
     <Element>
         <Heading>M02 Metaan</Heading>
-        <Question>Metaan on Veoautos ja/või Tehases</Question>
+        <Question>Metaan Veoautos ja/või Tehases</Question>
         <Tag>m02</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>40</Value></Option>
@@ -161,7 +161,7 @@
 
     <Element>
         <Heading>M03 Transport</Heading>
-        <Question>Kollane konteiner on suunajast täielikult idas</Question>
+        <Question>Kollane konteiner suunajast TÄIELIKULT idas</Question>
         <Tag>m03b</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -174,7 +174,7 @@
 
     <Element>
         <Heading>M05 Karjäär</Heading>
-        <Question>Vähemalt üks LEGO mehike on Sorteerimisalas</Question>
+        <Question>1+ Inimest TÄIELIKULT Sorteerimisalas</Question>
         <Tag>m05</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -187,7 +187,7 @@
 
     <Element>
         <Heading>M06 Autoromud</Heading>
-        <Question>Mootor on lahtivolditud autos omal kohal</Question>
+        <Question>Mootor lahtivolditud autos omal kohal</Question>
         <Tag>m06a</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -204,7 +204,7 @@
 
     <Element>
         <Heading>M06 Autoromud</Heading>
-        <Question>Kokkuvolditud auto on täielikult Transport Itta alas</Question>
+        <Question>Kokkuvolditud auto Transport Itta alas</Question>
         <Tag>m06b</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -221,7 +221,7 @@
 
     <Element>
         <Heading>M06 Autoromud</Heading>
-        <Question>Auto ei olnud kordagi Ohutus alas</Question>
+        <Question>Auto polnud KORDAGI Ohutus alas</Question>
         <Tag>m06c</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value><Default/>
@@ -233,7 +233,7 @@
 
     <Element>
         <Heading>M08 Komposteerimine</Heading>
-        <Question>Kompost on väljastatud ja see ei ole Ohutus alas</Question>
+        <Question>Kompost väljastatud, POLE TÄIELIKULT Ohutus alas</Question>
         <Tag>m08a</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -250,7 +250,7 @@
 
     <Element>
         <Heading>M08 Komposteerimine</Heading>
-        <Question>Kompost on väljastatud ja on TÄIELIKULT Ohutus alas</Question>
+        <Question>Kompost väljastatud, TÄIELIKULT Ohutus alas</Question>
         <Tag>m08b</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -267,7 +267,7 @@
 
     <Element>
         <Heading>M07 Koristus</Heading>
-        <Question>Kilekotid on täielikult Ohutus alas</Question>
+        <Question>Kilekotid TÄIELIKULT Ohutus alas</Question>
         <Tag>m07a</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -277,7 +277,7 @@
 
     <Element>
         <Heading>M07 Koristus</Heading>
-        <Question>Loomad on täielikult ringi sees, kus puudub kilekott</Question>
+        <Question>Loomad TÄIELIKULT ringi sees, kus puudub kilekott</Question>
         <Tag>m07b</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -288,7 +288,7 @@
 
     <Element>
         <Heading>M07 Koristus</Heading>
-        <Question>Kana on täielikult prügimäe väikeses ringis</Question>
+        <Question>Kana on TÄIELIKULT prügimäe väikeses ringis</Question>
         <Tag>m07c</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -301,7 +301,7 @@
 
     <Element>
         <Heading>M10 Lammutamine</Heading>
-        <Question>ÜKSKI MAJA TALA ei ole oma algasendis</Question>
+        <Question>ÜKSKI maja tala pole algasendis</Question>
         <Tag>m10</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -314,7 +314,7 @@
 
     <Element>
         <Heading>M01 Ringlusmaterjali kasutamine</Heading>
-        <Question>Teie roheline prügikast koos vastava plokiga vastase Oh. alas</Question>
+        <Question>Teie roheline prügikast koos vastava plokiga vastase Ohutus alas</Question>
         <Tag>m01a</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -324,7 +324,7 @@
 
     <Element>
         <Heading>M01 Ringlusmaterjali kasutamine</Heading>
-        <Question>Vastase roheline prügikast koos vastava plokiga teie Oh. alas</Question>
+        <Question>Vastase roheline prügikast koos vastava plokiga teie Ohutus alas</Question>
         <Tag>m01b</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -334,7 +334,7 @@
 
     <Element>
         <Heading>M09 Vara päästmine</Heading>
-        <Question>Väärtislikud esemed on täielikult Ohutus alas</Question>
+        <Question>Väärtuslikud esemed TÄIELIKULT Ohutus alas</Question>
         <Tag>m09</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -347,7 +347,7 @@
 
     <Element>
         <Heading>M11 Ostuotsused</Heading>
-        <Question>Mängulennukid on täielikult Ohutus alas</Question>
+        <Question>Mängulennukid TÄIELIKULT Ohutus alas</Question>
         <Tag>m11</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -357,7 +357,7 @@
 
     <Element>
         <Heading>M12 Uus eesmärk (Lillepott)</Heading>
-        <Question>Kompost on täielikult tühjas Mängulennuki pakendis</Question>
+        <Question>Kompost TÄIELIKULT tühjas Mängulennuki pakendis</Question>
         <Tag>m12a</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -370,7 +370,7 @@
 
     <Element>
         <Heading>M12 Uus eesmärk (Lillepott)</Heading>
-        <Question>Pakend on algses olekus</Question>
+        <Question>Pakend algses olekus</Question>
         <Tag>m12b</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value><Default/>
