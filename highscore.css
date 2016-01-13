@@ -27,3 +27,19 @@ body {
 .col-name {
     overflow: hidden;
 }
+
+#highscore .col-name {
+    line-height: 100%;
+    font-size: 115%;
+}
+
+#highscore .col-round {
+    line-height: 100%;
+    font-size: 120%;
+}
+
+#highscore .col-total {
+    line-height: 100%;
+    font-size: 125%;
+    font-weight: bold;
+}
