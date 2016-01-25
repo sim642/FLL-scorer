@@ -28,6 +28,10 @@ body {
     overflow: hidden;
 }
 
+#highscore-header {
+    clear: left;
+}
+
 #highscore .col-name {
     line-height: 100%;
     font-size: 115%;
