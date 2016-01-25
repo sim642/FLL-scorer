@@ -40,7 +40,7 @@ function animateScroll() {
                 scrolls--;
                 if (scrolls) {
                     $("html, body").animate({
-                        scrollTop: $(".panel", "#highscore").first().offset().top - $("#highscore").offset().top
+                        scrollTop: 0
                     }, "slow", "swing").promise().done(function() {
                         animateScroll();
                     });
@@ -52,9 +52,17 @@ function animateScroll() {
         });
     }, 10 * 1000);
 }
+
+function bodyTop() {
+    $("body").css("padding-top", $("nav").first().outerHeight() + "px");
+}
+
 $(function() {
     renderLogos();
     setInterval(renderLogos, 15 * 1000);
+
+    bodyTop();
+    $(window).resize(bodyTop);
 
     $("html, body").scrollTop(0);
     animateScroll();

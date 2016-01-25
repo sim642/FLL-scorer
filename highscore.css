@@ -1,6 +1,4 @@
 body {
-    padding-top: 27vh;
-
     font-size: 250%;
 }
 
@@ -30,6 +28,10 @@ body {
 
 #highscore-header {
     clear: left;
+}
+
+#highscore {
+    padding-top: 15px;
 }
 
 #highscore .col-name {
