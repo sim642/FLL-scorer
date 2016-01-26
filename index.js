@@ -142,9 +142,13 @@ function loadURLChallenge(trigger) {
     var challenge = getURLParameter("challenge");
     if (challenge) {
         $("#challenge").val(challenge);
-        if (trigger)
-            $("#challenge").trigger("change", true);
     }
+    else {
+        $("#challenge").val($("option", "#challenge").first().val());
+    }
+
+    if (trigger)
+        $("#challenge").trigger("change", true);
 }
 
 var needURLAnswers = false;
