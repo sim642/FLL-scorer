@@ -32,7 +32,7 @@
 
     <Element>
         <Heading>M04 Sorting: Yellow/Blue Bars in Matching Green Bin</Heading>
-        <Question>Bars in Bins NEVER completely in West Transfer</Question>
+        <Question>Bars in Bins <b>never</b> completely in West Transfer</Question>
         <Tag>m04b</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -221,7 +221,7 @@
 
     <Element>
         <Heading>M06 Scrap Cars</Heading>
-        <Question>Car NEVER even partly in Safety</Question>
+        <Question>Car <b>never</b> even partly in Safety</Question>
         <Tag>m06c</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value><Default/>
@@ -233,7 +233,7 @@
 
     <Element>
         <Heading>M08 Composting</Heading>
-        <Question>Compost Ejected, NOT Completely in Safety</Question>
+        <Question>Compost Ejected, <b>not</b> Completely in Safety</Question>
         <Tag>m08a</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value>
@@ -250,7 +250,7 @@
 
     <Element>
         <Heading>M08 Composting</Heading>
-        <Question>Compost Ejected AND Completely in Safety</Question>
+        <Question>Compost Ejected <b>and</b> Completely in Safety</Question>
         <Tag>m08b</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value>
@@ -301,7 +301,7 @@
 
     <Element>
         <Heading>M10 Demolition</Heading>
-        <Question>ALL beams no longer in setup position</Question>
+        <Question><b>All</b> beams no longer in setup position</Question>
         <Tag>m10</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value>
