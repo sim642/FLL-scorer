@@ -6,7 +6,7 @@ function parseData(data) {
 
     $("Element", $data).each(function() {
         var element = {
-            heading: $("Heading", this).text(),
+            heading: $("Heading", this).html(),
             question: $("Question", this).html(),
             tag: $("Tag", this).text(),
             options: [],
@@ -18,6 +18,7 @@ function parseData(data) {
         $("Option", this).each(function() {
             var option = {
                 label: $("Label", this).text(),
+                labelfull: ($("LabelFull", this).length > 0 ? $("LabelFull", this).text() : null),
                 value: $("Value", this).text(),
                 default: $("Default", this).length > 0
             };
@@ -45,6 +46,8 @@ function buildElements() {
 
         $.each(element.options, function(j, option) {
             var $label = $("<label></label>").addClass("btn btn-default").text(option.label);
+            if (option.labelfull)
+                $label.attr("title", option.labelfull);
             var $input = $("<input></input>").attr("type", "radio").attr("name", element.tag).attr("autocomplete", "off").val(option.value);
 
             if (option.default)
@@ -67,7 +70,7 @@ function buildElements() {
         if (!(element.heading in panels))
         {
             var $panel = $("<div></div>").addClass("panel panel-default");
-            var $heading = $("<div></div>").addClass("panel-heading").text(element.heading);
+            var $heading = $("<div></div>").addClass("panel-heading").html(element.heading);
             var $list = $("<ul></ul>").addClass("list-group");
 
             var $error = $("<li></li>").addClass("list-group-item list-group-item-danger error").hide();
