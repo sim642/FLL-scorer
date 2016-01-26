@@ -138,10 +138,12 @@ function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [,""])[1].replace(/\+/g, '%20')) || null;
 }
 
-function loadURLChallenge() {
+function loadURLChallenge(trigger) {
     var challenge = getURLParameter("challenge");
     if (challenge) {
         $("#challenge").val(challenge);
+        if (trigger)
+            $("#challenge").trigger("change", true);
     }
 }
 
@@ -166,16 +168,25 @@ function loadData(name) {
     });
 }
 
+window.onpopstate = function(event) {
+    needURLAnswers = true;
+    loadURLChallenge(true);
+}
+
 $(function() {
     resetTimer();
 
-    loadURLChallenge();
     needURLAnswers = true;
+    loadURLChallenge(false);
 
-    $("#challenge").on("change", function() {
-        loadData($(this).val());
-        ga("send", "event", "challenge", "load", $(this).val());
-    }).trigger("change");
+    $("#challenge").on("change", function(event, ni) {
+        var challenge = $(this).val();
+        loadData(challenge);
+        document.title = "FLL scorer - " + $("option[value=" + challenge + "]", "#challenge").text();
+        if (!ni)
+            window.history.pushState({}, document.title, "?challenge=" + challenge);
+        ga("send", "event", "challenge", "load", challenge);
+    }).trigger("change", true);
 
     $("#reset").on("click", function() {
         reset();
