@@ -140,8 +140,22 @@ function loadData(name) {
     });
 }
 
+// http://stackoverflow.com/a/11582513
+function getURLParameter(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [,""])[1].replace(/\+/g, '%20')) || null;
+}
+
+function loadURLChallenge() {
+    var challenge = getURLParameter("challenge");
+    if (challenge) {
+        $("#challenge").val(challenge);
+    }
+}
+
 $(function() {
     resetTimer();
+
+    loadURLChallenge();
 
     $("#challenge").on("change", function() {
         loadData($(this).val());
