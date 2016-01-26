@@ -117,16 +117,19 @@ function checkDefault(tag) {
 }
 
 function loadAnswers(answers) {
-    $.each(answers, function(tag, answer) {
-        $("input[name=" + tag + "]").attr("checked", "").parent().removeClass("active");
-        $("input[name=" + tag + "][value=" + answer + "]").attr("checked", "checked").parent().addClass("active");
+    if (answers) {
+        $.each(answers, function(tag, answer) {
+            $("input[name=" + tag + "]").attr("checked", "").parent().removeClass("active");
+            $("input[name=" + tag + "][value=" + answer + "]").attr("checked", "checked").parent().addClass("active");
 
-        checkDefault(tag);
-    });
+            checkDefault(tag);
+        });
+    }
 }
 
-function reset() {
+function reset(answers) {
     buildElements();
+    loadAnswers(answers);
     doScore();
 
     $("#submit").removeClass("btn-danger btn-success").addClass("btn-default");
@@ -154,21 +157,25 @@ function loadURLChallenge(trigger) {
 var needURLAnswers = false;
 
 function loadURLAnswers() {
+    if (history.state && history.state.answers) {
+        return history.state.answers;
+    }
+
     if (needURLAnswers) {
         var answers = getURLParameter("answers");
+        var ret = null;
         if (answers) {
-            loadAnswers(JSON.parse(answers));
+            ret = JSON.parse(answers);
         }
         needURLAnswers = false;
+        return ret;
     }
 }
 
 function loadData(name) {
     $.get("data/" + name + ".xml", function(data) {
         elements = parseData(data);
-        reset();
-
-        loadURLAnswers();
+        reset(loadURLAnswers());
     });
 }
 
@@ -287,6 +294,9 @@ function doScore() {
     var score = getScore();
     $("#score").text(score);
     $("#formscore").val(score);
+
+    window.history.replaceState({answers: getAnswers()}, document.title, location.search);
+
     return score;
 }
 
