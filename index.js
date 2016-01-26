@@ -6,7 +6,7 @@ function parseData(data) {
 
     $("Element", $data).each(function() {
         var element = {
-            heading: $("Heading", this).text(),
+            heading: $("Heading", this).html(),
             question: $("Question", this).html(),
             tag: $("Tag", this).text(),
             options: [],
@@ -67,7 +67,7 @@ function buildElements() {
         if (!(element.heading in panels))
         {
             var $panel = $("<div></div>").addClass("panel panel-default");
-            var $heading = $("<div></div>").addClass("panel-heading").text(element.heading);
+            var $heading = $("<div></div>").addClass("panel-heading").html(element.heading);
             var $list = $("<ul></ul>").addClass("list-group");
 
             var $error = $("<li></li>").addClass("list-group-item list-group-item-danger error").hide();
