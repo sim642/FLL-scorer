@@ -133,13 +133,6 @@ function reset() {
     resetTimer();
 }
 
-function loadData(name) {
-    $.get("data/" + name + ".xml", function(data) {
-        elements = parseData(data);
-        reset();
-    });
-}
-
 // http://stackoverflow.com/a/11582513
 function getURLParameter(name) {
     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [,""])[1].replace(/\+/g, '%20')) || null;
@@ -152,10 +145,32 @@ function loadURLChallenge() {
     }
 }
 
+var needURLAnswers = false;
+
+function loadURLAnswers() {
+    if (needURLAnswers) {
+        var answers = getURLParameter("answers");
+        if (answers) {
+            loadAnswers(JSON.parse(answers));
+        }
+        needURLAnswers = false;
+    }
+}
+
+function loadData(name) {
+    $.get("data/" + name + ".xml", function(data) {
+        elements = parseData(data);
+        reset();
+
+        loadURLAnswers();
+    });
+}
+
 $(function() {
     resetTimer();
 
     loadURLChallenge();
+    needURLAnswers = true;
 
     $("#challenge").on("change", function() {
         loadData($(this).val());
