@@ -15,7 +15,7 @@
 
     <Element>
         <Heading>Tree Branch</Heading>
-        <Question>Models upright, TOUCHING mat?</Question>
+        <Question>Models upright, <b>touching</b> mat?</Question>
         <Tag>cables</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value><Default/>
@@ -90,7 +90,7 @@
 
     <Element>
         <Heading>Construction Relocation</Heading>
-        <Question>Any Gray Bldg IN Lt Green Region?</Question>
+        <Question>Any Gray Bldg <b>in</b> Lt Green Region?</Question>
         <Tag>relocation</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value><Default/>
@@ -103,7 +103,7 @@
 
     <Element>
         <Heading>Supply Truck</Heading>
-        <Question>Truck TOUCHING Yellow or Lt Blue Region?</Question>
+        <Question>Truck <b>touching</b> Yellow or Lt Blue Region?</Question>
         <Tag>supply_truck</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value>
@@ -116,7 +116,7 @@
 
     <Element>
         <Heading>Ambulance</Heading>
-        <Question>Ambulance IN Yellow Region, all wheels touching mat?</Question>
+        <Question>Ambulance <b>in</b> Yellow Region, all wheels touching mat?</Question>
         <Tag>ambulance</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value>
@@ -201,7 +201,7 @@
 
     <Element>
         <Heading>Runway</Heading>
-        <Question>Nothing But Waves or Plane TOUCHING Mat On Runway?</Question>
+        <Question>Nothing But Waves or Plane <b>touching</b> Mat On Runway?</Question>
         <Tag>runway</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value><Default/>
@@ -214,7 +214,7 @@
 
     <Element>
         <Heading>Evacuation Sign</Heading>
-        <Question>Sign is UP, No Strategic Touching?</Question>
+        <Question>Sign is <b>up</b>, No Strategic Touching?</Question>
         <Tag>evacuation_sign</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value>
@@ -247,7 +247,7 @@
 
     <Element>
         <Heading>Family</Heading>
-        <Question>People IN Largest Group in a Single Region?</Question>
+        <Question>People <b>in</b> Largest Group in a Single Region?</Question>
         <Tag>family1</Tag>
         <Option><Label>0</Label><Value>0</Value></Option>
         <Option><Label>1</Label><Value>0</Value><Default/></Option>
@@ -258,7 +258,7 @@
 
     <Element>
         <Heading>Family</Heading>
-        <Question>People IN Regions containing Bottled Water?</Question>
+        <Question>People <b>in</b> Regions containing Bottled Water?</Question>
         <Tag>water</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -269,7 +269,7 @@
 
     <Element>
         <Heading>Family</Heading>
-        <Question>People IN The Yellow Region?</Question>
+        <Question>People <b>in</b> The Yellow Region?</Question>
         <Tag>yellow_people</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -281,10 +281,10 @@
 
     <Element>
         <Heading>Family</Heading>
-        <Question>People IN The Red Region?</Question>
+        <Question>People <b>in</b> The Red Region?</Question>
         <Tag>red_people</Tag>
         <Option><Label>0</Label><Value>0</Value></Option>
-	<Option><Label>1</Label><Value>1</Value><Default/></Option>
+	    <Option><Label>1</Label><Value>1</Value><Default/></Option>
         <Option><Label>2</Label><Value>2</Value></Option>
         <Option><Label>3</Label><Value>3</Value></Option>
         <Score><![CDATA[score += (this.answers['red_people'] || 0) * 18;]]></Score>
@@ -293,7 +293,7 @@
 
     <Element>
         <Heading>Family</Heading>
-        <Question>Pets IN Regions containing People?</Question>
+        <Question>Pets <b>in</b> Regions containing People?</Question>
         <Tag>pets</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -303,7 +303,7 @@
 
     <Element>
         <Heading>Supplies</Heading>
-        <Question>Non-Water Items IN Yellow Region?</Question>
+        <Question>Non-Water Items <b>in</b> Yellow Region?</Question>
         <Tag>yellow_supplies</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -324,7 +324,7 @@
 
     <Element>
         <Heading>Supplies</Heading>
-        <Question>Non-Water Items IN Red Region?</Question>
+        <Question>Non-Water Items <b>in</b> Red Region?</Question>
         <Tag>red_supplies</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -345,7 +345,7 @@
 
     <Element>
         <Heading>Safe Place</Heading>
-        <Question>Robot IN Red Region at End of Match?</Question>
+        <Question>Robot <b>in</b> Red Region at End of Match?</Question>
         <Tag>safe_place</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value>
@@ -370,7 +370,7 @@
 
     <Element>
         <Heading>Tsunami</Heading>
-        <Question>All 3 Waves TOUCHING Mat</Question>
+        <Question>All 3 Waves <b>touching</b> Mat</Question>
         <Tag>tsunami</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value>

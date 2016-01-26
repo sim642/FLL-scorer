@@ -102,7 +102,7 @@
         </Option>
         <Score><![CDATA[if (this.answers['engine1'] == 'Yes') {score += 15;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>Search Engine</Heading>
         <Question>Only correct loop removed</Question>
@@ -115,7 +115,7 @@
         </Option>
         <Score><![CDATA[if ((this.answers['engine1'] == 'Yes') && (this.answers['engine_loop'] == 'Yes')) {score += 45;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>Sports</Heading>
         <Question>Ball shot from East/North of "Shot Lines" to Net</Question>
@@ -141,7 +141,7 @@
         </Option>
         <Score><![CDATA[if ((this.answers['ball_shot'] == 'Yes') && (this.answers['ball_touch'] == 'Yes')) {score += 30;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>Robotics Competition</Heading>
         <Question>Only Robotics Insert installed</Question>
@@ -167,7 +167,7 @@
         </Option>
         <Score><![CDATA[if ((this.answers['insert_installed'] == 'Yes') && (this.answers['loop_touch'] == 'Yes')) {score += 30;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>Using the Right Senses</Heading>
         <Question>Loop no longer touching model*</Question>
@@ -180,7 +180,7 @@
         </Option>
         <Score><![CDATA[if (this.answers['senses_touch'] == 'Yes') {score += 40;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>Remote Communication/Learning</Heading>
         <Question>Referee saw robot pull slider west</Question>
@@ -193,7 +193,7 @@
         </Option>
         <Score><![CDATA[if (this.answers['robot_pull'] == 'Yes') {score += 40;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>Thinking Outside the Box</Heading>
         <Question>Idea model not touching Box, Box never in Base</Question>
@@ -208,7 +208,7 @@
 
     <Element>
         <Heading>Thinking Outside the Box</Heading>
-        <Question>Bulb faces UP</Question>
+        <Question>Bulb faces <b>up</b></Question>
         <Tag>bulb_up</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value>
@@ -218,7 +218,7 @@
         </Option>
         <Score><![CDATA[if (this.answers['idea_touch'] == 'Yes') {if (this.answers['bulb_up'] == 'Yes') {score += 40;} else {score += 25;}} ]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>Community Learning</Heading>
         <Question>Loop no longer touching model</Question>
@@ -231,10 +231,10 @@
         </Option>
         <Score><![CDATA[if (this.answers['community_touch'] == 'Yes') {score += 25;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>Cloud Access</Heading>
-        <Question>SD card is UP due to inserted "key"</Question>
+        <Question>SD card is <b>up</b> due to inserted "key"</Question>
         <Tag>key_up</Tag>
         <Option>
             <Label>Yes</Label><Value>Yes</Value>
@@ -244,7 +244,7 @@
         </Option>
         <Score><![CDATA[if (this.answers['key_up'] == 'Yes') {score += 30;}]]></Score>
     </Element>
-    
+
     <Element>
         <Heading>Engagement</Heading>
         <Question>Yellow section moved south</Question>
@@ -256,7 +256,7 @@
             <Label>No</Label><Value>No</Value><Default/>
         </Option>
     </Element>
-    
+
     <Element>
         <Heading>Engagement</Heading>
         <Question>Dial major marker Color</Question>
@@ -299,7 +299,7 @@
                            {'highlight': false, 'msg':''};]]>
         </Validate>
     </Element>
-    
+
     <Element>
         <Heading>Engagement</Heading>
         <Question>Ticks past major marker</Question>
@@ -342,7 +342,7 @@
                         ]]>
         </Score>
     </Element>
-    
+
     <Element>
         <Heading>Adapting to Changing Conditions</Heading>
         <Question>Model rotated 90-ish degrees CCW</Question>
