@@ -18,6 +18,7 @@ function parseData(data) {
         $("Option", this).each(function() {
             var option = {
                 label: $("Label", this).text(),
+                labelfull: ($("LabelFull", this).length > 0 ? $("LabelFull", this).text() : null),
                 value: $("Value", this).text(),
                 default: $("Default", this).length > 0
             };
@@ -45,6 +46,8 @@ function buildElements() {
 
         $.each(element.options, function(j, option) {
             var $label = $("<label></label>").addClass("btn btn-default").text(option.label);
+            if (option.labelfull)
+                $label.attr("title", option.labelfull);
             var $input = $("<input></input>").attr("type", "radio").attr("name", element.tag).attr("autocomplete", "off").val(option.value);
 
             if (option.default)
