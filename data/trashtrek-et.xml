@@ -32,7 +32,7 @@
 
     <Element>
         <Heading>M04 Sorteerimine: Kollased/Sinised plokid õigetes prügikastides</Heading>
-        <Question>Prügikastides plokid polnud KORDAGI Transport Läände alas</Question>
+        <Question>Prügikastides plokid polnud <b>kordagi</b> Transport Läände alas</Question>
         <Tag>m04b</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -161,7 +161,7 @@
 
     <Element>
         <Heading>M03 Transport</Heading>
-        <Question>Kollane konteiner suunajast TÄIELIKULT idas</Question>
+        <Question>Kollane konteiner suunajast <b>täielikult</b> idas</Question>
         <Tag>m03b</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -174,7 +174,7 @@
 
     <Element>
         <Heading>M05 Karjäär</Heading>
-        <Question>1+ Inimest TÄIELIKULT Sorteerimisalas</Question>
+        <Question>1+ Inimest <b>täielikult</b> Sorteerimisalas</Question>
         <Tag>m05</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -221,7 +221,7 @@
 
     <Element>
         <Heading>M06 Autoromud</Heading>
-        <Question>Auto polnud KORDAGI Ohutus alas</Question>
+        <Question>Auto polnud <b>kordagi</b> Ohutus alas</Question>
         <Tag>m06c</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value><Default/>
@@ -233,7 +233,7 @@
 
     <Element>
         <Heading>M08 Komposteerimine</Heading>
-        <Question>Kompost väljastatud, POLE TÄIELIKULT Ohutus alas</Question>
+        <Question>Kompost väljastatud, <b>pole täielikult</b> Ohutus alas</Question>
         <Tag>m08a</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -250,7 +250,7 @@
 
     <Element>
         <Heading>M08 Komposteerimine</Heading>
-        <Question>Kompost väljastatud, TÄIELIKULT Ohutus alas</Question>
+        <Question>Kompost väljastatud, <b>täielikult</b> Ohutus alas</Question>
         <Tag>m08b</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -267,7 +267,7 @@
 
     <Element>
         <Heading>M07 Koristus</Heading>
-        <Question>Kilekotid TÄIELIKULT Ohutus alas</Question>
+        <Question>Kilekotid <b>täielikult</b> Ohutus alas</Question>
         <Tag>m07a</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -277,7 +277,7 @@
 
     <Element>
         <Heading>M07 Koristus</Heading>
-        <Question>Loomad TÄIELIKULT ringi sees, kus puudub kilekott</Question>
+        <Question>Loomad <b>täielikult</b> ringi sees, kus puudub kilekott</Question>
         <Tag>m07b</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -288,7 +288,7 @@
 
     <Element>
         <Heading>M07 Koristus</Heading>
-        <Question>Kana on TÄIELIKULT prügimäe väikeses ringis</Question>
+        <Question>Kana on <b>täielikult</b> prügimäe väikeses ringis</Question>
         <Tag>m07c</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -301,7 +301,7 @@
 
     <Element>
         <Heading>M10 Lammutamine</Heading>
-        <Question>ÜKSKI maja tala pole algasendis</Question>
+        <Question><b>Ükski</b> maja tala pole algasendis</Question>
         <Tag>m10</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -334,7 +334,7 @@
 
     <Element>
         <Heading>M09 Vara päästmine</Heading>
-        <Question>Väärtuslikud esemed TÄIELIKULT Ohutus alas</Question>
+        <Question>Väärtuslikud esemed <b>täielikult</b> Ohutus alas</Question>
         <Tag>m09</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
@@ -347,7 +347,7 @@
 
     <Element>
         <Heading>M11 Ostuotsused</Heading>
-        <Question>Mängulennukid TÄIELIKULT Ohutus alas</Question>
+        <Question>Mängulennukid <b>täielikult</b> Ohutus alas</Question>
         <Tag>m11</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -357,7 +357,7 @@
 
     <Element>
         <Heading>M12 Uus eesmärk (Lillepott)</Heading>
-        <Question>Kompost TÄIELIKULT tühjas Mängulennuki pakendis</Question>
+        <Question>Kompost <b>täielikult</b> tühjas Mängulennuki pakendis</Question>
         <Tag>m12a</Tag>
         <Option>
             <Label>Jah</Label><Value>Yes</Value>
