@@ -43,8 +43,11 @@ function buildElements() {
         var $item = $("<li></li>").addClass("list-group-item clearfix").attr("id", element.tag);
         $item.append(element.question);
         if (element.info) {
-            $item.append("<br/>");
-            $item.append($("<small></small>").addClass("text-info").text(element.info));
+            var $tooltip = $("<span></span>").addClass("glyphicon glyphicon-info-sign text-info").attr("title", element.info);
+            $tooltip.tooltip();
+
+            $item.append(" ");
+            $item.append($tooltip);
         }
 
         var $group = $("<div></div>").addClass("btn-group pull-right").attr('data-toggle', 'buttons');
