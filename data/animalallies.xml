@@ -257,10 +257,10 @@
 
     <Element>
         <Heading>M14 Milk on Ramp</Heading>
-        <Question>Select option that best fits
-        A.)   All three milk supported by Ramp
-        B.)   (A) + only things supported by &amp; touching Ramp
-        C.)   (A) + (B) + standing
+        <Question>Select option that best fits<br/>
+        A) All three milk supported by Ramp<br/>
+        B) (A) + only things supported by &amp; touching Ramp<br/>
+        C) (A) + (B) + standing
         </Question>
         <Tag>m14</Tag>
 	    <Option><Label>None</Label><Value>0</Value><Default/></Option>
