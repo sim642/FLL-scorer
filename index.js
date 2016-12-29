@@ -116,7 +116,7 @@ function loadAnswers(answers) {
 }
 
 $(function() {
-    $.get("data/trashtrek-et.xml", function(data) {
+    $.get("data/animalallies.xml", function(data) {
         elements = parseData(data);
         buildElements();
         loadAnswers(JSON.parse($("#formanswers").val()));
