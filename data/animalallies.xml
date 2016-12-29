@@ -12,7 +12,7 @@
     
     <Element>
         <Heading>M01 Shark Shipment (* - Nothing can touch the Shark except the tank)</Heading>
-        <Question>Shark touching only tank floor (NOT wall)</Question>
+        <Question>Shark touching only tank floor (<b>not</b> wall)</Question>
         <Tag>m01b</Tag>
         <Option><Label>Yes</Label><Value>1</Value></Option>
 	    <Option><Label>No</Label><Value>0</Value><Default/></Option>
@@ -38,7 +38,7 @@
 
     <Element>
         <Heading>M02 Service Dog Action (* - Robot must cross the fence from West, between barriers)</Heading>
-        <Question>Robot completely crossed fence</Question>
+        <Question>Robot completely crossed fence*</Question>
         <Tag>m02b</Tag>
         <Option><Label>Yes</Label><Value>1</Value></Option>
 	    <Option><Label>No</Label><Value>0</Value><Default/></Option>
@@ -93,8 +93,8 @@
     </Element>
 		
     <Element>
-        <Heading>M06 Milking Automation ( * - Movement made by red lever )</Heading>
-        <Question>Milk AND Manure have all rolled out*</Question>
+        <Heading>M06 Milking Automation (* - Movement made by red lever)</Heading>
+        <Question>Milk <b>and</b> Manure have all rolled out*</Question>
         <Tag>m06a</Tag>
         <Option><Label>Yes</Label><Value>1</Value></Option>
 	    <Option><Label>No</Label><Value>0</Value><Default/></Option>
@@ -107,8 +107,8 @@
     </Element>
 
     <Element>
-        <Heading>M06 Milking Automation ( * - Movement made by red lever )</Heading>
-        <Question>Milk has all rolled out, but NOT Manure*</Question>
+        <Heading>M06 Milking Automation (* - Movement made by red lever)</Heading>
+        <Question>Milk has all rolled out, but <b>not</b> Manure*</Question>
         <Tag>m06b</Tag>
         <Option><Label>Yes</Label><Value>1</Value></Option>
 	    <Option><Label>No</Label><Value>0</Value><Default/></Option>
@@ -139,7 +139,7 @@
     </Element>
     
     <Element>
-        <Heading>M09 Training and Research ( * - Manure samples must be moved one at a time )</Heading>
+        <Heading>M09 Training and Research (* - Manure samples must be Transported one at a time)</Heading>
         <Question>Dog &amp; Trainer completely in Training/Research Area</Question>
         <Tag>m09a</Tag>
         <Option><Label>Yes</Label><Value>1</Value></Option>
@@ -148,7 +148,7 @@
     </Element>
 
     <Element>
-        <Heading>M09 Training and Research ( * - Manure samples must be moved one at a time )</Heading>
+        <Heading>M09 Training and Research (* - Manure samples must be Transported one at a time)</Heading>
         <Question>Zoologist completely in Training/Research Area</Question>
         <Tag>m09b</Tag>
         <Option><Label>Yes</Label><Value>1</Value></Option>
@@ -157,10 +157,10 @@
     </Element>
 
     <Element>
-        <Heading>M09 Training and Research ( * - Manure samples must be moved one at a time )</Heading>
+        <Heading>M09 Training and Research (* - Manure samples must be Transported one at a time)</Heading>
     	<Question>Manure completely in Training/Research Area*</Question>
         <Tag>m09c</Tag>
-	    <Option><Label>NONE</Label><Value>0</Value><Default/></Option>
+	    <Option><Label>None</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
         <Option><Label>2</Label><Value>2</Value></Option>
         <Option><Label>3</Label><Value>3</Value></Option>
@@ -173,7 +173,7 @@
 
     <Element>
         <Heading>M10 Bee Keeping</Heading>
-        <Question>Bee is on Beehive with NO Honey in Beehive</Question>
+        <Question>Bee is on Beehive with <b>no</b> Honey in Beehive</Question>
         <Tag>m10a</Tag>
         <Option><Label>Yes</Label><Value>12</Value></Option>
 	    <Option><Label>No</Label><Value>0</Value><Default/></Option>
@@ -201,7 +201,7 @@
 
     <Element>
         <Heading>M11 Prosthesis</Heading>
-        <Question>Prosthesis fitted to Pet, NOT held by Ref</Question>
+        <Question>Prosthesis fitted to Pet, <b>not</b> held by Ref</Question>
         <Tag>m11a</Tag>
         <Option><Label>Yes</Label><Value>9</Value></Option>
 	    <Option><Label>No</Label><Value>0</Value><Default/></Option>
@@ -215,7 +215,7 @@
 
     <Element>
         <Heading>M11 Prosthesis</Heading>
-        <Question>Prosthesis fitted to Pet and completely in Farm Target</Question>
+        <Question>Prosthesis fitted to Pet and completely in Farm</Question>
         <Tag>m11b</Tag>
         <Option><Label>Yes</Label><Value>15</Value></Option>
 	    <Option><Label>No</Label><Value>0</Value><Default/></Option>
@@ -229,7 +229,7 @@
 
     <Element>
         <Heading>M12 Seal in Base</Heading>
-        <Question>Seal is completely in Base, NOT broken</Question>
+        <Question>Seal is completely in Base, <b>not</b> broken</Question>
         <Tag>m12</Tag>
         <Option><Label>Yes</Label><Value>1</Value></Option>
 	    <Option><Label>No</Label><Value>0</Value><Default/></Option>
