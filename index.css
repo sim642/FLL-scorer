@@ -12,6 +12,12 @@ body {
     display: inline-block;
 }
 
+.tooltip-inner {
+    /* http://stackoverflow.com/a/31683500 */
+    max-width: none;
+    white-space: nowrap;
+}
+
 #elements .panel {
     /* http://stackoverflow.com/a/26854682 */
     page-break-inside: avoid; /* For Firefox. */

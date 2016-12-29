@@ -8,6 +8,7 @@ function parseData(data) {
         var element = {
             heading: $("Heading", this).html(),
             question: $("Question", this).html(),
+            info: ($("Info", this).length > 0 ? $("Info", this).html() : null),
             tag: $("Tag", this).text(),
             options: [],
             default: null,
@@ -41,6 +42,13 @@ function buildElements() {
     $.each(elements, function(i, element) {
         var $item = $("<li></li>").addClass("list-group-item clearfix").attr("id", element.tag);
         $item.append(element.question);
+        if (element.info) {
+            var $tooltip = $("<span></span>").addClass("glyphicon glyphicon-info-sign text-info").attr("title", element.info);
+            $tooltip.tooltip();
+
+            $item.append(" ");
+            $item.append($tooltip);
+        }
 
         var $group = $("<div></div>").addClass("btn-group pull-right").attr('data-toggle', 'buttons');
 
