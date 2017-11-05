@@ -3,7 +3,7 @@
 
     <Element>
         <Heading>M01 Pipe Removal</Heading>
-        <Question>Broken Pipe complete in Base</Question>
+        <Question>Broken Pipe completely in Base</Question>
         <Tag>m01</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -12,7 +12,8 @@
 
     <Element>
         <Heading>M02 Flow</Heading>
-        <Question>Big Water is on other team's field</Question>
+        <Question>Big Water is on other team's Field</Question>
+        <Info>Only by turning Pump System's valve(s)</Info>
         <Tag>m02</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -30,7 +31,7 @@
 
     <Element>
         <Heading>M03 Pump Addition</Heading>
-        <Question>Pump Addition has contact with the mat completely inside the target area</Question>
+        <Question>Pump Addition has contact with the mat, completely inside the target area</Question>
         <Tag>m03</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -58,6 +59,7 @@
     <Element>
         <Heading>M06 Water Treatment</Heading>
         <Question>Big Water is ejected from Water Treatment model</Question>
+        <Info>Only by Toilet's lever</Info>
         <Tag>m06</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -67,6 +69,7 @@
     <Element>
         <Heading>M07 Fountain</Heading>
         <Question>Middle layer is raised</Question>
+        <Info>Due only to a Big Water in gray tub</Info>
         <Tag>m07</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -84,7 +87,8 @@
 
     <Element>
         <Heading>M08 Manhole Covers</Heading>
-        <Question>Manhole cover(s) are flipped over past vertical</Question>
+        <Question>Manhole Cover(s) are flipped over past vertical</Question>
+        <Info>And never reached base</Info>
         <Tag>m08a</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
@@ -94,7 +98,7 @@
 
     <Element>
         <Heading>M08 Manhole Covers</Heading>
-        <Question>Both covers are flipped over and completely in separate Tripod target</Question>
+        <Question>Both Manhole Covers are flipped over, and completely in separate Tripod target</Question>
         <Tag>m08b</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -116,7 +120,7 @@
 
     <Element>
         <Heading>M09 Tripod</Heading>
-        <Question>Tripod is partially in a Tripod target</Question>
+        <Question>Tripod is <i>partially</i> in a Tripod target</Question>
         <Tag>m09b</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -130,7 +134,7 @@
 
     <Element>
         <Heading>M09 Tripod</Heading>
-        <Question>Tripod is completely in a Tripod target</Question>
+        <Question>Tripod is <i>completely</i> in a Tripod target</Question>
         <Tag>m09c</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -169,7 +173,7 @@
 
     <Element>
         <Heading>M11 Pipe Construction</Heading>
-        <Question>This New Pipe is partially in its target</Question>
+        <Question>This New Pipe is <i>partially</i> in its target</Question>
         <Tag>m11b</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -183,7 +187,7 @@
 
     <Element>
         <Heading>M11 Pipe Construction</Heading>
-        <Question>This New Pipe is completely in its target</Question>
+        <Question>This New Pipe is <i>completely</i> in its target</Question>
         <Tag>m11c</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -207,6 +211,7 @@
     <Element>
         <Heading>M13 Flower</Heading>
         <Question>Flower is raised</Question>
+        <Info>Due only to a Big Water in brown pot</Info>
         <Tag>m13a</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -224,7 +229,7 @@
 
     <Element>
         <Heading>M13 Flower</Heading>
-        <Question>At least one rain is in the purple part, touching nothing bug Flower model</Question>
+        <Question>At least one Rain is in the purple part, touching nothing but Flower model</Question>
         <Tag>m13b</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -233,7 +238,7 @@
 
     <Element>
         <Heading>M14 Water Well</Heading>
-        <Question>Water Well contacting mat partially inside target area</Question>
+        <Question>Water Well contacting mat <i>partially</i> inside target area</Question>
         <Tag>m14a</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -247,7 +252,7 @@
 
     <Element>
         <Heading>M14 Water Well</Heading>
-        <Question>Water Well contacting mat completely inside target area</Question>
+        <Question>Water Well contacting mat <i>completely</i> inside target area</Question>
         <Tag>m14b</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -263,6 +268,7 @@
     <Element>
         <Heading>M15 Fire</Heading>
         <Question>Fire is dropped</Question>
+        <Info>Due only to Firetruck applying direct force to House's lever</Info>
         <Tag>m15</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -272,6 +278,7 @@
     <Element>
         <Heading>M16 Water Collection</Heading>
         <Question>Water Target is East of Off-Limits line</Question>
+        <Info>And never reached Off-Limit line</Info>
         <Tag>m16a</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -337,7 +344,7 @@
 
     <Element>
         <Heading>M17 Slingshot</Heading>
-        <Question>Rain AND Dirty Water completely in the Slingshot target</Question>
+        <Question>Rain <b>and</b> Dirty Water completely in the Slingshot target</Question>
         <Tag>m17b</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
@@ -347,6 +354,7 @@
     <Element>
         <Heading>M18 Faucet</Heading>
         <Question>Water level is more blue than white</Question>
+        <Info>Only by turning Faucet handle</Info>
         <Tag>m18</Tag>
         <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
         <Option><Label>No</Label><Value>0</Value></Option>
