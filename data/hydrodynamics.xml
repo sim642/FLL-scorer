@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>M01 Pipe Removal</Heading>
+        <Question>Broken Pipe completely in Base</Question>
+        <Tag>m01</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m01'] || 0)*20;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Flow</Heading>
+        <Question>Big Water is on other team's Field</Question>
+        <Info>Only by turning Pump System's valve(s)</Info>
+        <Tag>m02</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m02'] || 0)*25;]]></Score>
+        <Validate><![CDATA[(
+                        (this.answers['m02'] || 0)*1  +
+                        (this.answers['m07'] || 0)*1  +
+                        (this.answers['m13a'] || 0)*1  +
+                        (this.answers['m16c'] || 0)*1  +
+                            (this.answers['m16d'] || 0)*1 > (5 - (1 - (this.answers['m06'] || 0)*1))) ?
+                           {'highlight': true, 'msg':'Too many big waters in use.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M03 Pump Addition</Heading>
+        <Question>Pump Addition has contact with the mat, completely inside the target area</Question>
+        <Tag>m03</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m03'] || 0)*20;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Rain</Heading>
+        <Question>At least one Rain is out of the Rain Cloud</Question>
+        <Tag>m04</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m04'] || 0)*20;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Filter</Heading>
+        <Question>Lock latch is in dropped position</Question>
+        <Tag>m05</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m05'] || 0)*30;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Water Treatment</Heading>
+        <Question>Big Water is ejected from Water Treatment model</Question>
+        <Info>Only by Toilet's lever</Info>
+        <Tag>m06</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m06'] || 0)*20;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 Fountain</Heading>
+        <Question>Middle layer is raised</Question>
+        <Info>Due only to a Big Water in gray tub</Info>
+        <Tag>m07</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m07'] || 0)*20;]]></Score>
+        <Validate><![CDATA[(
+                        (this.answers['m02'] || 0)*1  +
+                        (this.answers['m07'] || 0)*1  +
+                        (this.answers['m13a'] || 0)*1  +
+                        (this.answers['m16c'] || 0)*1  +
+                            (this.answers['m16d'] || 0)*1 > (5 - (1 - (this.answers['m06'] || 0)*1))) ?
+                           {'highlight': true, 'msg':'Too many big waters in use.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M08 Manhole Covers</Heading>
+        <Question>Manhole Cover(s) are flipped over past vertical</Question>
+        <Info>And never reached base</Info>
+        <Tag>m08a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[score += (this.answers['m08a'] || 0)*15;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M08 Manhole Covers</Heading>
+        <Question>Both Manhole Covers are flipped over, and completely in separate Tripod target</Question>
+        <Tag>m08b</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m08a'] || 0) == 2 ? (this.answers['m08b'] || 0)*30 : 0;]]></Score>
+        <Validate><![CDATA[(((this.answers['m08b'] || 0)*1 && 
+                            ((this.answers['m08a'] || 0)*1) < 2)) ?
+                           {'highlight': true, 'msg':'Both Manhole covers must be flipped to score bonus.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M09 Tripod</Heading>
+        <Question>All the Tripod's feet are touching the mat</Question>
+        <Tag>m09a</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+    </Element>
+
+    <Element>
+        <Heading>M09 Tripod</Heading>
+        <Question>Tripod is <i>partially</i> in a Tripod target</Question>
+        <Tag>m09b</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m09a'] || 0)*1 && (this.answers['m09b'] || 0)*1 ? 15 : 0;]]></Score>
+        <Validate><![CDATA[((this.answers['m09b'] || 0)*1 && 
+                            (this.answers['m09c'] || 0)*1) ?
+                           {'highlight': true, 'msg':'Tripod cannot be both partially and completely in target.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M09 Tripod</Heading>
+        <Question>Tripod is <i>completely</i> in a Tripod target</Question>
+        <Tag>m09c</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m09a'] || 0)*1 && (this.answers['m09c'] || 0)*1 ? 20 : 0;]]></Score>
+        <Validate><![CDATA[((this.answers['m09b'] || 0)*1 && 
+                            (this.answers['m09c'] || 0)*1) ?
+                           {'highlight': true, 'msg':'Tripod cannot be both partially and completely in target.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M10 Pipe Replacement</Heading>
+        <Question>New pipe is installed where Broken Pipe was</Question>
+        <Tag>m10a</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+    </Element>
+
+    <Element>
+        <Heading>M10 Pipe Replacement</Heading>
+        <Question>This New Pipe has full/flat contact with the mat</Question>
+        <Tag>m10b</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += ((this.answers['m10a'] || 0)*1) && ((this.answers['m10b'] || 0)*1) ? 20 : 0;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Pipe Construction</Heading>
+        <Question>New Pipe has full/flat contact with the mat</Question>
+        <Tag>m11a</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+    </Element>
+
+    <Element>
+        <Heading>M11 Pipe Construction</Heading>
+        <Question>This New Pipe is <i>partially</i> in its target</Question>
+        <Tag>m11b</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += ((this.answers['m11a'] || 0)*1) && ((this.answers['m11b'] || 0)*1) ? 15 : 0;]]></Score>
+        <Validate><![CDATA[(((this.answers['m11b'] || 0)*1  &&
+                            (this.answers['m11c'] || 0)*1) ) ?
+                           {'highlight': true, 'msg':'Pipe cannot be both partially and completely in its target.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M11 Pipe Construction</Heading>
+        <Question>This New Pipe is <i>completely</i> in its target</Question>
+        <Tag>m11c</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += ((this.answers['m11a'] || 0)*1) && ((this.answers['m11c'] || 0)*1) ? 20 : 0;]]></Score>
+        <Validate><![CDATA[(((this.answers['m11b'] || 0)*1  &&
+                            (this.answers['m11c'] || 0)*1) ) ?
+                           {'highlight': true, 'msg':'Pipe cannot be both partially and completely in its target.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M12 Sludge</Heading>
+        <Question>Sludge touching visible wood of a drawn garden box</Question>
+        <Tag>m12</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m12'] || 0)*30;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 Flower</Heading>
+        <Question>Flower is raised</Question>
+        <Info>Due only to a Big Water in brown pot</Info>
+        <Tag>m13a</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m13a'] || 0)*30;]]></Score>
+        <Validate><![CDATA[(
+                        (this.answers['m02'] || 0)*1  +
+                        (this.answers['m07'] || 0)*1  +
+                        (this.answers['m13a'] || 0)*1  +
+                        (this.answers['m16c'] || 0)*1  +
+                            (this.answers['m16d'] || 0)*1 > (5 - (1 - (this.answers['m06'] || 0)*1))) ?
+                           {'highlight': true, 'msg':'Too many big waters in use.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M13 Flower</Heading>
+        <Question>At least one Rain is in the purple part, touching nothing but Flower model</Question>
+        <Tag>m13b</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m13a'] || 0)*1 && (this.answers['m13b'] || 0)*1 ? 30 : 0;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M14 Water Well</Heading>
+        <Question>Water Well contacting mat <i>partially</i> inside target area</Question>
+        <Tag>m14a</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m14a'] || 0)*15;]]></Score>
+        <Validate><![CDATA[((((this.answers['m14a'] || 0)*1 > 0) &&
+                            ((this.answers['m14b'] || 0)*1) > 0)) ?
+                           {'highlight': true, 'msg':'Well cannot be both partially and completely within target.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M14 Water Well</Heading>
+        <Question>Water Well contacting mat <i>completely</i> inside target area</Question>
+        <Tag>m14b</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        // TODO: fix up validation and score
+        <Score><![CDATA[score += (this.answers['m14b'] || 0)*25;]]></Score>
+        <Validate><![CDATA[((((this.answers['m14a'] || 0)*1 > 0) &&
+                            ((this.answers['m14b'] || 0)*1) > 0)) ?
+                           {'highlight': true, 'msg':'Well cannot be both partially and completely within target.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M15 Fire</Heading>
+        <Question>Fire is dropped</Question>
+        <Info>Due only to Firetruck applying direct force to House's lever</Info>
+        <Tag>m15</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m15'] || 0)*25;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M16 Water Collection</Heading>
+        <Question>Water Target is East of Off-Limits line</Question>
+        <Info>And never reached Off-Limit line</Info>
+        <Tag>m16a</Tag>
+        <Option><Label>Yes</Label><Value>1</Value><Default/></Option>
+        <Option><Label>No</Label><Value>0</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M16 Water Collection</Heading>
+        <Question>At least one Rain is touching mat in the Water Target</Question>
+        <Tag>m16b</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m16a'] || 0)*1 && (this.answers['m16b'] || 0)*1 ? 10 : 0;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M16 Water Collection</Heading>
+        <Question>Big Water touching mat in the Water Target</Question>
+        <Tag>m16c</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Score><![CDATA[score += (this.answers['m16a'] || 0)*1 > 0 ? (this.answers['m16c'] || 0)*10 : 0;]]></Score>
+        <Validate><![CDATA[(
+                        (this.answers['m02'] || 0)*1  +
+                        (this.answers['m07'] || 0)*1  +
+                        (this.answers['m13a'] || 0)*1  +
+                        (this.answers['m16c'] || 0)*1  +
+                            (this.answers['m16d'] || 0)*1 > (5 - (1 - (this.answers['m06'] || 0)*1))) ?
+                           {'highlight': true, 'msg':'Too many big waters in use.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M16 Water Collection</Heading>
+        <Question>At least one pair of Big Waters stacked in Water Target</Question>
+        <Tag>m16d</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m16a'] || 0)*1 && (this.answers['m16d'] || 0)*1 ? 30 : 0;]]></Score>
+        <Validate><![CDATA[(
+                        (this.answers['m02'] || 0)*1  +
+                        (this.answers['m07'] || 0)*1  +
+                        (this.answers['m13a'] || 0)*1  +
+                        (this.answers['m16c'] || 0)*1  +
+                            (this.answers['m16d'] || 0)*1 > (5 - (1 - (this.answers['m06'] || 0)*1))) ?
+                           {'highlight': true, 'msg':'Too many big waters in use.'} : // validation failed
+                           {'highlight': false, 'msg':''};]]>
+        </Validate>
+    </Element>
+
+    <Element>
+        <Heading>M17 Slingshot</Heading>
+        <Question>Slingshot is completely in the Slingshot target</Question>
+        <Tag>m17a</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m17a'] || 0)*20;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M17 Slingshot</Heading>
+        <Question>Rain <b>and</b> Dirty Water completely in the Slingshot target</Question>
+        <Tag>m17b</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m17a'] || 0)*1 && (this.answers['m17b'] || 0)*1 ? 15 : 0;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M18 Faucet</Heading>
+        <Question>Water level is more blue than white</Question>
+        <Info>Only by turning Faucet handle</Info>
+        <Tag>m18</Tag>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Score><![CDATA[score += (this.answers['m18'] || 0)*25;]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>Penalties</Heading>
+        <Question>Penalty discs in the white triangle area</Question>
+        <Tag>m19</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Score><![CDATA[score -= (this.answers['m19'] || 0)*5;]]></Score>
+    </Element>
+</Scoring_Elements>

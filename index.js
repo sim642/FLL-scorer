@@ -305,21 +305,26 @@ function doValidate() {
     var errors = getErrors();
     var errorcnt = 0;
 
+    // first pass - decide which error panels are needed
     $(".error", "#elements").data("current", false);
+    $.each(errors, function (tag, error) {
+        var $panel = $("#" + tag, "#elements").parents(".panel");
+        var $error = $(".error", $panel);
 
+        errorcnt++;
+        $error.data("current", true);
+    });
+
+    // second pass - open & populate or close error panels if needed
     $.each(elements, function(i, element) {
         var $panel = $("#" + element.tag, "#elements").parents(".panel");
         var $error = $(".error", $panel);
 
         if (element.tag in errors) {
-            errorcnt++;
-
             $error.text(errors[element.tag]);
             $error.prepend($icon.clone());
             if ($error.is(":hidden"))
                 $error.slideDown();
-
-            $error.data("current", true);
         }
         else {
             if ($error.is(":visible") && !$error.data("current"))
