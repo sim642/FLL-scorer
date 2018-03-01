@@ -23,7 +23,7 @@
                         (this.answers['m07'] || 0)*1  +
                         (this.answers['m13a'] || 0)*1  +
                         (this.answers['m16c'] || 0)*1  +
-                            (this.answers['m16d'] || 0)*1 > (5 - (1 - (this.answers['m06'] || 0)*1))) ?
+                            (this.answers['m16d'] || 0)*1 > (6 - (1 - (this.answers['m06'] || 0)*1))) ?
                            {'highlight': true, 'msg':'Too many big waters in use.'} : // validation failed
                            {'highlight': false, 'msg':''};]]>
         </Validate>
@@ -79,7 +79,7 @@
                         (this.answers['m07'] || 0)*1  +
                         (this.answers['m13a'] || 0)*1  +
                         (this.answers['m16c'] || 0)*1  +
-                            (this.answers['m16d'] || 0)*1 > (5 - (1 - (this.answers['m06'] || 0)*1))) ?
+                            (this.answers['m16d'] || 0)*1 > (6 - (1 - (this.answers['m06'] || 0)*1))) ?
                            {'highlight': true, 'msg':'Too many big waters in use.'} : // validation failed
                            {'highlight': false, 'msg':''};]]>
         </Validate>
@@ -221,7 +221,7 @@
                         (this.answers['m07'] || 0)*1  +
                         (this.answers['m13a'] || 0)*1  +
                         (this.answers['m16c'] || 0)*1  +
-                            (this.answers['m16d'] || 0)*1 > (5 - (1 - (this.answers['m06'] || 0)*1))) ?
+                            (this.answers['m16d'] || 0)*1 > (6 - (1 - (this.answers['m06'] || 0)*1))) ?
                            {'highlight': true, 'msg':'Too many big waters in use.'} : // validation failed
                            {'highlight': false, 'msg':''};]]>
         </Validate>
@@ -309,7 +309,7 @@
                         (this.answers['m07'] || 0)*1  +
                         (this.answers['m13a'] || 0)*1  +
                         (this.answers['m16c'] || 0)*1  +
-                            (this.answers['m16d'] || 0)*1 > (5 - (1 - (this.answers['m06'] || 0)*1))) ?
+                            (this.answers['m16d'] || 0)*1 > (6 - (1 - (this.answers['m06'] || 0)*1))) ?
                            {'highlight': true, 'msg':'Too many big waters in use.'} : // validation failed
                            {'highlight': false, 'msg':''};]]>
         </Validate>
@@ -327,7 +327,7 @@
                         (this.answers['m07'] || 0)*1  +
                         (this.answers['m13a'] || 0)*1  +
                         (this.answers['m16c'] || 0)*1  +
-                            (this.answers['m16d'] || 0)*1 > (5 - (1 - (this.answers['m06'] || 0)*1))) ?
+                            (this.answers['m16d'] || 0)*1 > (6 - (1 - (this.answers['m06'] || 0)*1))) ?
                            {'highlight': true, 'msg':'Too many big waters in use.'} : // validation failed
                            {'highlight': false, 'msg':''};]]>
         </Validate>
