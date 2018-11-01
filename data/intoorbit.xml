@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>M01 Space Travel</Heading>
+        <Question>Vehicle Payload rolled past first track connection</Question>
+        <Tag>m01a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Space Travel</Heading>
+        <Question>Supply Payload rolled past first track connection</Question>
+        <Tag>m01b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Space Travel</Heading>
+        <Question>Crew Payload rolled past first track connection</Question>
+        <Tag>m01c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Solar Panel Array</Heading>
+        <Question>Both Solar Panels are angled toward the same Field</Question>
+        <Tag>m02a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Solar Panel Array</Heading>
+        <Question>Your Solar Panel is angled to other team's Field</Question>
+        <Tag>m02b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 3D Printing</Heading>
+        <Question>2×4 Brick is ejected</Question>
+        <Info>Due only to a Regolith Core Sample in the 3D Printer</Info>
+        <Tag>m03a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 3D Printing</Heading>
+        <Question>2×4 Brick is completely in Northeast Planet Area</Question>
+        <Tag>m03b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Crater Crossing</Heading>
+        <Question>All weight-bearing features of crossing equipment crossed completely between towers</Question>
+        <Tag>m04a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Crater Crossing</Heading>
+        <Question>All crossing equipment crossed from east to west, completely past flattened Gate</Question>
+        <Tag>m04b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Extraction</Heading>
+        <Question>All four Core Samples no longer touching axle of Core Site Model</Question>
+        <Tag>m05a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Extraction</Heading>
+        <Question>Gas Core Sample touching Mat &amp; completely in Lander's Target Circle</Question>
+        <Tag>m05b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Extraction</Heading>
+        <Question>Gas Core Sample is completely in Base</Question>
+        <Tag>m05c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Extraction</Heading>
+        <Question>Water Core Sample supported only by Food Growth Chamber</Question>
+        <Tag>m05d</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Space Station Module</Heading>
+        <Question>Cone Module is completely in Base</Question>
+        <Tag>m06a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Space Station Module</Heading>
+        <Question>Tube Module is in west port of Habitation Hub</Question>
+        <Tag>m06b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Space Station Module</Heading>
+        <Question>Dock Module is in east port of Habitation Hub</Question>
+        <Tag>m06c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 Space Walk Emergency</Heading>
+        <Question>Astronaut "Gerhard" is in the Habitation Hub's Airlock Chamber</Question>
+        <Tag>m07</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Partly</Label><Value>1</Value></Option>
+        <Option><Label>Completely</Label><Value>2</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M08 Aerobic Exercise</Heading>
+        <Question>Exercise Pointer tip is in</Question>
+        <Info>Due only to moving one or both Handle Assemblies</Info>
+        <Tag>m08</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Gray</Label><Value>1</Value></Option>
+        <Option><Label>White</Label><Value>2</Value></Option>
+        <Option><Label>Orange</Label><Value>3</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 Strength Exercise</Heading>
+        <Question>Strength Bar lifted so that tooth-strip's 4th hole is at least partly in view</Question>
+        <Tag>m09</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 Food Production</Heading>
+        <Question>Grey weight is dropped after green, but before tan</Question>
+        <Info>Due only to moving the Push Bar</Info>
+        <Tag>m10</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Escape Velocity</Heading>
+        <Question>Spacecraft stays up</Question>
+        <Info>Due only to pressing/hitting Strike Pad</Info>
+        <Tag>m11</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Satellite Orbits</Heading>
+        <Question>Satellites on or above the area between the two lines of Outer Orbit</Question>
+        <Tag>m12</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 Observatory</Heading>
+        <Question>The Observatory pointer tip is in</Question>
+        <Tag>m13</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Gray</Label><Value>1</Value></Option>
+        <Option><Label>White</Label><Value>2</Value></Option>
+        <Option><Label>Orange</Label><Value>3</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M14 Meteoroid Deflection</Heading>
+        <Question>Meteoroids touching the Mat and in the Center Section</Question>
+        <Tag>m14a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M14 Meteoroid Deflection</Heading>
+        <Question>Meteoroids touching the Mat and in Either Side Section</Question>
+        <Tag>m14b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M15 Lander Touch-Down</Heading>
+        <Question>Lander is intact and touching the Mat</Question>
+        <Tag>m15a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M15 Lander Touch-Down</Heading>
+        <Question>Lander is completely in</Question>
+        <Tag>m15b</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Base</Label><Value>1</Value></Option>
+        <Option><Label>Northeast Planet Area</Label><Value>2</Value></Option>
+        <Option><Label>Target Circle</Label><Value>3</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>Penalties</Heading>
+        <Question>Penalty discs in the southeast triangle</Question>
+        <Tag>m19</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+</Scoring_Elements>
