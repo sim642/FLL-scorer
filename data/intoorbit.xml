@@ -7,7 +7,7 @@
         <Tag>m01a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m01a'] || 0) * 22;]]></Score>
     </Element>
 
     <Element>
@@ -16,7 +16,7 @@
         <Tag>m01b</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m01b'] || 0) * 14;]]></Score>
     </Element>
 
     <Element>
@@ -25,7 +25,7 @@
         <Tag>m01c</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m01c'] || 0) * 10;]]></Score>
     </Element>
 
     <Element>
@@ -34,7 +34,7 @@
         <Tag>m02a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m02a'] || 0) * 22;]]></Score>
     </Element>
 
     <Element>
@@ -43,7 +43,7 @@
         <Tag>m02b</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m02b'] || 0) * 18;]]></Score>
     </Element>
 
     <Element>
@@ -53,7 +53,6 @@
         <Tag>m03a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
     </Element>
 
     <Element>
@@ -62,7 +61,7 @@
         <Tag>m03b</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m03a'] || 0) * ((this.answers['m03b'] || 0) * 1 ? 22 : 18);]]></Score>
     </Element>
 
     <Element>
@@ -71,7 +70,6 @@
         <Tag>m04a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
     </Element>
 
     <Element>
@@ -80,7 +78,7 @@
         <Tag>m04b</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += ((this.answers['m04a'] || 0) * 1 && (this.answers['m04b'] || 0) * 1) ? 20 : 0;]]></Score>
     </Element>
 
     <Element>
@@ -89,7 +87,8 @@
         <Tag>m05a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m05a'] || 0) * 16;]]></Score>
+        <!-- U02 - Some Core Samples: m05a not needed for others -->
     </Element>
 
     <Element>
@@ -98,7 +97,12 @@
         <Tag>m05b</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m05b'] || 0) * 12;]]></Score>
+        <Validate><![CDATA[((this.answers['m05b'] || 0) * 1 &&
+                            (this.answers['m05c'] || 0) * 1) ?
+                           {'highlight': true, 'msg': 'Gas Core Sample cannot be both in Lander\'s Target Circle and Base'} : // validation failed
+                           {'highlight': false, 'msg': ''};]]>
+        </Validate>
     </Element>
 
     <Element>
@@ -107,7 +111,12 @@
         <Tag>m05c</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m05c'] || 0) * 10;]]></Score>
+        <Validate><![CDATA[((this.answers['m05b'] || 0) * 1 &&
+                            (this.answers['m05c'] || 0) * 1) ?
+                           {'highlight': true, 'msg': 'Gas Core Sample cannot be both in Lander\'s Target Circle and Base'} : // validation failed
+                           {'highlight': false, 'msg': ''};]]>
+        </Validate>
     </Element>
 
     <Element>
@@ -116,7 +125,7 @@
         <Tag>m05d</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m05d'] || 0) * 8;]]></Score>
     </Element>
 
     <Element>
@@ -125,7 +134,7 @@
         <Tag>m06a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m06a'] || 0) * 16;]]></Score>
     </Element>
 
     <Element>
@@ -134,7 +143,7 @@
         <Tag>m06b</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m06b'] || 0) * 16;]]></Score>
     </Element>
 
     <Element>
@@ -143,7 +152,7 @@
         <Tag>m06c</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m06c'] || 0) * 14;]]></Score>
     </Element>
 
     <Element>
@@ -151,9 +160,9 @@
         <Question>Astronaut "Gerhard" is in the Habitation Hub's Airlock Chamber</Question>
         <Tag>m07</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
-        <Option><Label>Partly</Label><Value>1</Value></Option>
-        <Option><Label>Completely</Label><Value>2</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Option><Label>Partly</Label><Value>18</Value></Option>
+        <Option><Label>Completely</Label><Value>22</Value></Option>
+        <Score><![CDATA[score += (this.answers['m07'] || 0) * 1;]]></Score>
     </Element>
 
     <Element>
@@ -162,10 +171,10 @@
         <Info>Due only to moving one or both Handle Assemblies</Info>
         <Tag>m08</Tag>
         <Option><Label>None</Label><Value>0</Value><Default/></Option>
-        <Option><Label>Gray</Label><Value>1</Value></Option>
-        <Option><Label>White</Label><Value>2</Value></Option>
-        <Option><Label>Orange</Label><Value>3</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Option><Label>Gray</Label><Value>18</Value></Option>
+        <Option><Label>White</Label><Value>20</Value></Option>
+        <Option><Label>Orange</Label><Value>22</Value></Option>
+        <Score><![CDATA[score += (this.answers['m08'] || 0) * 1;]]></Score>
     </Element>
 
     <Element>
@@ -174,7 +183,7 @@
         <Tag>m09</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m09'] || 0) * 16;]]></Score>
     </Element>
 
     <Element>
@@ -184,7 +193,7 @@
         <Tag>m10</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m10'] || 0) * 16;]]></Score>
     </Element>
 
     <Element>
@@ -194,7 +203,7 @@
         <Tag>m11</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m11'] || 0) * 24;]]></Score>
     </Element>
 
     <Element>
@@ -205,7 +214,7 @@
         <Option><Label>1</Label><Value>1</Value></Option>
         <Option><Label>2</Label><Value>2</Value></Option>
         <Option><Label>3</Label><Value>3</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m12'] || 0) * 8;]]></Score>
     </Element>
 
     <Element>
@@ -213,10 +222,10 @@
         <Question>The Observatory pointer tip is in</Question>
         <Tag>m13</Tag>
         <Option><Label>None</Label><Value>0</Value><Default/></Option>
-        <Option><Label>Gray</Label><Value>1</Value></Option>
-        <Option><Label>White</Label><Value>2</Value></Option>
-        <Option><Label>Orange</Label><Value>3</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Option><Label>Gray</Label><Value>16</Value></Option>
+        <Option><Label>White</Label><Value>18</Value></Option>
+        <Option><Label>Orange</Label><Value>20</Value></Option>
+        <Score><![CDATA[score += (this.answers['m13'] || 0) * 1;]]></Score>
     </Element>
 
     <Element>
@@ -226,7 +235,12 @@
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
         <Option><Label>2</Label><Value>2</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m14a'] || 0) * 12;]]></Score>
+        <Validate><![CDATA[((this.answers['m14a'] || 0) * 1 +
+                            (this.answers['m14b'] || 0) * 1 > 2) ?
+                           {'highlight': true, 'msg': 'Too many meteoroids in use'} : // validation failed
+                           {'highlight': false, 'msg': ''};]]>
+        </Validate>
     </Element>
 
     <Element>
@@ -236,7 +250,12 @@
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
         <Option><Label>2</Label><Value>2</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score += (this.answers['m14b'] || 0) * 8;]]></Score>
+        <Validate><![CDATA[((this.answers['m14a'] || 0) * 1 +
+                            (this.answers['m14b'] || 0) * 1 > 2) ?
+                           {'highlight': true, 'msg': 'Too many meteoroids in use'} : // validation failed
+                           {'highlight': false, 'msg': ''};]]>
+        </Validate>
     </Element>
 
     <Element>
@@ -245,7 +264,6 @@
         <Tag>m15a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <Score><![CDATA[]]></Score>
     </Element>
 
     <Element>
@@ -253,16 +271,16 @@
         <Question>Lander is completely in</Question>
         <Tag>m15b</Tag>
         <Option><Label>None</Label><Value>0</Value><Default/></Option>
-        <Option><Label>Base</Label><Value>1</Value></Option>
-        <Option><Label>Northeast Planet Area</Label><Value>2</Value></Option>
-        <Option><Label>Target Circle</Label><Value>3</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Option><Label>Base</Label><Value>16</Value></Option>
+        <Option><Label>Northeast Planet Area</Label><Value>20</Value></Option>
+        <Option><Label>Target Circle</Label><Value>22</Value></Option>
+        <Score><![CDATA[score += (this.answers['m15b'] || 0) * ((this.answers['m15b'] || 0) * 1 == 16 ? 1 : (this.answers['m15a'] || 0) * 1)]]></Score>
     </Element>
 
     <Element>
         <Heading>Penalties</Heading>
         <Question>Penalty discs in the southeast triangle</Question>
-        <Tag>m19</Tag>
+        <Tag>p01</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
         <Option><Label>1</Label><Value>1</Value></Option>
         <Option><Label>2</Label><Value>2</Value></Option>
@@ -270,7 +288,7 @@
         <Option><Label>4</Label><Value>4</Value></Option>
         <Option><Label>5</Label><Value>5</Value></Option>
         <Option><Label>6</Label><Value>6</Value></Option>
-        <Score><![CDATA[]]></Score>
+        <Score><![CDATA[score -= (this.answers['p01'] || 0) * 3;]]></Score>
     </Element>
 
 </Scoring_Elements>
