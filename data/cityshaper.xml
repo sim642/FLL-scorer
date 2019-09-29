@@ -118,9 +118,15 @@
         <Option><Label>14</Label><Value>14</Value></Option>
         <Option><Label>15</Label><Value>15</Value></Option>
         <Option><Label>16</Label><Value>16</Value></Option>
+        <!-- TODO: does Hooked Blue Unit not count here? -->
         <Score><![CDATA[
             score += this.answers["m05a"] * 10;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m05a"] * 1 + this.answers["m05b"] * 1 + this.answers["m12a"] * 1 > 16) ?
+                {"highlight": true, "msg": "Too many units in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -144,11 +150,17 @@
         <Option><Label>14</Label><Value>14</Value></Option>
         <Option><Label>15</Label><Value>15</Value></Option>
         <Option><Label>16</Label><Value>16</Value></Option>
+        <!-- TODO: does Hooked Blue Unit not count here? -->
         <Score><![CDATA[
             score += this.answers["m05b"] * 15;
             if (this.answers["m05a"] * 1 || this.answers["m05b"] * 1)
                 score += this.answers["m00"] * 5;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m05a"] * 1 + this.answers["m05b"] * 1 + this.answers["m12a"] * 1 > 16) ?
+                {"highlight": true, "msg": "Too many units in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -267,6 +279,11 @@
         <Score><![CDATA[
             score += this.answers["m12a"] * 10;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m05a"] * 1 + this.answers["m05b"] * 1 + this.answers["m12a"] * 1 > 16) ?
+                {"highlight": true, "msg": "Too many units in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -302,11 +319,13 @@
         <Option><Label>26</Label><Value>26</Value></Option>
         <Option><Label>27</Label><Value>27</Value></Option>
         <Option><Label>28</Label><Value>28</Value></Option>
+        <!-- TODO: does Hooked Blue Unit not count here? -->
         <Score><![CDATA[
             score += this.answers["m12b"] * 5;
             if (this.answers["m12a"] * 1 || this.answers["m12b"] * 1)
                 score += this.answers["m00"] * 5;
         ]]></Score>
+        <!-- TODO: consider height in units count validation -->
     </Element>
 
     <Element>
