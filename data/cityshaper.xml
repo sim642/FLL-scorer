@@ -123,7 +123,9 @@
             score += this.answers["m05a"] * 10;
         ]]></Score>
         <Validate><![CDATA[
-            (this.answers["m05a"] * 1 + this.answers["m05b"] * 1 + this.answers["m12a"] * 1 > 16) ?
+            (this.answers["m05a"] * 1 +
+             this.answers["m05b"] * 1 +
+             (this.answers["m12b"] * 1 - Math.min(Math.floor(this.answers["m12b"] * 1 / 2), 12)) > 16) ?
                 {"highlight": true, "msg": "Too many units in use"} :
                 {"highlight": false, "msg": ""}
         ]]></Validate>
@@ -157,7 +159,9 @@
                 score += this.answers["m00"] * 5;
         ]]></Score>
         <Validate><![CDATA[
-            (this.answers["m05a"] * 1 + this.answers["m05b"] * 1 + this.answers["m12a"] * 1 > 16) ?
+            (this.answers["m05a"] * 1 +
+             this.answers["m05b"] * 1 +
+             (this.answers["m12b"] * 1 - Math.min(Math.floor(this.answers["m12b"] * 1 / 2), 12)) > 16) ?
                 {"highlight": true, "msg": "Too many units in use"} :
                 {"highlight": false, "msg": ""}
         ]]></Validate>
@@ -279,11 +283,6 @@
         <Score><![CDATA[
             score += this.answers["m12a"] * 10;
         ]]></Score>
-        <Validate><![CDATA[
-            (this.answers["m05a"] * 1 + this.answers["m05b"] * 1 + this.answers["m12a"] * 1 > 16) ?
-                {"highlight": true, "msg": "Too many units in use"} :
-                {"highlight": false, "msg": ""}
-        ]]></Validate>
     </Element>
 
     <Element>
@@ -325,7 +324,13 @@
             if (this.answers["m12a"] * 1 || this.answers["m12b"] * 1)
                 score += this.answers["m00"] * 5;
         ]]></Score>
-        <!-- TODO: consider height in units count validation -->
+        <Validate><![CDATA[
+            (this.answers["m05a"] * 1 +
+             this.answers["m05b"] * 1 +
+             (this.answers["m12b"] * 1 - Math.min(Math.floor(this.answers["m12b"] * 1 / 2), 12)) > 16) ?
+                {"highlight": true, "msg": "Too many units in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
