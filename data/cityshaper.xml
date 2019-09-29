@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>Advantage</Heading>
+        <Question>Your Robot and Equipment fit in the Small Inspection Area</Question>
+        <Tag>m00</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Elevated Places</Heading>
+        <Question>The Robot is Supported by the Bridge</Question>
+        <Tag>m01a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Elevated Places</Heading>
+        <Question>Number of flags that are clearly raised any distance, only by the Robot</Question>
+        <Tag>m01b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Crane</Heading>
+        <Question>The Hooked Blue Unit is clearly lowered any distance from the Guide Hole</Question>
+        <Tag>m02a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Crane</Heading>
+        <Question>The Hooked Blue Unit is Independent and Supported by another Blue Unit</Question>
+        <Tag>m02b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Crane</Heading>
+        <Question><b>And</b> Level 1 is Completely in the Blue Circle</Question>
+        <Tag>m02c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Inspection Drone</Heading>
+        <Question>The Inspection Drone is Supported by the axle on the Bridge</Question>
+        <Tag>m03</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Design For Wildlife</Heading>
+        <Question>The Bat is Supported by the branch on the Tree</Question>
+        <Tag>m04</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Treehouse</Heading>
+        <Question>Number of Units Independent and Supported by the Tree’s Large Branches</Question>
+        <Tag>m05a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <!-- TODO: possible choices -->
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Treehouse</Heading>
+        <Question>Number of Units Independent and Supported by the Tree’s Small Branches</Question>
+        <Tag>m05b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <!-- TODO: possible choices -->
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Traffic Jam</Heading>
+        <Question>The Traffic Jam is lifted, its moving part is Independent, and it is Supported only by its hinges</Question>
+        <Tag>m06</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 Swing</Heading>
+        <Question>The Swing is released</Question>
+        <Tag>m07</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M08 Elevator</Heading>
+        <Question>The Elevator’s moving parts are Independent and Supported only by its hinges, in the following position</Question>
+        <Tag>m08</Tag>
+        <Option><Label>Neither</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Blue Car Down</Label><Value>1</Value></Option>
+        <Option><Label>Balanced</Label><Value>2</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 Safety Factor</Heading>
+        <Question>The Test Building is Independent and Supported only by the blue beams</Question>
+        <Tag>m09a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 Safety Factor</Heading>
+        <Question>Number of blue beams knocked out at least half way</Question>
+        <Tag>m09b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 Steel Construction</Heading>
+        <Question>The Steel Structure is standing, and is Independent and Supported only by its hinges</Question>
+        <Tag>m10</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Innovative Architecture</Heading>
+        <Question>The Structure is bigger than a Blue Building Unit and built from the team’s white LEGO bricks</Question>
+        <Tag>m11a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Innovative Architecture</Heading>
+        <Question>The Structure is in any Circle</Question>
+        <Tag>m11b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Partly</Label><Value>1</Value></Option>
+        <Option><Label>Completely</Label><Value>2</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Design &amp; Build</Heading>
+        <Question>Number of Circles with a color-matching Unit, flat down on the Mat, and Completely in Circle</Question>
+        <Tag>m12a</Tag>
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>1</Value><Default/></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Design &amp; Build</Heading>
+        <Question>Sum of height Levels of Independent Stacks at least partly in any Circle</Question>
+        <Tag>m12b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <!-- TODO: possible choices -->
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 Sustainability Upgrades</Heading>
+        <Question>Number of Upgrades that are Independent and Supported only by a Stack which is at least partly in a Circle</Question>
+        <Tag>m13</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M14 Precision</Heading>
+        <Question>Number of Precision Tokens left on the field</Question>
+        <Tag>m14</Tag>
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value><Default/></Option>
+        <Score><![CDATA[]]></Score>
+    </Element>
+
+</Scoring_Elements>
