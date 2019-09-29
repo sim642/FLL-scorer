@@ -124,7 +124,7 @@ function loadAnswers(answers) {
 }
 
 $(function() {
-    $.get("data/intoorbit.xml", function(data) {
+    $.get("data/cityshaper.xml", function(data) {
         elements = parseData(data);
         buildElements();
         loadAnswers(JSON.parse($("#formanswers").val()));
