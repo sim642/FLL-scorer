@@ -283,6 +283,11 @@
         <Score><![CDATA[
             score += this.answers["m12a"] * 10;
         ]]></Score>
+        <Validate><![CDATA[
+            ((2 * this.answers["m12a"] * 1 - Math.min(this.answers["m12a"] * 1, 1)) > this.answers["m12b"] * 1) ?
+                {"highlight": true, "msg": "Too small height sum"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -329,6 +334,8 @@
              this.answers["m05b"] * 1 +
              (this.answers["m12b"] * 1 - Math.min(Math.floor(this.answers["m12b"] * 1 / 2), 12)) > 16) ?
                 {"highlight": true, "msg": "Too many units in use"} :
+             ((2 * this.answers["m12a"] * 1 - Math.min(this.answers["m12a"] * 1, 1)) > this.answers["m12b"] * 1) ?
+                {"highlight": true, "msg": "Too small height sum"} :
                 {"highlight": false, "msg": ""}
         ]]></Validate>
     </Element>
