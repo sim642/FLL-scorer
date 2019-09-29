@@ -79,7 +79,22 @@
         <Question>Number of Units Independent and Supported by the Tree’s Large Branches</Question>
         <Tag>m05a</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
-        <!-- TODO: possible choices -->
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Option><Label>9</Label><Value>9</Value></Option>
+        <Option><Label>10</Label><Value>10</Value></Option>
+        <Option><Label>11</Label><Value>11</Value></Option>
+        <Option><Label>12</Label><Value>12</Value></Option>
+        <Option><Label>13</Label><Value>13</Value></Option>
+        <Option><Label>14</Label><Value>14</Value></Option>
+        <Option><Label>15</Label><Value>15</Value></Option>
+        <Option><Label>16</Label><Value>16</Value></Option>
         <Score><![CDATA[]]></Score>
     </Element>
 
@@ -88,7 +103,22 @@
         <Question>Number of Units Independent and Supported by the Tree’s Small Branches</Question>
         <Tag>m05b</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
-        <!-- TODO: possible choices -->
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Option><Label>9</Label><Value>9</Value></Option>
+        <Option><Label>10</Label><Value>10</Value></Option>
+        <Option><Label>11</Label><Value>11</Value></Option>
+        <Option><Label>12</Label><Value>12</Value></Option>
+        <Option><Label>13</Label><Value>13</Value></Option>
+        <Option><Label>14</Label><Value>14</Value></Option>
+        <Option><Label>15</Label><Value>15</Value></Option>
+        <Option><Label>16</Label><Value>16</Value></Option>
         <Score><![CDATA[]]></Score>
     </Element>
 
@@ -186,8 +216,35 @@
         <Heading>M12 Design &amp; Build</Heading>
         <Question>Sum of height Levels of Independent Stacks at least partly in any Circle</Question>
         <Tag>m12b</Tag>
-        <Option><Label>0</Label><Value>0</Value><Default/></Option>
-        <!-- TODO: possible choices -->
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>1</Value><Default/></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Option><Label>9</Label><Value>9</Value></Option>
+        <Option><Label>10</Label><Value>10</Value></Option>
+        <Option><Label>11</Label><Value>11</Value></Option>
+        <Option><Label>12</Label><Value>12</Value></Option>
+        <Option><Label>13</Label><Value>13</Value></Option>
+        <Option><Label>14</Label><Value>14</Value></Option>
+        <Option><Label>15</Label><Value>15</Value></Option>
+        <Option><Label>16</Label><Value>16</Value></Option>
+        <Option><Label>17</Label><Value>17</Value></Option>
+        <Option><Label>18</Label><Value>18</Value></Option>
+        <Option><Label>19</Label><Value>19</Value></Option>
+        <Option><Label>20</Label><Value>20</Value></Option>
+        <Option><Label>21</Label><Value>21</Value></Option>
+        <Option><Label>22</Label><Value>22</Value></Option>
+        <Option><Label>23</Label><Value>23</Value></Option>
+        <Option><Label>24</Label><Value>24</Value></Option>
+        <Option><Label>25</Label><Value>25</Value></Option>
+        <Option><Label>26</Label><Value>26</Value></Option>
+        <Option><Label>27</Label><Value>27</Value></Option>
+        <Option><Label>28</Label><Value>28</Value></Option>
         <Score><![CDATA[]]></Score>
     </Element>
 
