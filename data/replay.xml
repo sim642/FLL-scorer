@@ -7,6 +7,9 @@
         <Tag>m00</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m00"] * 25;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -24,7 +27,11 @@
         <Tag>m01b</Tag>
         <Option><Label>None</Label><Value>0</Value><Default/></Option>
         <Option><Label>RePLAY Logo</Label><Value>1</Value></Option>
-        <Option><Label>Bench Gray Area</Label><Value>2</Value></Option>
+        <Option><Label>Bench Gray Area</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m01a"] * 1)
+                score += this.answers["m01b"] * 20;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -32,9 +39,12 @@
         <Question>The bottom of the pointer is on</Question>
         <Tag>m02</Tag>
         <Option><Label>None</Label><Value>0</Value><Default/></Option>
-        <Option><Label>Magenta</Label><Value>1</Value></Option>
-        <Option><Label>Yellow</Label><Value>2</Value></Option>
-        <Option><Label>Blue</Label><Value>3</Value></Option>
+        <Option><Label>Magenta</Label><Value>10</Value></Option>
+        <Option><Label>Yellow</Label><Value>15</Value></Option>
+        <Option><Label>Blue</Label><Value>20</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m02"] * 1;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -42,8 +52,11 @@
         <Question>Number of slide figures off the slide</Question>
         <Tag>m03a</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
-        <Option><Label>1</Label><Value>1</Value></Option>
-        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>1</Label><Value>5</Value></Option>
+        <Option><Label>2</Label><Value>20</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m03a"] * 1;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -52,6 +65,11 @@
         <Tag>m03b</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m03a"] * 1 > 0)
+                score += this.answers["m03b"] * 10;
+        ]]></Score>
+        <!-- TODO: validation -->
     </Element>
 
     <Element>
@@ -60,6 +78,11 @@
         <Tag>m03c</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m03a"] * 1 > 0)
+                score += this.answers["m03c"] * 20;
+        ]]></Score>
+        <!-- TODO: validation -->
     </Element>
 
     <Element>
@@ -68,6 +91,9 @@
         <Tag>m04a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04a"] * 10;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -79,6 +105,11 @@
         <Option><Label>2</Label><Value>2</Value></Option>
         <Option><Label>3</Label><Value>3</Value></Option>
         <Option><Label>4</Label><Value>4</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m04a"] * 1)
+                score += this.answers["m04b"] * 10;
+        ]]></Score>
+        <!-- TODO: validation -->
     </Element>
 
     <Element>
@@ -87,6 +118,9 @@
         <Tag>m04c</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04c"] * 15;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -95,6 +129,9 @@
         <Tag>m05a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m05a"] * 15;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -102,8 +139,11 @@
         <Question>On which white stopper does the crate rest</Question>
         <Tag>m05b</Tag>
         <Option><Label>None</Label><Value>0</Value><Default/></Option>
-        <Option><Label>Middle</Label><Value>1</Value></Option>
-        <Option><Label>Top</Label><Value>2</Value></Option>
+        <Option><Label>Middle</Label><Value>15</Value></Option>
+        <Option><Label>Top</Label><Value>25</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m05b"] * 1;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -112,6 +152,9 @@
         <Tag>m06a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m06a"] * 15;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -120,6 +163,10 @@
         <Tag>m06b</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m06b"] * 30;
+        ]]></Score>
+        <!-- TODO: validation -->
     </Element>
 
     <Element>
@@ -128,6 +175,10 @@
         <Tag>m07</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m07"] * 20;
+        ]]></Score>
+        <!-- TODO: validation -->
     </Element>
 
     <Element>
@@ -159,6 +210,7 @@
         <Option><Label>14</Label><Value>14</Value></Option>
         <Option><Label>15</Label><Value>15</Value></Option>
         <Option><Label>16</Label><Value>16</Value></Option>
+        <!-- TODO: how many cubes in total? 18? -->
     </Element>
 
     <Element>
@@ -167,6 +219,7 @@
         <Tag>m08c</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <!-- TODO: validation -->
     </Element>
 
     <Element>
@@ -175,26 +228,43 @@
         <Tag>m08d</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (!(this.answers["m08d"] * 1)) {
+                score += this.answers["m08a"] * 25;
+                score += this.answers["m08b"] * 5;
+                score += this.answers["m08c"] * 10;
+            }
+        ]]></Score>
     </Element>
 
     <Element>
         <Heading>M09 Tire Flip</Heading>
         <Question>Tires white side up <b>and</b> resting on the mat</Question>
         <Tag>m09a</Tag>
+        <!-- binary encoded tires -->
         <Option><Label>None</Label><Value>0</Value><Default/></Option>
         <Option><Label>Blue</Label><Value>1</Value></Option>
         <Option><Label>Black</Label><Value>2</Value></Option>
         <Option><Label>Both</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            if ((this.answers["m09a"] * 1) & 1)
+                score += 10;
+        ]]></Score>
     </Element>
 
     <Element>
         <Heading>M09 Tire Flip</Heading>
         <Question>Tires completely in the large target circle</Question>
         <Tag>m09b</Tag>
+        <!-- binary encoded tires -->
         <Option><Label>None</Label><Value>0</Value><Default/></Option>
         <Option><Label>Blue</Label><Value>1</Value></Option>
         <Option><Label>Black</Label><Value>2</Value></Option>
         <Option><Label>Both</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            if (((this.answers["m09a"] * 1) & (this.answers["m09b"] * 1)) & 1)
+                score += 5;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -203,6 +273,14 @@
         <Tag>m09c</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (!(this.answers["m09c"] * 1)) {
+                if ((this.answers["m09a"] * 1) & 2)
+                    score += 15;
+                if (((this.answers["m09a"] * 1) & (this.answers["m09b"] * 1)) & 2)
+                    score += 5;
+            }
+        ]]></Score>
     </Element>
 
     <Element>
@@ -211,6 +289,9 @@
         <Tag>m10</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10"] * 15;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -218,12 +299,15 @@
         <Question>The robot spun the rollers so the pointer points to</Question>
         <Tag>m11</Tag>
         <Option><Label>None</Label><Value>0</Value><Default/></Option>
-        <Option><Label>Gray</Label><Value>1</Value></Option>
-        <Option><Label>Red</Label><Value>2</Value></Option>
-        <Option><Label>Orange</Label><Value>3</Value></Option>
-        <Option><Label>Yellow</Label><Value>4</Value></Option>
-        <Option><Label>Light Green</Label><Value>5</Value></Option>
-        <Option><Label>Dark Green</Label><Value>6</Value></Option>
+        <Option><Label>Gray</Label><Value>5</Value></Option>
+        <Option><Label>Red</Label><Value>10</Value></Option>
+        <Option><Label>Orange</Label><Value>15</Value></Option>
+        <Option><Label>Yellow</Label><Value>20</Value></Option>
+        <Option><Label>Light Green</Label><Value>25</Value></Option>
+        <Option><Label>Dark Green</Label><Value>30</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m11"] * 1;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -232,6 +316,9 @@
         <Tag>m12a</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12a"] * 15;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -240,6 +327,10 @@
         <Tag>m12b</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12b"] * 15;
+        ]]></Score>
+        <!-- TODO: validation -->
     </Element>
 
     <Element>
@@ -247,9 +338,12 @@
         <Question>The stopper is under the lever <b>and</b> the lever setting is</Question>
         <Tag>m13</Tag>
         <Option><Label>None</Label><Value>0</Value><Default/></Option>
-        <Option><Label>Blue</Label><Value>1</Value></Option>
-        <Option><Label>Magenta</Label><Value>2</Value></Option>
-        <Option><Label>Yellow</Label><Value>3</Value></Option>
+        <Option><Label>Blue</Label><Value>10</Value></Option>
+        <Option><Label>Magenta</Label><Value>15</Value></Option>
+        <Option><Label>Yellow</Label><Value>20</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m13"] * 1;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -265,6 +359,9 @@
         <Option><Label>6</Label><Value>6</Value></Option>
         <Option><Label>7</Label><Value>7</Value></Option>
         <Option><Label>8</Label><Value>8</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14a"] * 5;
+        ]]></Score>
     </Element>
 
     <Element>
@@ -277,6 +374,10 @@
         <Option><Label>2</Label><Value>2</Value></Option>
         <Option><Label>3</Label><Value>3</Value></Option>
         <Option><Label>4</Label><Value>4</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14b"] * 10;
+        ]]></Score>
+        <!-- TODO: validation -->
     </Element>
 
     <Element>
@@ -290,6 +391,9 @@
         <Option><Label>4</Label><Value>30</Value></Option>
         <Option><Label>5</Label><Value>45</Value></Option>
         <Option><Label>6</Label><Value>60</Value><Default/></Option>
+        <Score><![CDATA[
+            score += this.answers["m15"] * 1;
+        ]]></Score>
     </Element>
 
 </Scoring_Elements>
