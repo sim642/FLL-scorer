@@ -121,6 +121,8 @@
                 score += this.answers["m04b"] * 10;
         ]]></Score>
         <Validate><![CDATA[
+            ((this.answers["m04b"] * 1 > 0) && (this.answers["m04b"] * 1 + this.answers["m05a"] * 1 + this.answers["m08b"] * 1 > 16)) ?
+                {"highlight": true, "msg": "Too many cubes in use"} :
             (this.answers["m04b"] * 1 > this.answers["m04a"] * 1) ?
                 {"highlight": true, "msg": "Bench must be down flat for cubes to touch the mat"} :
                 {"highlight": false, "msg": ""}
@@ -147,6 +149,11 @@
         <Score><![CDATA[
             score += this.answers["m05a"] * 15;
         ]]></Score>
+        <Validate><![CDATA[
+            ((this.answers["m05a"] * 1 > 0) && (this.answers["m04b"] * 1 + this.answers["m05a"] * 1 + this.answers["m08b"] * 1 > 16)) ?
+                {"highlight": true, "msg": "Too many cubes in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -235,11 +242,12 @@
         <Option><Label>16</Label><Value>16</Value></Option>
         <!-- TODO: how many cubes in total? 18? -->
         <Validate><![CDATA[
+            ((this.answers["m08b"] * 1 > 0) && (this.answers["m04b"] * 1 + this.answers["m05a"] * 1 + this.answers["m08b"] * 1 > 16)) ?
+                {"highlight": true, "msg": "Too many cubes in use"} :
             (this.answers["m08c"] * 1 > this.answers["m08b"] * 1) ?
                 {"highlight": true, "msg": "Target cannot both be empty and contain yellow cube"} :
                 {"highlight": false, "msg": ""}
         ]]></Validate>
-        <!-- TODO: too many cubes in use error -->
     </Element>
 
     <Element>
