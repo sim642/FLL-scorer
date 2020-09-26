@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>M00 Equipment Inspection Bonus</Heading>
+        <Question>All team equipment fits in the small inspection space</Question>
+        <Tag>m00</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M01 Innovation Project</Heading>
+        <Question>The innovation project is large enough</Question>
+        <Info>2+ white LEGO pieces and 4+ LEGO studs long</Info>
+        <Tag>m01a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M01 Innovation Project</Heading>
+        <Question>Part of the innovation Project is touching</Question>
+        <Tag>m01b</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>RePLAY Logo</Label><Value>1</Value></Option>
+        <Option><Label>Bench Gray Area</Label><Value>2</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M02 Step Counter</Heading>
+        <Question>The bottom of the pointer is on</Question>
+        <Tag>m02</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Magenta</Label><Value>1</Value></Option>
+        <Option><Label>Yellow</Label><Value>2</Value></Option>
+        <Option><Label>Blue</Label><Value>3</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M03 Slide</Heading>
+        <Question>Number of slide figures off the slide</Question>
+        <Tag>m03a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M03 Slide</Heading>
+        <Question>A slide figure is completely in home</Question>
+        <Tag>m03b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M03 Slide</Heading>
+        <Question>A slide figure is held completely off the mat by the heavy tire <b>and</b> touching nothing else</Question>
+        <Tag>m03c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M04 Bench</Heading>
+        <Question>The bench is down flat</Question>
+        <Tag>m04a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M04 Bench</Heading>
+        <Question>Number of hopscotch spaces with cubes touching the mat inside them</Question>
+        <Tag>m04b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M04 Bench</Heading>
+        <Question>The backrest in completely out of both of its holes</Question>
+        <Tag>m04c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M05 Basketball</Heading>
+        <Question>A cube is in the crate</Question>
+        <Tag>m05a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M05 Basketball</Heading>
+        <Question>On which white stopper does the crate rest</Question>
+        <Tag>m05b</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Middle</Label><Value>1</Value></Option>
+        <Option><Label>Top</Label><Value>2</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M06 Pull-up Bar</Heading>
+        <Question>The robot passed completely through the pull-up bar's upright frame at any time</Question>
+        <Tag>m06a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M06 Pull-up Bar</Heading>
+        <Question>The pull-up bar holds 100% of the robot up off the mat at the end of the match</Question>
+        <Tag>m06b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M07 Robot Dance</Heading>
+        <Question>The robot's controller is dancing over the dance floor at the end of the match</Question>
+        <Tag>m07</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M08 Boccia</Heading>
+        <Question>Both share models have sent only one cube anywhere onto the opposing field <b>and</b> those cubes color-match each other</Question>
+        <Tag>m08a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M08 Boccia</Heading>
+        <Question>Number of cubes in the frame or target</Question>
+        <Tag>m08b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Option><Label>9</Label><Value>9</Value></Option>
+        <Option><Label>10</Label><Value>10</Value></Option>
+        <Option><Label>11</Label><Value>11</Value></Option>
+        <Option><Label>12</Label><Value>12</Value></Option>
+        <Option><Label>13</Label><Value>13</Value></Option>
+        <Option><Label>14</Label><Value>14</Value></Option>
+        <Option><Label>15</Label><Value>15</Value></Option>
+        <Option><Label>16</Label><Value>16</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M08 Boccia</Heading>
+        <Question>At least one yellow cube is completely in the target</Question>
+        <Tag>m08c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M08 Boccia</Heading>
+        <Question>Any equipment is in the frame (even partly)</Question>
+        <Tag>m08d</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M09 Tire Flip</Heading>
+        <Question>Tires white side up <b>and</b> resting on the mat</Question>
+        <Tag>m09a</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Blue</Label><Value>1</Value></Option>
+        <Option><Label>Black</Label><Value>2</Value></Option>
+        <Option><Label>Both</Label><Value>3</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M09 Tire Flip</Heading>
+        <Question>Tires completely in the large target circle</Question>
+        <Tag>m09b</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Blue</Label><Value>1</Value></Option>
+        <Option><Label>Black</Label><Value>2</Value></Option>
+        <Option><Label>Both</Label><Value>3</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M09 Tire Flip</Heading>
+        <Question>The heavy (black tread) tire crossed the flip line (even partly) at any time</Question>
+        <Tag>m09c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M10 Cell Phone</Heading>
+        <Question>The cell phone is white side up <b>and</b> resting only on the mat</Question>
+        <Tag>m10</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M11 Treadmill</Heading>
+        <Question>The robot spun the rollers so the pointer points to</Question>
+        <Tag>m11</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Gray</Label><Value>1</Value></Option>
+        <Option><Label>Red</Label><Value>2</Value></Option>
+        <Option><Label>Orange</Label><Value>3</Value></Option>
+        <Option><Label>Yellow</Label><Value>4</Value></Option>
+        <Option><Label>Light Green</Label><Value>5</Value></Option>
+        <Option><Label>Dark Green</Label><Value>6</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M12 Row Machine</Heading>
+        <Question>The free wheel is completely outside the large circle</Question>
+        <Tag>m12a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M12 Row Machine</Heading>
+        <Question>The free wheel is completely in the small circle</Question>
+        <Tag>m12b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M13 Weight Machine</Heading>
+        <Question>The stopper is under the lever <b>and</b> the lever setting is</Question>
+        <Tag>m13</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Blue</Label><Value>1</Value></Option>
+        <Option><Label>Magenta</Label><Value>2</Value></Option>
+        <Option><Label>Yellow</Label><Value>3</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M14 Health Units</Heading>
+        <Question>Number of health units touching either the RePLAY logo or the gray area around the bench</Question>
+        <Tag>m14a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M14 Health Units</Heading>
+        <Question>Number of health units looped over a pull-up bar post <b>and</b> touching no equipment</Question>
+        <Info>Max of 4</Info>
+        <Tag>m14b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M15 Precision</Heading>
+        <Question>Number of precision tokens left on the field</Question>
+        <Tag>m15</Tag>
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>5</Value></Option>
+        <Option><Label>2</Label><Value>10</Value></Option>
+        <Option><Label>3</Label><Value>20</Value></Option>
+        <Option><Label>4</Label><Value>30</Value></Option>
+        <Option><Label>5</Label><Value>45</Value></Option>
+        <Option><Label>6</Label><Value>60</Value><Default/></Option>
+    </Element>
+
+</Scoring_Elements>
