@@ -52,10 +52,13 @@
         <Question>Number of slide figures off the slide</Question>
         <Tag>m03a</Tag>
         <Option><Label>0</Label><Value>0</Value><Default/></Option>
-        <Option><Label>1</Label><Value>5</Value></Option>
-        <Option><Label>2</Label><Value>20</Value></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
         <Score><![CDATA[
-            score += this.answers["m03a"] * 1;
+            if (this.answers["m03a"] * 1 == 1)
+                score += 5;
+            else if (this.answers["m03a"] * 1 == 2)
+                score += 20;
         ]]></Score>
     </Element>
 
@@ -69,7 +72,11 @@
             if (this.answers["m03a"] * 1 > 0)
                 score += this.answers["m03b"] * 10;
         ]]></Score>
-        <!-- TODO: validation -->
+        <Validate><![CDATA[
+            (this.answers["m03b"] * 1 > this.answers["m03a"] * 1) ?
+                {"highlight": true, "msg": "Not enough slide figures in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -82,7 +89,11 @@
             if (this.answers["m03a"] * 1 > 0)
                 score += this.answers["m03c"] * 20;
         ]]></Score>
-        <!-- TODO: validation -->
+        <Validate><![CDATA[
+            (this.answers["m03c"] * 1 > this.answers["m03a"] * 1) ?
+                {"highlight": true, "msg": "Not enough slide figures in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -109,7 +120,11 @@
             if (this.answers["m04a"] * 1)
                 score += this.answers["m04b"] * 10;
         ]]></Score>
-        <!-- TODO: validation -->
+        <Validate><![CDATA[
+            (this.answers["m04b"] * 1 > this.answers["m04a"] * 1) ?
+                {"highlight": true, "msg": "Bench must be down flat for cubes to touch the mat"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -166,7 +181,11 @@
         <Score><![CDATA[
             score += this.answers["m06b"] * 30;
         ]]></Score>
-        <!-- TODO: validation -->
+        <Validate><![CDATA[
+            (this.answers["m06b"] * 1 + this.answers["m07"] * 1 > 1) ?
+                {"highlight": true, "msg": "Robot cannot be both held up and dancing"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -178,7 +197,11 @@
         <Score><![CDATA[
             score += this.answers["m07"] * 20;
         ]]></Score>
-        <!-- TODO: validation -->
+        <Validate><![CDATA[
+            (this.answers["m06b"] * 1 + this.answers["m07"] * 1 > 1) ?
+                {"highlight": true, "msg": "Robot cannot be both held up and dancing"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -211,6 +234,12 @@
         <Option><Label>15</Label><Value>15</Value></Option>
         <Option><Label>16</Label><Value>16</Value></Option>
         <!-- TODO: how many cubes in total? 18? -->
+        <Validate><![CDATA[
+            (this.answers["m08c"] * 1 > this.answers["m08b"] * 1) ?
+                {"highlight": true, "msg": "Target cannot both be empty and contain yellow cube"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+        <!-- TODO: too many cubes in use error -->
     </Element>
 
     <Element>
@@ -219,7 +248,11 @@
         <Tag>m08c</Tag>
         <Option><Label>No</Label><Value>0</Value><Default/></Option>
         <Option><Label>Yes</Label><Value>1</Value></Option>
-        <!-- TODO: validation -->
+        <Validate><![CDATA[
+            (this.answers["m08c"] * 1 > this.answers["m08b"] * 1) ?
+                {"highlight": true, "msg": "Target cannot both be empty and contain yellow cube"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -319,6 +352,11 @@
         <Score><![CDATA[
             score += this.answers["m12a"] * 15;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m12b"] * 1 > this.answers["m12a"] * 1) ?
+                {"highlight": true, "msg": "Free wheel cannot be both in large circle and completely in small circle"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -330,7 +368,11 @@
         <Score><![CDATA[
             score += this.answers["m12b"] * 15;
         ]]></Score>
-        <!-- TODO: validation -->
+        <Validate><![CDATA[
+            (this.answers["m12b"] * 1 > this.answers["m12a"] * 1) ?
+                {"highlight": true, "msg": "Free wheel cannot be both in large circle and completely in small circle"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -362,6 +404,11 @@
         <Score><![CDATA[
             score += this.answers["m14a"] * 5;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m14a"] * 1 + this.answers["m14b"] * 1 > 8) ?
+                {"highlight": true, "msg": "Too many health units in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -377,7 +424,11 @@
         <Score><![CDATA[
             score += this.answers["m14b"] * 10;
         ]]></Score>
-        <!-- TODO: validation -->
+        <Validate><![CDATA[
+            (this.answers["m14a"] * 1 + this.answers["m14b"] * 1 > 8) ?
+                {"highlight": true, "msg": "Too many health units in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
