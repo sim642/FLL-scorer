@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Scoring_Elements>
+  <Element>
+    <Heading>M00 Varustuse kontrollboonus</Heading>
+    <Question>Kõik meeskonna varustus mahub ära väikesele kontrollalale</Question>
+    <Tag>m00</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m00"] * 25;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M01 Innovatsiooniprojekt</Heading>
+    <Question>Innovatsiooniprojekt on piisavalt suur</Question>
+    <Info>2+ valget LEGO tükki ja 4+ LEGO punni pikk</Info>
+    <Tag>m01a</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+  </Element>
+  <Element>
+    <Heading>M01 Innovatsiooniprojekt</Heading>
+    <Question>Ükskõik milline osa innovatsiooniprojektist puudutab</Question>
+    <Tag>m01b</Tag>
+    <Option>
+      <Label>Mittemidagi</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>RePLAY Logo</Label>
+      <Value>1</Value>
+    </Option>
+    <Option>
+      <Label>Pingi Halli Ala</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            if (this.answers["m01a"] * 1)
+                score += this.answers["m01b"] * 20;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M02 Sammulugeja</Heading>
+    <Question>Alumine osuti on</Question>
+    <Tag>m02</Tag>
+    <Option>
+      <Label>Mitteühelgi</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Magenta</Label>
+      <Value>10</Value>
+    </Option>
+    <Option>
+      <Label>Kollane</Label>
+      <Value>15</Value>
+    </Option>
+    <Option>
+      <Label>Sinine</Label>
+      <Value>20</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m02"] * 1;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M03 Liumägi</Heading>
+    <Question>Luimäest alla lasknud mehikeste arv</Question>
+    <Tag>m03a</Tag>
+    <Option>
+      <Label>0</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>1</Label>
+      <Value>1</Value>
+    </Option>
+    <Option>
+      <Label>2</Label>
+      <Value>2</Value>
+    </Option>
+    <Score>
+            if (this.answers["m03a"] * 1 == 1)
+                score += 5;
+            else if (this.answers["m03a"] * 1 == 2)
+                score += 20;
+        </Score>
+  </Element>
+  <Element>
+    <Heading>M03 Liumägi</Heading>
+    <Question>Liumäe mehike on täielikult kodualal</Question>
+    <Tag>m03b</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            if (this.answers["m03a"] * 1 > 0)
+                score += this.answers["m03b"] * 10;
+        ]]></Score>
+    <Validate><![CDATA[
+            (this.answers["m03b"] * 1 > this.answers["m03a"] * 1) ?
+                {"highlight": true, "msg": "Pole piisavalt mehikesi"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+  </Element>
+  <Element>
+    <Heading>M03 Liumägi</Heading>
+    <Question>Liumäe mehike pole enam matil vaid raskel rehvil<b>ning</b>ei puuduta midagi muud</Question>
+    <Tag>m03c</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            if (this.answers["m03a"] * 1 > 0)
+                score += this.answers["m03c"] * 20;
+        ]]></Score>
+    <Validate><![CDATA[
+            (this.answers["m03c"] * 1 > this.answers["m03a"] * 1) ?
+                {"highlight": true, "msg": "Pole piisavalt mehikesi"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+  </Element>
+  <Element>
+    <Heading>M04 Pink</Heading>
+    <Question>Pink on tasaselt maas</Question>
+    <Tag>m04a</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m04a"] * 10;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M04 Pink</Heading>
+    <Question>Arv kuubikuid, mis puudutavad keksumängu alal matti</Question>
+    <Tag>m04b</Tag>
+    <Option>
+      <Label>0</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>1</Label>
+      <Value>1</Value>
+    </Option>
+    <Option>
+      <Label>2</Label>
+      <Value>2</Value>
+    </Option>
+    <Option>
+      <Label>3</Label>
+      <Value>3</Value>
+    </Option>
+    <Option>
+      <Label>4</Label>
+      <Value>4</Value>
+    </Option>
+    <Score><![CDATA[
+            if (this.answers["m04a"] * 1)
+                score += this.answers["m04b"] * 10;
+        ]]></Score>
+    <Validate>
+            ((this.answers["m04b"] * 1 &gt; 0) &amp;&amp; (this.answers["m04b"] * 1 + this.answers["m05a"] * 1 + this.answers["m08b"] * 1 &gt; 16)) ?
+                {"highlight": true, "msg": "Liiga palju kuubikuid kasutuses"} :
+            ((this.answers["m04a"] * 1 == 0) &amp;&amp; (this.answers["m04b"] * 1 &gt; 0)) ?
+                {"highlight": true, "msg": "Pink peab olema tasaselt maas, et kuubikud puudutaksid matti"} :
+                {"highlight": false, "msg": ""}
+        </Validate>
+  </Element>
+  <Element>
+    <Heading>M04 Pink</Heading>
+    <Question>Seljatugi on täielikult mõlemast avast väljas</Question>
+    <Tag>m04c</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m04c"] * 15;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M05 Korvpall</Heading>
+    <Question>Kasti sees on kuubik</Question>
+    <Tag>m05a</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m05a"] * 15;
+        ]]></Score>
+    <Validate><![CDATA[
+            ((this.answers["m05a"] * 1 > 0) && (this.answers["m04b"] * 1 + this.answers["m05a"] * 1 + this.answers["m08b"] * 1 > 16)) ?
+                {"highlight": true, "msg": "Liiga palju kuubikuid kasutuses"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+  </Element>
+  <Element>
+    <Heading>M05 Korvpall</Heading>
+    <Question>Millisel valgel stopperil on kast</Question>
+    <Tag>m05b</Tag>
+    <Option>
+      <Label>Mitteühelgi</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Keskmine</Label>
+      <Value>15</Value>
+    </Option>
+    <Option>
+      <Label>Ülemine</Label>
+      <Value>25</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m05b"] * 1;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M06 Lõuatõmbelatt</Heading>
+    <Question>Robot liikus matši ajal täielikult lõuatõmbelati püstise raami alt läbi</Question>
+    <Tag>m06a</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m06a"] * 15;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M06 Pull-up Bar</Heading>
+    <Question>Matši lõpus hoiab lõuatõmbelatt 100%-liselt robotit matilt üleval</Question>
+    <Tag>m06b</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m06b"] * 30;
+        ]]></Score>
+    <Validate>
+            (this.answers["m06b"] * 1 + this.answers["m07"] * 1 &gt; 1) ?
+                {"highlight": true, "msg": "Robot ei saa samal ajal rippuda ja tantsida"} :
+                {"highlight": false, "msg": ""}
+        </Validate>
+  </Element>
+  <Element>
+    <Heading>M07 Robotitants</Heading>
+    <Question>Roboti kontroller on matši lõpus vähemalt osaliselt tantsupõrandal ja teeb tantsuliigutusi</Question>
+    <Tag>m07</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m07"] * 20;
+        ]]></Score>
+    <Validate><![CDATA[
+            (this.answers["m06b"] * 1 + this.answers["m07"] * 1 > 1) ?
+                {"highlight": true, "msg": "Robot ei saa samal ajal rippuda ja tantsida"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+  </Element>
+  <Element>
+    <Heading>M08 Boccia</Heading>
+    <Question>Mõlemad jagatud mudelid on saatnud ainult ühe kuubiku ükskõik kuhu vastastaspoole väljakule<b>ning</b>need kuubikud on samat värvi</Question>
+    <Tag>m08a</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+  </Element>
+  <Element>
+    <Heading>M08 Boccia</Heading>
+    <Question>Arv kuubikuid, mis on täielikult teie raamis või sihtmärgil</Question>
+    <Tag>m08b</Tag>
+    <Option>
+      <Label>0</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>1</Label>
+      <Value>1</Value>
+    </Option>
+    <Option>
+      <Label>2</Label>
+      <Value>2</Value>
+    </Option>
+    <Option>
+      <Label>3</Label>
+      <Value>3</Value>
+    </Option>
+    <Option>
+      <Label>4</Label>
+      <Value>4</Value>
+    </Option>
+    <Option>
+      <Label>5</Label>
+      <Value>5</Value>
+    </Option>
+    <Option>
+      <Label>6</Label>
+      <Value>6</Value>
+    </Option>
+    <Option>
+      <Label>7</Label>
+      <Value>7</Value>
+    </Option>
+    <Option>
+      <Label>8</Label>
+      <Value>8</Value>
+    </Option>
+    <Option>
+      <Label>9</Label>
+      <Value>9</Value>
+    </Option>
+    <Option>
+      <Label>10</Label>
+      <Value>10</Value>
+    </Option>
+    <Option>
+      <Label>11</Label>
+      <Value>11</Value>
+    </Option>
+    <Option>
+      <Label>12</Label>
+      <Value>12</Value>
+    </Option>
+    <Option>
+      <Label>13</Label>
+      <Value>13</Value>
+    </Option>
+    <Option>
+      <Label>14</Label>
+      <Value>14</Value>
+    </Option>
+    <Option>
+      <Label>15</Label>
+      <Value>15</Value>
+    </Option>
+    <Option>
+      <Label>16</Label>
+      <Value>16</Value>
+    </Option>
+    <!-- TODO: how many cubes in total? 18? -->
+    <Validate>
+            ((this.answers["m08b"] * 1 &gt; 0) &amp;&amp; (this.answers["m04b"] * 1 + this.answers["m05a"] * 1 + this.answers["m08b"] * 1 &gt; 16)) ?
+                {"highlight": true, "msg": "Liiga palju kuubikuid kasutuses"} :
+            (this.answers["m08c"] * 1 &gt; this.answers["m08b"] * 1) ?
+                {"highlight": true, "msg": "Sihtmärk ei saa olla tühi ja sisaldada kollast kuubikut"} :
+                {"highlight": false, "msg": ""}
+        </Validate>
+  </Element>
+  <Element>
+    <Heading>M08 Boccia</Heading>
+    <Question>Vähemalt üks kollane kuubik on täielikult teie sihtmärgil</Question>
+    <Tag>m08c</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Validate><![CDATA[
+            (this.answers["m08c"] * 1 > this.answers["m08b"] * 1) ?
+                {"highlight": true, "msg": "Sihtmärk ei saa olla tühi ja sisaldada kollast kuubikut"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+  </Element>
+  <Element>
+    <Heading>M08 Boccia</Heading>
+    <Question>Raamis on meeskonna varustus</Question>
+    <Tag>m08d</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            if (!(this.answers["m08d"] * 1)) {
+                score += this.answers["m08a"] * 25;
+                score += this.answers["m08b"] * 5;
+                score += this.answers["m08c"] * 10;
+            }
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M09 Rehvi kantimine</Heading>
+    <Question>Rehvid, millel on valge külg üleval<b>ning</b> toetub ainult matile</Question>
+    <Tag>m09a</Tag>
+    <!-- binary encoded tires -->
+    <Option>
+      <Label>Mitteükski</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Sinine</Label>
+      <Value>1</Value>
+    </Option>
+    <Option>
+      <Label>Must</Label>
+      <Value>2</Value>
+    </Option>
+    <Option>
+      <Label>Mõlemad</Label>
+      <Value>3</Value>
+    </Option>
+    <Score><![CDATA[
+            if ((this.answers["m09a"] * 1) & 1)
+                score += 10;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M09 Rehvi kantimine</Heading>
+    <Question>Rehvid, mis on täielikult suures sihtringis</Question>
+    <Tag>m09b</Tag>
+    <!-- binary encoded tires -->
+    <Option>
+      <Label>Mitteükski</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Sinine</Label>
+      <Value>1</Value>
+    </Option>
+    <Option>
+      <Label>Must</Label>
+      <Value>2</Value>
+    </Option>
+    <Option>
+      <Label>Mõlemad</Label>
+      <Value>3</Value>
+    </Option>
+    <Score><![CDATA[
+            if (((this.answers["m09a"] * 1) & (this.answers["m09b"] * 1)) & 1)
+                score += 5;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M09 Rehvi kantimine</Heading>
+    <Question>Raske (must) rehv läks üle punase joone (isegi osaliselt) ükskõik mis ajal</Question>
+    <Tag>m09c</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            if (!(this.answers["m09c"] * 1)) {
+                if ((this.answers["m09a"] * 1) & 2)
+                    score += 15;
+                if (((this.answers["m09a"] * 1) & (this.answers["m09b"] * 1)) & 2)
+                    score += 5;
+            }
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M10 Mobiiltelefon</Heading>
+    <Question>Telefoni valge külg on üleval pool<b>ning</b>toetub ainult matile</Question>
+    <Tag>m10</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m10"] * 15;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M11 Jooksulint</Heading>
+    <Question>Robot liigutas rullikuid nii, et osuti on</Question>
+    <Tag>m11</Tag>
+    <Option>
+      <Label>Mitteühelgi</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Hallil</Label>
+      <Value>5</Value>
+    </Option>
+    <Option>
+      <Label>Punasel</Label>
+      <Value>10</Value>
+    </Option>
+    <Option>
+      <Label>Oranžil</Label>
+      <Value>15</Value>
+    </Option>
+    <Option>
+      <Label>Kollasel</Label>
+      <Value>20</Value>
+    </Option>
+    <Option>
+      <Label>Helerohelisel</Label>
+      <Value>25</Value>
+    </Option>
+    <Option>
+      <Label>Tumerohelisel</Label>
+      <Value>30</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m11"] * 1;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M12 Sõudeergomeeter</Heading>
+    <Question>Vaba ratas on täielikult väljaspool suurt ringi</Question>
+    <Tag>m12a</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m12a"] * 15;
+        ]]></Score>
+    <Validate>
+            (this.answers["m12b"] * 1 &gt; this.answers["m12a"] * 1) ?
+                {"highlight": true, "msg": "Vaba ratas ei saa korraga olla suures ringis ja täielikult väikeses ringis"} :
+                {"highlight": false, "msg": ""}
+        </Validate>
+  </Element>
+  <Element>
+    <Heading>M12 Sõudeergomeeter</Heading>
+    <Question>Vaba ratas on täielikult väikeses ringis</Question>
+    <Tag>m12b</Tag>
+    <Option>
+      <Label>Ei</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Jah</Label>
+      <Value>1</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m12b"] * 15;
+        ]]></Score>
+    <Validate>
+            (this.answers["m12b"] * 1 &gt; this.answers["m12a"] * 1) ?
+                {"highlight": true, "msg": "Vaba ratas ei saa korraga olla suures ringis ja täielikult väikeses ringis"} :
+                {"highlight": false, "msg": ""}
+        </Validate>
+  </Element>
+  <Element>
+    <Heading>M13 Jõupink</Heading>
+    <Question>Stopper on hoova all<b>ning</b>hoova värv on</Question>
+    <Tag>m13</Tag>
+    <Option>
+      <Label>Mitteükski</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>Sinine</Label>
+      <Value>10</Value>
+    </Option>
+    <Option>
+      <Label>Magenta</Label>
+      <Value>15</Value>
+    </Option>
+    <Option>
+      <Label>Kollane</Label>
+      <Value>20</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m13"] * 1;
+        ]]></Score>
+  </Element>
+  <Element>
+    <Heading>M14 Tervisepakid</Heading>
+    <Question>Arv tervisepakke, mis puudutavad kas RePLAY logo või halli ala pingi ümber</Question>
+    <Tag>m14a</Tag>
+    <Option>
+      <Label>0</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>1</Label>
+      <Value>1</Value>
+    </Option>
+    <Option>
+      <Label>2</Label>
+      <Value>2</Value>
+    </Option>
+    <Option>
+      <Label>3</Label>
+      <Value>3</Value>
+    </Option>
+    <Option>
+      <Label>4</Label>
+      <Value>4</Value>
+    </Option>
+    <Option>
+      <Label>5</Label>
+      <Value>5</Value>
+    </Option>
+    <Option>
+      <Label>6</Label>
+      <Value>6</Value>
+    </Option>
+    <Option>
+      <Label>7</Label>
+      <Value>7</Value>
+    </Option>
+    <Option>
+      <Label>8</Label>
+      <Value>8</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m14a"] * 5;
+        ]]></Score>
+    <Validate>
+            (this.answers["m14a"] * 1 + this.answers["m14b"] * 1 &gt; 8) ?
+                {"highlight": true, "msg": "Liiga palju tervisepakke kasutuses"} :
+                {"highlight": false, "msg": ""}
+        </Validate>
+  </Element>
+  <Element>
+    <Heading>M14 Tervisepakid</Heading>
+    <Question>Arv tervisepakke, mis ripuvad aasaga üle lõuatõmbelati<b>ning</b>ei puuduta varustust</Question>
+    <Info>Maksimaalselt 4</Info>
+    <Tag>m14b</Tag>
+    <Option>
+      <Label>0</Label>
+      <Value>0</Value>
+      <Default />
+    </Option>
+    <Option>
+      <Label>1</Label>
+      <Value>1</Value>
+    </Option>
+    <Option>
+      <Label>2</Label>
+      <Value>2</Value>
+    </Option>
+    <Option>
+      <Label>3</Label>
+      <Value>3</Value>
+    </Option>
+    <Option>
+      <Label>4</Label>
+      <Value>4</Value>
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m14b"] * 10;
+        ]]></Score>
+    <Validate>
+            (this.answers["m14a"] * 1 + this.answers["m14b"] * 1 &gt; 8) ?
+                {"highlight": true, "msg": "Liiga palju tervisepakke kasutuses"} :
+                {"highlight": false, "msg": ""}
+        </Validate>
+  </Element>
+  <Element>
+    <Heading>M15 Täpsus</Heading>
+    <Question>Arv täpsuskettaid väljakul</Question>
+    <Tag>m15</Tag>
+    <Option>
+      <Label>0</Label>
+      <Value>0</Value>
+    </Option>
+    <Option>
+      <Label>1</Label>
+      <Value>5</Value>
+    </Option>
+    <Option>
+      <Label>2</Label>
+      <Value>10</Value>
+    </Option>
+    <Option>
+      <Label>3</Label>
+      <Value>20</Value>
+    </Option>
+    <Option>
+      <Label>4</Label>
+      <Value>30</Value>
+    </Option>
+    <Option>
+      <Label>5</Label>
+      <Value>45</Value>
+    </Option>
+    <Option>
+      <Label>6</Label>
+      <Value>60</Value>
+      <Default />
+    </Option>
+    <Score><![CDATA[
+            score += this.answers["m15"] * 1;
+        ]]></Score>
+  </Element>
+</Scoring_Elements>
