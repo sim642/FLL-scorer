@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>M00 Equipment Inspection Bonus</Heading>
+        <Question>All team equipment fits in the small inspection area</Question>
+        <Tag>m00</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m00"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Innovation Project Model</Heading>
+        <Question>The innovation project is large enough and part of it is touching Cargo Connect circle</Question>
+        <Info>2+ white LEGO pieces and 4+ LEGO studs long</Info>
+        <Tag>m01</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m01"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Unused Capacity</Heading>
+        <Question>The hinged container is completely closed</Question>
+        <Tag>m02a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M02 Unused Capacity</Heading>
+        <Question>Number of contents completely in the hinged container</Question>
+        <Tag>m02b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>20</Value></Option>
+        <Option><Label>2</Label><Value>20</Value></Option>
+        <Option><Label>3</Label><Value>20</Value></Option>
+        <Option><Label>4</Label><Value>20</Value></Option>
+        <Option><Label>5</Label><Value>20</Value></Option>
+        <Option><Label>6</Label><Value>30</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m02a"] * 1)
+                score += this.answers["m02b"] * 1;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Unload Cargo Plane</Heading>
+        <Question>The cargo door rests completely down, touching the black frame</Question>
+        <Tag>m03a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m03a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Unload Cargo Plane</Heading>
+        <Question>The container is completely separate from the plane</Question>
+        <Tag>m03b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m03b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Transportation Journey</Heading>
+        <Question>The truck is completely past its blue end line and is on the mat</Question>
+        <Tag>m04a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04a"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Transportation Journey</Heading>
+        <Question>The airplane is completely past its blue end line and is on the mat</Question>
+        <Tag>m04b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04b"] * 10;
+            if (this.answers["m04a"] * 1 && this.answers["m04b"] * 1)
+                score += 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Switch Engine</Heading>
+        <Question>The yellow bar rests all the way down/south</Question>
+        <Tag>m05</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m05"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Accident Avoidance</Heading>
+        <Question>The robot is parked over the blue accident-avoidance line at the end of the match</Question>
+        <Tag>m06a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M06 Accident Avoidance</Heading>
+        <Question>The yellow panel is knocked down</Question>
+        <Tag>m06b</Tag>
+        <Option><Label>No</Label><Value>20</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>30</Value></Option>
+    </Element>
+
+    <Element>
+        <Heading>M06 Accident Avoidance</Heading>
+        <Question>The black frame is knocked down</Question>
+        <Tag>m06c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m06a"] * 1 && !(this.answers["m06c"] * 1))
+                score += this.answers["m06b"] * 1;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 Unload Cargo Ship</Heading>
+        <Question>The container is no longer touching the cargo ship’s east deck</Question>
+        <Tag>m07a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m07a"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m07a"] * 1) && this.answers["m07b"] * 1) ?
+                {"highlight": true, "msg": "Container cannot be both touching and completely east"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M07 Unload Cargo Ship</Heading>
+        <Question>The container is completely east of the cargo ship’s east deck</Question>
+        <Tag>m07b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m07b"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m07a"] * 1) && this.answers["m07b"] * 1) ?
+                {"highlight": true, "msg": "Container cannot be both touching and completely east"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M08 Air Drop</Heading>
+        <Question>The food package is separated from your helicopter</Question>
+        <Tag>m08a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m08a"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m08a"] * 1) && this.answers["m08c"] * 1) ?
+                {"highlight": true, "msg": "Food package from your helicopter cannot be both not separated and separated"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M08 Air Drop</Heading>
+        <Question>The other team’s food package is completely in your field’s Cargo Connect circle</Question>
+        <Tag>m08b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m08b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M08 Air Drop</Heading>
+        <Question>Both teams have separated their food package from their field’s helicopters</Question>
+        <Tag>m08c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m08c"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m08a"] * 1) && this.answers["m08c"] * 1) ?
+                {"highlight": true, "msg": "Food package from your helicopter cannot be both not separated and separated"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M09 Train Tracks</Heading>
+        <Question>The train tracks are repaired, resting completely down/west</Question>
+        <Tag>m09a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 Train Tracks</Heading>
+        <Question>The train is latched at the end of the tracks</Question>
+        <Tag>m09b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09b"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 Sorting Center</Heading>
+        <Question>The light orange container is the only container completely in the blue sorting area box</Question>
+        <Tag>m10</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Home Delivery</Heading>
+        <Question>The package is on the doorstep, and not touching any equipment</Question>
+        <Tag>m11</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Partly</Label><Value>20</Value></Option>
+        <Option><Label>Completely</Label><Value>30</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m11"] * 1;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Large Delivery</Heading>
+        <Question>The turbine blade is touching only the blue holder and</Question>
+        <Tag>m12a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>The Mat</Label><Value>20</Value></Option>
+        <Option><Label>Nothing Else</Label><Value>30</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12a"] * 1;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Large Delivery</Heading>
+        <Question>The chicken statue is upright with its base in its circle</Question>
+        <Tag>m12b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Partly</Label><Value>5</Value></Option>
+        <Option><Label>Completely</Label><Value>10</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12b"] * 1;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 Platooning Trucks</Heading>
+        <Question>Both trucks are latched together completely outside of home</Question>
+        <Tag>m13a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m13a"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 Platooning Trucks</Heading>
+        <Question>A truck is latched to the bridge</Question>
+        <Tag>m13b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m13b"] * 10;
+            if (this.answers["m13a"] * 1 && this.answers["m13b"] * 1)
+                score += 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M14 Bridge</Heading>
+        <Question>Number of bridge decks that have been lowered onto their center support</Question>
+        <Tag>m14</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M15 Load Cargo</Heading>
+        <Question>Number of containers touching only the platooning trucks completely outside of home</Question>
+        <Tag>m15a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2 or more</Label><Value>2</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m15a"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            ((this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 > 0) && (this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
+                {"highlight": true, "msg": "Too many containers in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M15 Load Cargo</Heading>
+        <Question>Number of containers touching only the train</Question>
+        <Tag>m15b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2 or more</Label><Value>2</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m15b"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            ((this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 > 0) && (this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
+                {"highlight": true, "msg": "Too many containers in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M15 Load Cargo</Heading>
+        <Question>Number of containers touching only the cargo ship’s west deck</Question>
+        <Tag>m15c</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2 or more</Label><Value>2</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m15c"] * 30;
+        ]]></Score>
+        <Validate><![CDATA[
+            ((this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 > 0) && (this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
+                {"highlight": true, "msg": "Too many containers in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M16 Cargo Connect</Heading>
+        <Question>Number of containers partly in any circle</Question>
+        <Tag>m16a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m16a"] * 5;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8) ?
+                {"highlight": true, "msg": "Too many containers in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M16 Cargo Connect</Heading>
+        <Question>Number of containers completely in any circle</Question>
+        <Tag>m16b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Option><Label>8</Label><Value>8</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m16b"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8) ?
+                {"highlight": true, "msg": "Too many containers in use"} :
+            (this.answers["m16b"] * 1 < this.answers["m16e"] * 1) ?
+                {"highlight": true, "msg": "Too few containers completely in circles"} :
+            (this.answers["m16b"] * 1 > 0 && this.answers["m16e"] * 1 == 0) ?
+                {"highlight": true, "msg": "Too many containers completely in circles"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M16 Cargo Connect</Heading>
+        <Question>The blue (not hinged) container is completely in the blue circle</Question>
+        <Tag>m16c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m16c"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m16c"] * 1 + this.answers["m16d"] * 1 > this.answers["m16e"] * 1) ?
+                {"highlight": true, "msg": "Too many containers completely in circles"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M16 Cargo Connect</Heading>
+        <Question>The lime green container is completely in the lime green circle</Question>
+        <Tag>m16d</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m16d"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m16c"] * 1 + this.answers["m16d"] * 1 > this.answers["m16e"] * 1) ?
+                {"highlight": true, "msg": "Too many containers completely in circles"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M16 Cargo Connect</Heading>
+        <Question>Number of circles with at least one container completely in them</Question>
+        <Tag>m16e</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m16e"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m16b"] * 1 < this.answers["m16e"] * 1) ?
+                {"highlight": true, "msg": "Too few containers completely in circles"} :
+            (this.answers["m16b"] * 1 > 0 && this.answers["m16e"] * 1 == 0) ?
+                {"highlight": true, "msg": "Too many containers completely in circles"} :
+            (this.answers["m16c"] * 1 + this.answers["m16d"] * 1 > this.answers["m16e"] * 1) ?
+                {"highlight": true, "msg": "Too many containers completely in circles"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M17 Precision</Heading>
+        <Question>Number of precision tokens left on the field</Question>
+        <Tag>m17</Tag>
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>10</Value></Option>
+        <Option><Label>2</Label><Value>15</Value></Option>
+        <Option><Label>3</Label><Value>25</Value></Option>
+        <Option><Label>4</Label><Value>35</Value></Option>
+        <Option><Label>5</Label><Value>50</Value></Option>
+        <Option><Label>6</Label><Value>60</Value><Default/></Option> <!-- Different value to not have double active -->
+        <Score><![CDATA[
+            score += Math.min(this.answers["m17"] * 1, 50);
+        ]]></Score>
+    </Element>
+
+</Scoring_Elements>
