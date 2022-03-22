@@ -240,6 +240,11 @@
         <Score><![CDATA[
             score += this.answers["m10"] * 20;
         ]]></Score>
+        <Validate><![CDATA[
+            ((this.answers["m10"] * 1 > 0) && (this.answers["m10"] * 1 + this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
+                {"highlight": true, "msg": "Too many containers in use"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -325,7 +330,7 @@
             score += this.answers["m15a"] * 10;
         ]]></Score>
         <Validate><![CDATA[
-            ((this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 > 0) && (this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
+            ((this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 > 0) && (this.answers["m10"] * 1 + this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
                 {"highlight": true, "msg": "Too many containers in use"} :
                 {"highlight": false, "msg": ""}
         ]]></Validate>
@@ -342,7 +347,7 @@
             score += this.answers["m15b"] * 20;
         ]]></Score>
         <Validate><![CDATA[
-            ((this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 > 0) && (this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
+            ((this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 > 0) && (this.answers["m10"] * 1 + this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
                 {"highlight": true, "msg": "Too many containers in use"} :
                 {"highlight": false, "msg": ""}
         ]]></Validate>
@@ -359,7 +364,7 @@
             score += this.answers["m15c"] * 30;
         ]]></Score>
         <Validate><![CDATA[
-            ((this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 > 0) && (this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
+            ((this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 > 0) && (this.answers["m10"] * 1 + this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
                 {"highlight": true, "msg": "Too many containers in use"} :
                 {"highlight": false, "msg": ""}
         ]]></Validate>
@@ -382,7 +387,7 @@
             score += this.answers["m16a"] * 5;
         ]]></Score>
         <Validate><![CDATA[
-            (this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8) ?
+            ((this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 0) && (this.answers["m10"] * 1 + this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
                 {"highlight": true, "msg": "Too many containers in use"} :
                 {"highlight": false, "msg": ""}
         ]]></Validate>
@@ -405,7 +410,7 @@
             score += this.answers["m16b"] * 10;
         ]]></Score>
         <Validate><![CDATA[
-            (this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8) ?
+            ((this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 0) && (this.answers["m10"] * 1 + this.answers["m15a"] * 1 + this.answers["m15b"] * 1 + this.answers["m15c"] * 1 + this.answers["m16a"] * 1 + this.answers["m16b"] * 1 > 8)) ?
                 {"highlight": true, "msg": "Too many containers in use"} :
             (this.answers["m16b"] * 1 < this.answers["m16e"] * 1) ?
                 {"highlight": true, "msg": "Too few containers completely in circles"} :
