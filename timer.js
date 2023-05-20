@@ -36,7 +36,9 @@ function startTimer(func) {
         displayTime(endtime - Date.now(), func);
     }, 100);
 
-    ga("send", "event", "timer", "start");
+    gtag('event', 'timer', {
+        'type': 'start'
+    });
 }
 
 function stopTimer(reset) {
@@ -46,8 +48,12 @@ function stopTimer(reset) {
     clearInterval(stepper);
     stepper = null;
 
-    if (!reset)
-        ga("send", "event", "timer", "stop", $("#time").text().trim());
+    if (!reset) {
+        gtag('event', 'timer', {
+            'type': 'stop',
+            'time': $("#time").text().trim()
+        });
+    }
 }
 
 function resetTimer(func) {

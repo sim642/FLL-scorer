@@ -195,12 +195,18 @@ $(function() {
         document.title = "FLL scorer - " + $("option[value=" + challenge + "]", "#challenge").text();
         if (!ni)
             window.history.pushState({}, document.title, "?challenge=" + challenge);
-        ga("send", "event", "challenge", "load", challenge);
+        gtag('event', 'challenge', {
+            'type': 'load',
+            'challenge': challenge
+        });
     }).trigger("change", true);
 
     $("#reset").on("click", function() {
         reset();
-        ga("send", "event", "challenge", "reset", $("#challenge").val());
+        gtag('event', 'challenge', {
+            'type': 'reset',
+            'challenge': $("#challenge").val()
+        });
     });
 
     $("#timer").on("click", function() {
@@ -229,7 +235,11 @@ $(function() {
 
         e.preventDefault();
 
-        ga("send", "event", "scoring", "validate", $("#challenge").val(), good ? score : -1);
+        gtag('event', 'challenge', {
+            'type': 'validate',
+            'challenge': $("#challenge").val(),
+            'score': good ? score : -1
+        });
     });
 });
 
