@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>M00 Equipment Inspection</Heading>
+        <Question>All team equipment fits in one launch area and under 305mm</Question>
+        <Tag>m00</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m00"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 3D Cinema</Heading>
+        <Question>If the 3D cinema's small red beam is completely to the right of the black frame</Question>
+        <Tag>m01</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m01"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Theater Scene Change</Heading>
+        <Question>If your theater's red flag is down and the active scene color is</Question>
+        <Tag>m02a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Blue</Label><Value>1</Value></Option>
+        <Option><Label>Pink</Label><Value>2</Value></Option>
+        <Option><Label>Orange</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m02a"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Theater Scene Change</Heading>
+        <Question>Do both teams' active scenes match</Question>
+        <Tag>m02b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m02b"] * 1) {
+                switch (this.answers["m02a"] * 1) {
+                    case 0:
+                        break;
+                    case 1:
+                        score += 20;
+                        break;
+                    case 2:
+                        score += 30;
+                        break;
+                    case 3:
+                        score += 10;
+                        break;
+                }
+            }
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Immersive Experience</Heading>
+        <Question>The three immersive experience screens are raised</Question>
+        <Tag>m03</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m03"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Masterpiece</Heading>
+        <Question>Your team's LEGO® art piece is at least partly in the museum target area</Question>
+        <Tag>m04a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04a"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Masterpiece</Heading>
+        <Question>The art piece is completely supported by the pedestal</Question>
+        <Tag>m04b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m04a"] * 1)
+                score += this.answers["m04b"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Augmented Reality Statue</Heading>
+        <Question>The augmented reality statue’s orange lever is rotated completely to the right</Question>
+        <Tag>m05</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m05"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Music Concert Lights and Sounds</Heading>
+        <Question>The lights' orange lever is rotated completely downwards</Question>
+        <Tag>m06a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m06a"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Music Concert Lights and Sounds</Heading>
+        <Question>The speakers' orange lever is rotated completely to the left</Question>
+        <Tag>m06b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m06b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 Hologram Performer</Heading>
+        <Question>The performer's orange push activator is completely past the black stage set line</Question>
+        <Tag>m07</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m07"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M08 Rolling Camera</Heading>
+        <Question>The rolling camera's white pointer is left of</Question>
+        <Tag>m08</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Dark blue</Label><Value>1</Value></Option>
+        <Option><Label>Dark &amp; medium blue</Label><Value>2</Value></Option>
+        <Option><Label>Dark, medium &amp; light blue</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m08"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 Movie Set</Heading>
+        <Question>The boat is touching the mat and is completely past the black scene line</Question>
+        <Tag>m09a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09a"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 Movie Set</Heading>
+        <Question>The camera is touching the mat and is at least partly in the camera target area</Question>
+        <Tag>m09b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 Sound Mixer</Heading>
+        <Question>Number of sound mixer sliders raised</Question>
+        <Tag>m10</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Light Show</Heading>
+        <Question>The light show's white pointer is within zone</Question>
+        <Tag>m11</Tag>
+        <Option><Label>None</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yellow</Label><Value>1</Value></Option>
+        <Option><Label>Green</Label><Value>2</Value></Option>
+        <Option><Label>Blue</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m11"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Virtual Reality Artist</Heading>
+        <Question>The chicken is intact and has moved from its starting position</Question>
+        <Tag>m12a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12a"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Virtual Reality Artist</Heading>
+        <Question>The chicken is over or completely past the lavender dot</Question>
+        <Tag>m12b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m12a"] * 1)
+                score += this.answers["m12b"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 Craft Creator</Heading>
+        <Question>If the craft machine's orange and white lid is completely open</Question>
+        <Tag>m13a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m13a"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 Craft Creator</Heading>
+        <Question>If the craft machine's light pink latch is pointing straight down</Question>
+        <Tag>m13b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m13b"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M14 Audience Delivery</Heading>
+        <Question>Number of audience members completely in a target destination</Question>
+        <Tag>m14a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14a"] * 5;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m14a"] * 1 < this.answers["m14b"] * 1) ?
+                {"highlight": true, "msg": "Too few audience members in destinations"} :
+            (this.answers["m14a"] * 1 > 0 && this.answers["m14b"] * 1 == 0) ?
+                {"highlight": true, "msg": "Too many audience members in destinations"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M14 Audience Delivery</Heading>
+        <Question>Number of destinations with at least one audience member completely in it</Question>
+        <Tag>m14b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14b"] * 5;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m14a"] * 1 < this.answers["m14b"] * 1) ?
+                {"highlight": true, "msg": "Too few audience members in destinations"} :
+            (this.answers["m14a"] * 1 > 0 && this.answers["m14b"] * 1 == 0) ?
+                {"highlight": true, "msg": "Too many audience members in destinations"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M15 Expert Delivery</Heading>
+        <Question>Number of experts at least partly in their target destination</Question>
+        <Tag>m15</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m15"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M16 Precision Tokens</Heading>
+        <Question>Number of precision tokens remaining</Question>
+        <Tag>m16</Tag>
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>10</Value></Option>
+        <Option><Label>2</Label><Value>15</Value></Option>
+        <Option><Label>3</Label><Value>25</Value></Option>
+        <Option><Label>4</Label><Value>35</Value></Option>
+        <Option><Label>5</Label><Value>50</Value></Option>
+        <Option><Label>6</Label><Value>60</Value><Default/></Option> <!-- Different value to not have double active -->
+        <Score><![CDATA[
+            score += Math.min(this.answers["m16"] * 1, 50);
+        ]]></Score>
+    </Element>
+
+</Scoring_Elements>
