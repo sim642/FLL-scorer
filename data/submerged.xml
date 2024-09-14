@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>EI Equipment Inspection</Heading>
+        <Question>The robot and all equipment fit completely in one launch area and under the height limit</Question>
+        <Tag>ei</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["ei"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Coral Nursery 🛇</Heading>
+        <Question>The coral tree is hanging on the coral tree support</Question>
+        <Tag>m01a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m01a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Coral Nursery 🛇</Heading>
+        <Question>The bottom of the coral tree is in its holder</Question>
+        <Tag>m01b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m01a"] * 1)
+                score += this.answers["m01b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Coral Nursery 🛇</Heading>
+        <Question>The coral buds are flipped up</Question>
+        <Tag>m01c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m01c"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Shark</Heading>
+        <Question>The shark is no longer touching the cave</Question>
+        <Tag>m02a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m02a"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m02a"] * 1) && this.answers["m02b"] * 1) ?
+                {"highlight": true, "msg": "Shark cannot be in the shark habitat and still touching the cave"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M02 Shark</Heading>
+        <Question>The shark is touching the mat at least partly in the shark habitat</Question>
+        <Tag>m02b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m02b"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m02a"] * 1) && this.answers["m02b"] * 1) ?
+                {"highlight": true, "msg": "Shark cannot be in the shark habitat and still touching the cave"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M03 Coral Reef 🛇</Heading>
+        <Question>The coral reef is flipped up, not touching the mat</Question>
+        <Tag>m03a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m03a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Coral Reef 🛇</Heading>
+        <Question>Number of reef segments standing upright, outside of home, and touching the mat</Question>
+        <Tag>m03b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m03b"] * 5;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Scuba Diver</Heading>
+        <Question>The scuba diver is no longer touching the coral nursery</Question>
+        <Info>The “coral nursery” includes any part of the Mission 01 mission model</Info>
+        <Tag>m04a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04a"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m04a"] * 1) && this.answers["m04b"] * 1) ?
+                {"highlight": true, "msg": "Scuba diver cannot be on the coral reef support and still touching the coral nursery"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M04 Scuba Diver</Heading>
+        <Question>The scuba diver is hanging on the coral reef support</Question>
+        <Tag>m04b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04b"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m04a"] * 1) && this.answers["m04b"] * 1) ?
+                {"highlight": true, "msg": "Scuba diver cannot be on the coral reef support and still touching the coral nursery"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M05 Angler Fish</Heading>
+        <Question>The angler fish is latched within the shipwreck</Question>
+        <Tag>m05</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m05"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Raise the Mast 🛇</Heading>
+        <Question>The shipwreck’s mast is completely raised</Question>
+        <Info>The shipwreck’s mast is considered raised when the latch prevents it from returning to its starting position</Info>
+        <Tag>m06</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m06"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 Kraken's Treasure 🛇</Heading>
+        <Question>The treasure chest is completely outside the kraken’s nest</Question>
+        <Tag>m07</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m07"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M08 Artificial Habitat 🛇</Heading>
+        <Question>Number of artificial habitat stack segments completely flat and upright</Question>
+        <Info>There are four segments of the artificial habitat stack, each defined by its yellow base. A segment is considered upright when the crab is above its yellow base</Info>
+        <Tag>m08</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m08"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 Unexpected Encounter</Heading>
+        <Question>The unknown creature is released</Question>
+        <Tag>m09a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09a"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m09a"] * 1) && this.answers["m09b"] * 1) ?
+                {"highlight": true, "msg": "Unknown create cannot be in the cold seep and still unreleased"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M09 Unexpected Encounter</Heading>
+        <Question>The unknown creature is at least partly in the cold seep</Question>
+        <Tag>m09b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09b"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m09a"] * 1) && this.answers["m09b"] * 1) ?
+                {"highlight": true, "msg": "Unknown create cannot be in the cold seep and still unreleased"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M10 Send over the Submersible 🛇</Heading>
+        <Question>Your team’s yellow flag is down</Question>
+        <Tag>m10a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10a"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 Send over the Submersible 🛇</Heading>
+        <Question>The submersible is clearly closer to the opposing field</Question>
+        <Info>Teams may not block the opposing team. It is not possible to earn the bonus in remote competitions or if there is no opposing team</Info>
+        <Tag>m10b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Sonar Discovery</Heading>
+        <Question>Number of whales revealed</Question>
+        <Tag>m11</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>20</Value></Option>
+        <Option><Label>2</Label><Value>30</Value></Option> <!-- Includes bonus -->
+        <Score><![CDATA[
+            score += this.answers["m11"] * 1;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Feed the Whale 🛇</Heading>
+        <Question>Number of krill at least partly in the whale’s mouth</Question>
+        <Tag>m12</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 Changing Shipping Lanes</Heading>
+        <Question>The ship is in the new shipping lane, touching the mat</Question>
+        <Tag>m13</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m13"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M14 Sample Collection</Heading>
+        <Question>The water sample is completely outside the water sample area</Question>
+        <Tag>m14a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14a"] * 5;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M14 Sample Collection</Heading>
+        <Question>The seabed sample is no longer touching the seabed</Question>
+        <Tag>m14b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14b"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M14 Sample Collection</Heading>
+        <Question>The plankton sample is no longer touching the kelp forest</Question>
+        <Tag>m14c</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14c"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M14 Sample Collection</Heading>
+        <Question>Number of trident pieces no longer touching the shipwreck</Question>
+        <Tag>m14d</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[
+            switch (this.answers["m14d"] * 1) {
+                case 0:
+                    break;
+                case 1:
+                    score += 20;
+                    break;
+                case 2:
+                    score += 30;
+                    break;
+            }
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M15 Research Vessel 🛇</Heading>
+        <Question>Number of samples, trident part(s), or treasure chest at least partly in the research vessel’s cargo area</Question>
+        <Tag>m15a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m15a"] * 5;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M15 Research Vessel 🛇</Heading>
+        <Question>The ports latch is at least partly in the research vessel’s loop</Question>
+        <Tag>m15b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m15b"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>PT Precision Tokens</Heading>
+        <Question>Number of precision tokens remaining</Question>
+        <Tag>pt</Tag>
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>10</Value></Option>
+        <Option><Label>2</Label><Value>15</Value></Option>
+        <Option><Label>3</Label><Value>25</Value></Option>
+        <Option><Label>4</Label><Value>35</Value></Option>
+        <Option><Label>5</Label><Value>50</Value></Option>
+        <Option><Label>6</Label><Value>60</Value><Default/></Option> <!-- Different value to not have double active -->
+        <Score><![CDATA[
+            score += Math.min(this.answers["pt"] * 1, 50);
+        ]]></Score>
+    </Element>
+
+</Scoring_Elements>
