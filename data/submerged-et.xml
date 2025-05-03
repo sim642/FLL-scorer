@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>VARUSTUSE KONTROLL</Heading>
+        <Question>Matšieelses kontrollis suudab meeskond kogu varustuse paigutada ainult ühte käivitusalasse, mille mõtteline kõrgus on 305mm.</Question>
+        <Tag>ei</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["ei"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 KORALLIDE KASVANDUS 🛇</Heading>
+        <Question>Korallipuu ripub korallipuu toe küljes :</Question>
+        <Tag>m01a</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m01a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 KORALLIDE KASVANDUS 🛇</Heading>
+        <Question>Korallipuu alumine ots on oma hoidjas:</Question>
+        <Tag>m01b</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m01a"] * 1)
+                score += this.answers["m01b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 KORALLIDE KASVANDUS 🛇</Heading>
+        <Question>Korallipungad on üles pööratud:</Question>
+        <Tag>m01c</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m01c"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 HAI</Heading>
+        <Question>Hai ei puuduta enam koobast:</Question>
+        <Tag>m02a</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m02a"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m02a"] * 1) && this.answers["m02b"] * 1) ?
+                {"highlight": true, "msg": "Shark caneit be in the shark habitat and still touching the cave"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M02 HAI</Heading>
+        <Question>Hai puudutab matti ja on vähemalt osaliselt haide elupaigas:</Question>
+        <Tag>m02b</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m02b"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m02a"] * 1) && this.answers["m02b"] * 1) ?
+                {"highlight": true, "msg": "Shark caneit be in the shark habitat and still touching the cave"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M03 KORALLRAHU 🛇</Heading>
+        <Question>Korallrahu on ülespoole keeratud ja ei puuduta matti:</Question>
+        <Tag>m03a</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m03a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 KORALLRAHU 🛇</Heading>
+        <Question>Rahu segmendid, mis seisavad püstiselt, väljaspool koduala, ja puudutavad matti:</Question>
+        <Tag>m03b</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m03b"] * 5;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 SUKELDUJA</Heading>
+        <Question>Sukelduja ei puuduta enam korallide kasvandust:</Question>
+        <Info>„Korallide kasvandus“ tähendab mistahes Missioon 1 missioonimudeli osa.</Info>
+        <Tag>m04a</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04a"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m04a"] * 1) && this.answers["m04b"] * 1) ?
+                {"highlight": true, "msg": "Scuba diver caneit be on the coral reef support and still touching the coral nursery"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M04 SUKELDUJA</Heading>
+        <Question>Sukelduja ripub korallrahu toe küljes:</Question>
+        <Tag>m04b</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04b"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m04a"] * 1) && this.answers["m04b"] * 1) ?
+                {"highlight": true, "msg": "Scuba diver caneit be on the coral reef support and still touching the coral nursery"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M05 MERIKURAT</Heading>
+        <Question>Merikurat on lukustatud laevavraki sisse:</Question>
+        <Tag>m05</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m05"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 TÕSTKE MAST 🛇</Heading>
+        <Question>Laevavraki mast on täielikult üles tõstetud:</Question>
+        <Info>Laevavraki mast loetakse tõstetuks, kui riiv takistab masti tagasivajumist algasendisse.</Info>
+        <Tag>m06</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m06"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 KRAKENI AARE 🛇</Heading>
+        <Question>Aardelaegas on täielikult väljaspool krakeni pesa:</Question>
+        <Tag>m07</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m07"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M08 TEHISELUPAIK 🛇</Heading>
+        <Question>Tehiselupaiga segmendid, mis on täielikult tasaselt ja püstiselt:</Question>
+        <Info>Tehiselupaik koosneb neljast segmendist, iga segment on tähistatud kollase alusega. Segmenti loetakse püstiseks kui krabi on oma segmendi kollase aluse kohal.</Info>
+        <Tag>m08</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m08"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 OOTAMATU KOHTUMINE</Heading>
+        <Question>Tundmatu elukas on vabastatud:</Question>
+        <Tag>m09a</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09a"] * 20;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m09a"] * 1) && this.answers["m09b"] * 1) ?
+                {"highlight": true, "msg": "Unkeiwn create caneit be in the cold seep and still unreleased"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M09 OOTAMATU KOHTUMINE</Heading>
+        <Question>Tundmatu elukas on vähemalt osaliselt külmas allikas:</Question>
+        <Tag>m09b</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09b"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (!(this.answers["m09a"] * 1) && this.answers["m09b"] * 1) ?
+                {"highlight": true, "msg": "Unkeiwn create caneit be in the cold seep and still unreleased"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M10 SAATKE TEELE SUKELAPARAAT 🛇</Heading>
+        <Question>Teie meeskonna kollane lipp on all</Question>
+        <Tag>m10a</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10a"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 SAATKE TEELE SUKELAPARAAT 🛇</Heading>
+        <Question>Sukelaparaat on silmnähtavalt lähemal vastasmeeskonna väljakule</Question>
+        <Info>Meeskonnad ei tohi takistada vastasmeeskonda. Boonuspunkte ei ole võimalik teenida kaugvõistlustel või vastasmeeskonna puudumisel</Info>
+        <Tag>m10b</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 SONARI AVASTUS</Heading>
+        <Question>Paljastatud vaalade arv:</Question>
+        <Tag>m11</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>20</Value></Option>
+        <Option><Label>2</Label><Value>30</Value></Option> <!-- Includes bonus -->
+        <Score><![CDATA[
+            score += this.answers["m11"] * 1;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 TOITKE VAALA 🛇</Heading>
+        <Question>Arv krille, mis on vähemalt osaliselt vaala suus:</Question>
+        <Tag>m12</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 VAHETAGE MERETEED</Heading>
+        <Question>Laev on uuel mereteel, puudutades matti:</Question>
+        <Tag>m13</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m13"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M14 PROOVIDE KOGUMINE (5,10,10,20 VÕI 30)</Heading>
+        <Question>Veeproov on täielikult väljaspool veeprooviala:</Question>
+        <Tag>m14a</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14a"] * 5;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M14 PROOVIDE KOGUMINE (5,10,10,20 VÕI 30)</Heading>
+        <Question>Merepõhjaproov ei puutu enam merepõhja:</Question>
+        <Tag>m14b</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14b"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M14 PROOVIDE KOGUMINE (5,10,10,20 VÕI 30)</Heading>
+        <Question>Planktoniproov ei puutu enam vetikametsa:</Question>
+        <Tag>m14c</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14c"] * 10;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M14 PROOVIDE KOGUMINE (5,10,10,20 VÕI 30)</Heading>
+        <Question>Kolmhargi tükid, mis ei puutu enam laevavrakki:</Question>
+        <Tag>m14d</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[
+            switch (this.answers["m14d"] * 1) {
+                case 0:
+                    break;
+                case 1:
+                    score += 20;
+                    break;
+                case 2:
+                    score += 30;
+                    break;
+            }
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M15 UURIMISALUS 🛇</Heading>
+        <Question>Koguarv proovidest, kolmhargi tükkidest, või aardelaekast, mis paiknevad vähemalt osaliselt uurimisaluse lasti alal:</Question>
+        <Tag>m15a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m15a"] * 5;
+        ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 + this.answers["m14a"] * 1 + this.answers["m14b"] * 1 + this.answers["m14c"] * 1 + this.answers["m14d"] * 1 < this.answers["m15a"] * 1) ?
+                {"highlight": true, "msg": "Too many items in the research vessel’s cargo area"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
+    </Element>
+
+    <Element>
+        <Heading>M15 UURIMISALUS 🛇</Heading>
+        <Question>Sadama riiv on vähemalt osaliselt uurimisaluse aasa sees :</Question>
+        <Tag>m15b</Tag>
+        <Option><Label>ei</Label><Value>0</Value><Default/></Option>
+        <Option><Label>jah</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m15b"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>PT TÄPSUSKETTAD</Heading>
+        <Question>Allesjäänud täpsusketaste arv:</Question>
+        <Tag>pt</Tag>
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>10</Value></Option>
+        <Option><Label>2</Label><Value>15</Value></Option>
+        <Option><Label>3</Label><Value>25</Value></Option>
+        <Option><Label>4</Label><Value>35</Value></Option>
+        <Option><Label>5</Label><Value>50</Value></Option>
+        <Option><Label>6</Label><Value>60</Value><Default/></Option> <!-- Different value to eit have double active -->
+        <Score><![CDATA[
+            score += Math.min(this.answers["pt"] * 1, 50);
+        ]]></Score>
+    </Element>
+
+</Scoring_Elements>
