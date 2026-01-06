@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>EI Varustuse kontroll</Heading>
+        <Question>Matšieelses kontrollis suudab meeskond kogu varustuse paigutada ainult ühte käivitusalasse, mille mõtteline kõrgus on 305mm</Question>
+        <Tag>ei</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["ei"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Pinnase harjamine 🛇</Heading>
+        <Question>Mullakihid on täielikult eemaldatud, puudutades matti</Question>
+        <Tag>m01a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m01a"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Pinnase harjamine 🛇</Heading>
+        <Question>Arheoloogi harja ots ei puuduta kaevamiskohta</Question>
+        <Tag>m01b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m01b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Kaardi paljastamine</Heading>
+        <Question>Kaardi osad on täielikult avatud</Question>
+        <Tag>m02</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m02"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Kaevanduse uurija</Heading>
+        <Question>Teie meeskonna kaevanduskärud on vastasmeeskonna väljakul</Question>
+        <Info>Sinu meeskonna kaevanduskärud peavad läbima kaevanduse sissepääsu, et saada selle missiooni eest punkte</Info>
+        <Tag>m03a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m03a"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Kaevanduse uurija</Heading>
+        <Question><b>Boonus:</b> ja vastasmeeskonna kaevanduskärud on teie meeskonna väljakul</Question>
+        <Info>Kaugvõistlustel või vastasmeeskonna puudumisel ei ole võimalik boonust teenida</Info>
+        <Tag>m03b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m03a"] * 1)
+                score += this.answers["m03b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Ettevaatlik taastamine 🛇</Heading>
+        <Question>Väärisese ei puuduta kaevandust</Question>
+        <Tag>m04a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04a"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Ettevaatlik taastamine 🛇</Heading>
+        <Question>Mõlemad kaevanduse tugistruktuurid on püsti</Question>
+        <Tag>m04b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Kes siin elas? 🛇</Heading>
+        <Question>Hoone põrand on täielikult püsti</Question>
+        <Tag>m05</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m05"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Sepikoda</Heading>
+        <Question>Maagiklotsid ei puuduta sepikoda</Question>
+        <Info>Tehnikud võivad kodualas käsitsi eraldada maagiklotse, et paljastada kivistunud artefakt (vaata Missiooni 14)</Info>
+        <Tag>m06</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m06"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 Raskuse tõstmine</Heading>
+        <Question>Veskikivi ei puuduta alust</Question>
+        <Tag>m07</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m07"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M08 Punker</Heading>
+        <Question>Konserveeritud tükid on punkrist väljaspool</Question>
+        <Tag>m08</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m08"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 Mis on müügiks? 🛇</Heading>
+        <Question>Katus on täielikult üles tõstetud</Question>
+        <Tag>m09a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 Mis on müügiks? 🛇</Heading>
+        <Question>Turukaubad on täielikult üles tõstetud</Question>
+        <Tag>m09b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 Kaalukausi kallutamine</Heading>
+        <Question>Kaal on kallutatud ja puudutab matti</Question>
+        <Tag>m10a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 Kaalukausi kallutamine</Heading>
+        <Question>Kaalukauss on täielikult eemaldatud ja ei puuduta kaalu</Question>
+        <Tag>m10b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Õngitseja artefaktid 🛇</Heading>
+        <Question>Artefaktid tõstetakse kaevamiskohast üles</Question>
+        <Tag>m11a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m11a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Õngitseja artefaktid 🛇</Heading>
+        <Question><b>Boonus:</b> ja kraana lipp langetatakse</Question>
+        <Tag>m11b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m11a"] * 1)
+                score += this.answers["m11b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Päästeoperatsioon 🛇</Heading>
+        <Question>Liiv on täielikult eemaldatud</Question>
+        <Info>Liiv loetakse täielikult eemaldatuks, kui tõmbeaktivaator on matil asuva joone juures või sellest kaugemal</Info>
+        <Tag>m12a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Päästeoperatsioon 🛇</Heading>
+        <Question>Laev on täielikult üles tõstetud</Question>
+        <Tag>m12b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 Kuju taastamine 🛇</Heading>
+        <Question>Kuju on täielikult püstitatud</Question>
+        <Tag>m13</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m13"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M14 Foorum 🛇</Heading>
+        <Question>Artefaktid, mis asuvad vähemalt osaliselt foorumis ja puudutavad matti</Question>
+        <Info>Artefaktid: Hari, Pinnas, Väärtuslik artefakt, Vastasmeeskonna kaevanduskäru, Maak koos kivistunud artefaktiga, Veskikivi, Kaalukauss</Info>
+        <Tag>m14</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14"] * 5;
+        ]]></Score>
+        <!-- TODO: Validate if enough items have been released from other missions? Not done in other scorers. -->
+    </Element>
+
+    <Element>
+        <Heading>M15 Asukoha määramine</Heading>
+        <Question>Kohad, kus lipumärk on vähemalt osaliselt matil ja puudutab seda</Question>
+        <Info>Asukohad on näha väljaku raamistikus</Info>
+        <Tag>m15</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m15"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>PT Täpsuskettad</Heading>
+        <Question>Allesjäänud täpsusketaste arv</Question>
+        <Tag>pt</Tag>
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>10</Value></Option>
+        <Option><Label>2</Label><Value>15</Value></Option>
+        <Option><Label>3</Label><Value>25</Value></Option>
+        <Option><Label>4</Label><Value>35</Value></Option>
+        <Option><Label>5</Label><Value>50</Value></Option>
+        <Option><Label>6</Label><Value>60</Value><Default/></Option> <!-- Different value to not have double active -->
+        <Score><![CDATA[
+            score += Math.min(this.answers["pt"] * 1, 50);
+        ]]></Score>
+    </Element>
+
+</Scoring_Elements>
