@@ -44,7 +44,7 @@ function buildElements() {
         $item.append(element.question);
         if (element.info) {
             var $tooltip = $("<span></span>").addClass("glyphicon glyphicon-info-sign text-info").attr("title", element.info);
-            $tooltip.tooltip();
+            $tooltip.tooltip({html: true});
 
             $item.append(" ");
             $item.append($tooltip);
