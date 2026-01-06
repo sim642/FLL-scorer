@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Scoring_Elements>
+
+    <Element>
+        <Heading>EI Equipment Inspection</Heading>
+        <Question>The robot and all equipment fit completely in one launch area and under the height limit</Question>
+        <Tag>ei</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["ei"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Surface Brushing 🛇</Heading>
+        <Question>Soil deposits completely cleared, touching the mat</Question>
+        <Tag>m01a</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m01a"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M01 Surface Brushing 🛇</Heading>
+        <Question>Archaeologist’s brush is not touching the dig site</Question>
+        <Tag>m01b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m01b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M02 Map Reveal</Heading>
+        <Question>Topsoil sections completely cleared</Question>
+        <Tag>m02</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m02"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Mineshaft Explorer</Heading>
+        <Question>Your team’s minecart is on the opposing team’s field</Question>
+        <Info>Your team’s minecart must pass completely through the mineshaft entry to score points for this mission</Info>
+        <Tag>m03a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m03a"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M03 Mineshaft Explorer</Heading>
+        <Question><b>Bonus:</b> and the opposing team’s minecart is on your team’s field</Question>
+        <Info>It is not possible to earn the bonus if there is no opposing team or in remote competitions</Info>
+        <Tag>m03b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m03a"] * 1)
+                score += this.answers["m03b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Careful Recovery 🛇</Heading>
+        <Question>Precious artifact is not touching the mine</Question>
+        <Tag>m04a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04a"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M04 Careful Recovery 🛇</Heading>
+        <Question>Both support structures are standing</Question>
+        <Tag>m04b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m04b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M05 Who Lived Here? 🛇</Heading>
+        <Question>Structure floor is completely upright</Question>
+        <Tag>m05</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m05"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M06 Forge</Heading>
+        <Question>Ore blocks not touching the forge</Question>
+        <Info>Technicians may open ore blocks by hand to reveal the fossilized artifact when completely in home (see Mission 14)</Info>
+        <Tag>m06</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m06"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M07 Heavy Lifting</Heading>
+        <Question>Millstone is no longer touching its base</Question>
+        <Tag>m07</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m07"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M08 Silo</Heading>
+        <Question>Preserved pieces outside the silo</Question>
+        <Tag>m08</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m08"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 What’s on Sale? 🛇</Heading>
+        <Question>Roof is completely raised</Question>
+        <Tag>m09a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M09 What’s on Sale? 🛇</Heading>
+        <Question>Market wares are raised</Question>
+        <Tag>m09b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m09b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 Tip the Scales</Heading>
+        <Question>Scale is tipped and touching the mat</Question>
+        <Tag>m10a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M10 Tip the Scales</Heading>
+        <Question>Scale pan is completely removed</Question>
+        <Tag>m10b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m10b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Angler Artifacts 🛇</Heading>
+        <Question>Artifacts are raised above the ground layer</Question>
+        <Tag>m11a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m11a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M11 Angler Artifacts 🛇</Heading>
+        <Question><b>Bonus:</b> and the crane flag is at least partly lowered</Question>
+        <Tag>m11b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            if (this.answers["m11a"] * 1)
+                score += this.answers["m11b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Salvage Operation 🛇</Heading>
+        <Question>Sand is completely cleared</Question>
+        <Info>Sand is considered completely cleared when the pull activator is past the line on the mat</Info>
+        <Tag>m12a</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12a"] * 20;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M12 Salvage Operation 🛇</Heading>
+        <Question>Ship is completely raised</Question>
+        <Tag>m12b</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m12b"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M13 Statue Rebuild 🛇</Heading>
+        <Question>Statue is completely raised</Question>
+        <Tag>m13</Tag>
+        <Option><Label>No</Label><Value>0</Value><Default/></Option>
+        <Option><Label>Yes</Label><Value>1</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m13"] * 30;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>M14 Forum 🛇</Heading>
+        <Question>Artifacts touching the mat and at least partly in the forum</Question>
+        <Info>Artifacts: Brush, Topsoil, Precious Artifact, Opposing Team’s Minecart, Ore with Fossilized Artifact, Millstone, &amp; Scale Pan</Info>
+        <Tag>m14</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Option><Label>4</Label><Value>4</Value></Option>
+        <Option><Label>5</Label><Value>5</Value></Option>
+        <Option><Label>6</Label><Value>6</Value></Option>
+        <Option><Label>7</Label><Value>7</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m14"] * 5;
+        ]]></Score>
+        <!-- TODO: Validate if enough items have been released from other missions? Not done in other scorers. -->
+    </Element>
+
+    <Element>
+        <Heading>M15 Site Marking</Heading>
+        <Question>Sites with a flag at least partly inside and touching the mat</Question>
+        <Info>Sites are outlined on the mat wireframe</Info>
+        <Tag>m15</Tag>
+        <Option><Label>0</Label><Value>0</Value><Default/></Option>
+        <Option><Label>1</Label><Value>1</Value></Option>
+        <Option><Label>2</Label><Value>2</Value></Option>
+        <Option><Label>3</Label><Value>3</Value></Option>
+        <Score><![CDATA[
+            score += this.answers["m15"] * 10;
+        ]]></Score>
+    </Element>
+
+    <Element>
+        <Heading>PT Precision Tokens</Heading>
+        <Question>Number of precision tokens remaining</Question>
+        <Tag>pt</Tag>
+        <Option><Label>0</Label><Value>0</Value></Option>
+        <Option><Label>1</Label><Value>10</Value></Option>
+        <Option><Label>2</Label><Value>15</Value></Option>
+        <Option><Label>3</Label><Value>25</Value></Option>
+        <Option><Label>4</Label><Value>35</Value></Option>
+        <Option><Label>5</Label><Value>50</Value></Option>
+        <Option><Label>6</Label><Value>60</Value><Default/></Option> <!-- Different value to not have double active -->
+        <Score><![CDATA[
+            score += Math.min(this.answers["pt"] * 1, 50);
+        ]]></Score>
+    </Element>
+
+</Scoring_Elements>
