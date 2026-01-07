@@ -33,6 +33,11 @@
         <Score><![CDATA[
             score += this.answers["m01b"] * 10;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m01b"] * 1 == 0 && this.answers["m01b"] * 1 + Math.min(this.answers["m02"] * 1, 1) + this.answers["m04a"] * 1 + this.answers["m03b"] * 1 + Math.min(this.answers["m06"] * 1, 1) + this.answers["m07"] * 1 + this.answers["m10b"] * 1 < this.answers["m14"] * 1) ?
+                {"highlight": true, "msg": "Too many artifacts in the forum"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -46,6 +51,11 @@
         <Score><![CDATA[
             score += this.answers["m02"] * 10;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m02"] * 1 == 0 && this.answers["m01b"] * 1 + Math.min(this.answers["m02"] * 1, 1) + this.answers["m04a"] * 1 + this.answers["m03b"] * 1 + Math.min(this.answers["m06"] * 1, 1) + this.answers["m07"] * 1 + this.answers["m10b"] * 1 < this.answers["m14"] * 1) ?
+                {"highlight": true, "msg": "Too many artifacts in the forum"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -71,6 +81,11 @@
             if (this.answers["m03a"] * 1)
                 score += this.answers["m03b"] * 10;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m03b"] * 1 == 0 && this.answers["m01b"] * 1 + Math.min(this.answers["m02"] * 1, 1) + this.answers["m04a"] * 1 + this.answers["m03b"] * 1 + Math.min(this.answers["m06"] * 1, 1) + this.answers["m07"] * 1 + this.answers["m10b"] * 1 < this.answers["m14"] * 1) ?
+                {"highlight": true, "msg": "Too many artifacts in the forum"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -82,6 +97,11 @@
         <Score><![CDATA[
             score += this.answers["m04a"] * 30;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m04a"] * 1 == 0 && this.answers["m01b"] * 1 + Math.min(this.answers["m02"] * 1, 1) + this.answers["m04a"] * 1 + this.answers["m03b"] * 1 + Math.min(this.answers["m06"] * 1, 1) + this.answers["m07"] * 1 + this.answers["m10b"] * 1 < this.answers["m14"] * 1) ?
+                {"highlight": true, "msg": "Too many artifacts in the forum"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -118,6 +138,11 @@
         <Score><![CDATA[
             score += this.answers["m06"] * 10;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m06"] * 1 == 0 && this.answers["m01b"] * 1 + Math.min(this.answers["m02"] * 1, 1) + this.answers["m04a"] * 1 + this.answers["m03b"] * 1 + Math.min(this.answers["m06"] * 1, 1) + this.answers["m07"] * 1 + this.answers["m10b"] * 1 < this.answers["m14"] * 1) ?
+                {"highlight": true, "msg": "Too many artifacts in the forum"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -129,6 +154,11 @@
         <Score><![CDATA[
             score += this.answers["m07"] * 30;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m07"] * 1 == 0 && this.answers["m01b"] * 1 + Math.min(this.answers["m02"] * 1, 1) + this.answers["m04a"] * 1 + this.answers["m03b"] * 1 + Math.min(this.answers["m06"] * 1, 1) + this.answers["m07"] * 1 + this.answers["m10b"] * 1 < this.answers["m14"] * 1) ?
+                {"highlight": true, "msg": "Too many artifacts in the forum"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -186,6 +216,11 @@
         <Score><![CDATA[
             score += this.answers["m10b"] * 10;
         ]]></Score>
+        <Validate><![CDATA[
+            (this.answers["m10b"] * 1 == 0 && this.answers["m01b"] * 1 + Math.min(this.answers["m02"] * 1, 1) + this.answers["m04a"] * 1 + this.answers["m03b"] * 1 + Math.min(this.answers["m06"] * 1, 1) + this.answers["m07"] * 1 + this.answers["m10b"] * 1 < this.answers["m14"] * 1) ?
+                {"highlight": true, "msg": "Too many artifacts in the forum"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
@@ -261,7 +296,12 @@
         <Score><![CDATA[
             score += this.answers["m14"] * 5;
         ]]></Score>
-        <!-- TODO: Validate if enough items have been released from other missions? Not done in other scorers. -->
+        <!-- Validate if enough items have been released from other missions. Not done in other scorers. -->
+        <Validate><![CDATA[
+            (this.answers["m01b"] * 1 + Math.min(this.answers["m02"] * 1, 1) + this.answers["m04a"] * 1 + this.answers["m03b"] * 1 + Math.min(this.answers["m06"] * 1, 1) + this.answers["m07"] * 1 + this.answers["m10b"] * 1 < this.answers["m14"] * 1) ?
+                {"highlight": true, "msg": "Too many artifacts in the forum"} :
+                {"highlight": false, "msg": ""}
+        ]]></Validate>
     </Element>
 
     <Element>
